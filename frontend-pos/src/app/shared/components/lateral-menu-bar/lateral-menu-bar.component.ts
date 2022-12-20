@@ -1,0 +1,24 @@
+import {Component} from '@angular/core';
+
+@Component({
+  selector: 'pos-lateral-menu-bar',
+  templateUrl: './lateral-menu-bar.component.html',
+  styleUrls: ['./lateral-menu-bar.component.scss']
+})
+export class LateralMenuBarComponent {
+  constructor() {
+
+    let sideBar = document.querySelector('.side-bar');
+    let arrowCollapse = document.querySelector('#logo-name__icon');
+   /* sideBar?.onclick = () => {
+      sideBar.classList.toggle('collapse');
+      arrowCollapse.classList.toggle('collapse');
+      if (arrowCollapse.classList.contains('collapse')) {
+        arrowCollapse.classList =
+          'bx bx-arrow-from-left logo-name__icon collapse';
+      } else {
+        arrowCollapse.classList = 'bx bx-arrow-from-right logo-name__icon';
+      }
+    };*/
+  }
+}
