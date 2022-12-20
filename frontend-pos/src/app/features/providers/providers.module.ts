@@ -1,7 +1,5 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
-import { ProvidersRoutingModule } from './providers-routing.module';
 import { ProvidersComponent } from './providers.component';
 
 
@@ -10,8 +8,7 @@ import { ProvidersComponent } from './providers.component';
     ProvidersComponent
   ],
   imports: [
-    CommonModule,
-    ProvidersRoutingModule
+    CommonModule
   ]
 })
 export class ProvidersModule { }

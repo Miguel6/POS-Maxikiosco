@@ -1,8 +1,6 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-
-import { StatisticsRoutingModule } from './statistics-routing.module';
-import { StatisticsComponent } from './statistics.component';
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
+import {StatisticsComponent} from './statistics.component';
 
 
 @NgModule({
@@ -10,8 +8,7 @@ import { StatisticsComponent } from './statistics.component';
     StatisticsComponent
   ],
   imports: [
-    CommonModule,
-    StatisticsRoutingModule
+    CommonModule
   ]
 })
 export class StatisticsModule { }
