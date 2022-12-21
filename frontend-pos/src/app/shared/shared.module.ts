@@ -3,6 +3,8 @@ import {CommonModule} from '@angular/common';
 import {LateralMenuBarComponent} from './components/lateral-menu-bar/lateral-menu-bar.component';
 import {MaterialModule} from "./material/material.module";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import {FormsModule} from "@angular/forms";
+import {RouterLink} from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -15,7 +17,9 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
   imports: [
     CommonModule,
     MaterialModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    FormsModule,
+    RouterLink
   ]
 })
 export class SharedModule { }

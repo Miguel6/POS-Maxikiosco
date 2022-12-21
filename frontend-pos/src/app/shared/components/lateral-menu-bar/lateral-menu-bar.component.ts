@@ -1,4 +1,5 @@
 import {Component} from '@angular/core';
+import {animate, style, transition, trigger} from '@angular/animations';
 
 @Component({
   selector: 'pos-lateral-menu-bar',
@@ -6,7 +7,15 @@ import {Component} from '@angular/core';
   styleUrls: ['./lateral-menu-bar.component.scss']
 })
 export class LateralMenuBarComponent {
-  showFiller = false;
+  isExpanded = false;
+
+  mouseenter() {
+    this.isExpanded = true;
+  }
+
+  mouseleave() {
+    this.isExpanded = false;
+  }
 
   constructor() {
 
