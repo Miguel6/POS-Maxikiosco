@@ -4,36 +4,28 @@
     <div class="m-sidenav__handle">
       <mat-list  (mouseenter)="mouseenter()" (mouseleave)="mouseleave()">
         <mat-list-item>
-          <img src="assets/icons/home.svg">
-          <span class="menu-item" *ngIf="isExpanded">Inicio</span>
+          <pos-item-menu-bar [url]="'assets/icons/home.svg'" [text]="'Inicio'" [showText]="isExpanded"></pos-item-menu-bar>
         </mat-list-item>
         <mat-list-item>
-          <img src="assets/icons/basket.svg">
-          <span class="menu-item" *ngIf="isExpanded">Carrito</span>
+          <pos-item-menu-bar [url]="'assets/icons/basket.svg'" [text]="'Carrito'" [showText]="isExpanded"></pos-item-menu-bar>
         </mat-list-item>
         <mat-list-item>
-          <img src="assets/icons/statistics.svg">
-          <span class="menu-item" *ngIf="isExpanded">Estadisticas</span>
+          <pos-item-menu-bar [url]="'assets/icons/statistics.svg'" [text]="'Estadisticas'" [showText]="isExpanded"></pos-item-menu-bar>
         </mat-list-item>
         <mat-list-item>
-          <img src="assets/icons/providers.svg">
-          <span class="menu-item" *ngIf="isExpanded">Proveedores</span>
+          <pos-item-menu-bar [url]="'assets/icons/providers.svg'" [text]="'Proveedores'" [showText]="isExpanded"></pos-item-menu-bar>
         </mat-list-item>
         <mat-list-item>
-          <img src="assets/icons/product.svg">
-          <span class="menu-item" *ngIf="isExpanded">Productos</span>
+          <pos-item-menu-bar [url]="'assets/icons/product.svg'" [text]="'Productos'" [showText]="isExpanded"></pos-item-menu-bar>
         </mat-list-item>
         <mat-list-item>
-          <img src="assets/icons/edit-users.svg">
-          <span class="menu-item" *ngIf="isExpanded">Adm. Usuarios</span>
+          <pos-item-menu-bar [url]="'assets/icons/edit-users.svg'" [text]="'Adm. Usuarios'" [showText]="isExpanded"></pos-item-menu-bar>
         </mat-list-item>
         <mat-list-item>
-          <img src="assets/icons/configuration.svg">
-          <span class="menu-item" *ngIf="isExpanded">Configuracion</span>
+          <pos-item-menu-bar [url]="'assets/icons/configuration.svg'" [text]="'Configuracion'" [showText]="isExpanded"></pos-item-menu-bar>
         </mat-list-item>
         <mat-list-item>
-          <img src="assets/icons/sign-out.svg">
-          <span class="menu-item" *ngIf="isExpanded">Cerrar Sesión</span>
+          <pos-item-menu-bar [url]="'assets/icons/sign-out.svg'" [text]="'Cerrar Sesión'" [showText]="isExpanded"></pos-item-menu-bar>
         </mat-list-item>
       </mat-list>
     </div>

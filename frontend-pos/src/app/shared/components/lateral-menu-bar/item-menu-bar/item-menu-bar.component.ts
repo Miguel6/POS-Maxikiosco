@@ -9,5 +9,7 @@ export class ItemMenuBarComponent {
 
   @Input() showText = false;
   @Input() buttonActive = false;
+  @Input() text = '';
+  @Input() url: string;
 
 }

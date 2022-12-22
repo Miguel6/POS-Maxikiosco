@@ -16,23 +16,6 @@ mat-sidenav-container {
 
     mat-list {
       mat-list-item {
-        ::ng-deep span span {
-          display: grid;
-          grid-template-columns: 40px 160px;
-          grid-template-rows: 40px;
-          align-items: center;
-          svg {
-            grid-column: 1;
-            align-self: center;
-            justify-self: center;
-            justify-content: center;
-          }
-          span {
-            display: flex;
-            align-items: center;
-            grid-column: 2;
-          }
-        }
       }
     }
   }
