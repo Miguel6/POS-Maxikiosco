@@ -1,5 +1,5 @@
-import {Component} from '@angular/core';
-import {animate, style, transition, trigger} from '@angular/animations';
+import {Component, ViewChild} from '@angular/core';
+import {MatSidenav} from '@angular/material/sidenav';
 
 @Component({
   selector: 'pos-lateral-menu-bar',
@@ -7,17 +7,16 @@ import {animate, style, transition, trigger} from '@angular/animations';
   styleUrls: ['./lateral-menu-bar.component.scss']
 })
 export class LateralMenuBarComponent {
-  isExpanded = false;
+  @ViewChild('sidenav', {static: false}) sidenav: MatSidenav;
+  isExpanded: boolean = false;
+
+  constructor() { }
 
   mouseenter() {
-    this.isExpanded = true;
+    this.isExpanded = true
   }
 
   mouseleave() {
-    this.isExpanded = false;
-  }
-
-  constructor() {
-
+    this.isExpanded = false
   }
 }

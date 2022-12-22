@@ -5,10 +5,12 @@ import {MaterialModule} from "./material/material.module";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {FormsModule} from "@angular/forms";
 import {RouterLink} from '@angular/router';
+import { ItemMenuBarComponent } from './components/lateral-menu-bar/item-menu-bar/item-menu-bar.component';
 
 @NgModule({
   declarations: [
-    LateralMenuBarComponent
+    LateralMenuBarComponent,
+    ItemMenuBarComponent
   ],
   exports: [
     MaterialModule,

@@ -1,132 +1,44 @@
-<!--&lt;!&ndash;<mat-sidenav-container class="example-container" *ngIf="true">&ndash;&gt;-->
-<!--&lt;!&ndash;  <mat-sidenav mode="side">Sidenav content</mat-sidenav>&ndash;&gt;-->
-<!--&lt;!&ndash;  <mat-sidenav-content>Main content</mat-sidenav-content>&ndash;&gt;-->
-<!--&lt;!&ndash;</mat-sidenav-container>&ndash;&gt;-->
-<!--<mat-toolbar color="primary" class="example-toolbar">-->
-<!--  <button mat-icon-button (click)="isExpanded = !isExpanded">-->
-<!--    <mat-icon>menu</mat-icon>-->
-<!--  </button>-->
-<!--  <h1 class="example-app-name">Nested Menus</h1>-->
-<!--</mat-toolbar>-->
-<!--<mat-sidenav-container class="lateral-menu-bar-container" autosize>-->
-<!--  <mat-sidenav mode="side" [(opened)]="isExpanded" (mouseover)="mouseenter()" (mouseleave)="mouseleave()">-->
-<!--      <mat-nav-list>-->
-<!--        <mat-list-item [routerLink]="'home'">-->
-<!--          <svg xmlns="http://www.w3.org/2000/svg" width="30.056" height="28.192" viewBox="0 0 30.056 28.192" class="full-width">-->
-<!--            <g id="_3844470_home_house_icon" data-name="3844470_home_house_icon" transform="translate(-0.971 -1.808)">-->
-<!--              <path id="XMLID_1_"-->
-<!--                    d="M27,29H5V17H3.235a1.238,1.238,0,0,1-.812-2.168L14.131,3.745a2.716,2.716,0,0,1,3.737,0L29.575,14.832A1.238,1.238,0,0,1,28.763,17H27Z"-->
-<!--                    fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10"-->
-<!--                    stroke-width="2"/>-->
-<!--              <path id="XMLID_2_" d="M20,29H12V23a4,4,0,0,1,4-4h0a4,4,0,0,1,4,4Z" fill="none" stroke="#000"-->
-<!--                    stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2"/>-->
-<!--            </g>-->
-<!--          </svg>-->
-<!--          <span class="menu-item" *ngIf="isExpanded || isShowing">Home</span>-->
-<!--        </mat-list-item>-->
-
-<!--      </mat-nav-list>-->
-<!--  </mat-sidenav>-->
-<!--  <mat-sidenav-content>-->
-<!--    <ng-content></ng-content>-->
-<!--  </mat-sidenav-content>-->
-<!--</mat-sidenav-container>-->
-<div class="lateral-menu-bar-container">
-
-  <mat-list  (mouseenter)="mouseenter()" (mouseleave)="mouseleave()">
-    <mat-list-item [routerLink]="'home'">
-      <svg xmlns="http://www.w3.org/2000/svg" width="30.056" height="28.192" viewBox="0 0 30.056 28.192"
-           class="full-width">
-        <g id="_3844470_home_house_icon" data-name="3844470_home_house_icon" transform="translate(-0.971 -1.808)">
-          <path id="XMLID_1_"
-                d="M27,29H5V17H3.235a1.238,1.238,0,0,1-.812-2.168L14.131,3.745a2.716,2.716,0,0,1,3.737,0L29.575,14.832A1.238,1.238,0,0,1,28.763,17H27Z"
-                fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10"
-                stroke-width="2"/>
-          <path id="XMLID_2_" d="M20,29H12V23a4,4,0,0,1,4-4h0a4,4,0,0,1,4,4Z" fill="none" stroke="#000"
-                stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2"/>
-        </g>
-      </svg>
-      <span class="menu-item" *ngIf="isExpanded">Home</span>
-    </mat-list-item>
-
-    <mat-list-item>
-      <svg xmlns="http://www.w3.org/2000/svg" width="30" height="25.795" viewBox="0 0 30 25.795">
-        <path id="shopping_basket_FILL0_wght400_GRAD0_opsz48"
-              d="M7.222,29.645a1.55,1.55,0,0,1-.964-.321A1.5,1.5,0,0,1,5.7,28.5l-3.82-13.76a.987.987,0,0,1,.186-.913,1.043,1.043,0,0,1,.862-.406H9.69L15.945,4.29a1.412,1.412,0,0,1,.372-.321,1.006,1.006,0,0,1,.947,0,1.412,1.412,0,0,1,.372.321l6.221,9.128h6.931a1.009,1.009,0,0,1,.828.406.987.987,0,0,1,.186.913L27.947,28.5a1.5,1.5,0,0,1-.558.828,1.55,1.55,0,0,1-.964.321Zm.338-2.028H26.087L29.5,15.446H4.18Zm9.263-4.057a2.02,2.02,0,1,0-1.437-.592A1.956,1.956,0,0,0,16.824,23.56ZM12.158,13.418h9.23l-4.6-6.762Zm-4.6,14.2h0Z"
-              transform="translate(-1.841 -3.85)"/>
-      </svg>
-    </mat-list-item>
-    <mat-list-item>
-      <svg xmlns="http://www.w3.org/2000/svg" width="30" height="29.925" viewBox="0 0 30 29.925">
-        <path id="data_usage_FILL0_wght400_GRAD0_opsz48"
-              d="M19.05,34.025a14.514,14.514,0,0,1-5.812-1.181,15.376,15.376,0,0,1-4.781-3.206,14.991,14.991,0,0,1-3.225-4.763A14.514,14.514,0,0,1,4.05,19.062a14.426,14.426,0,0,1,3.994-10.2,14.624,14.624,0,0,1,9.919-4.725V7.963a11.091,11.091,0,0,0-10.088,11.1,10.713,10.713,0,0,0,3.262,7.894A10.806,10.806,0,0,0,19.05,30.2a11.11,11.11,0,0,0,5.1-1.219,11.832,11.832,0,0,0,4.087-3.431l3.3,1.912A15.223,15.223,0,0,1,26.081,32.3,14.889,14.889,0,0,1,19.05,34.025Zm13.575-8.588-3.3-1.837A13.727,13.727,0,0,0,30,21.294a11.731,11.731,0,0,0,.225-2.269,10.9,10.9,0,0,0-2.869-7.537,10.526,10.526,0,0,0-7.144-3.562V4.1a14.406,14.406,0,0,1,9.862,4.669A14.3,14.3,0,0,1,34.05,18.875a15.509,15.509,0,0,1-.356,3.319A16.982,16.982,0,0,1,32.625,25.437Z"
-              transform="translate(-4.05 -4.1)"/>
-      </svg>
-    </mat-list-item>
-    <mat-list-item>
-      <svg xmlns="http://www.w3.org/2000/svg" width="30" height="21.784" viewBox="0 0 30 21.784">
-        <path id="local_shipping_FILL0_wght400_GRAD0_opsz48"
-              d="M8.273,29.784A4.016,4.016,0,0,1,4.25,25.761H2V10.045a1.962,1.962,0,0,1,.614-1.432A1.962,1.962,0,0,1,4.045,8H23.784v5.693h3.58L32,19.864v5.9H29.58a4.026,4.026,0,0,1-6.869,2.847,3.877,3.877,0,0,1-1.176-2.847H12.3a4.016,4.016,0,0,1-4.023,4.023Zm0-2.045a1.977,1.977,0,1,0-1.4-3.375,1.977,1.977,0,0,0,1.4,3.375ZM4.045,23.716H4.8A4.517,4.517,0,0,1,6.261,22.25a3.836,3.836,0,0,1,3.972.017,4.75,4.75,0,0,1,1.483,1.449H21.739V10.045H4.045Zm21.511,4.023a1.979,1.979,0,1,0-1.4-.58A1.9,1.9,0,0,0,25.557,27.739Zm-1.773-6.955h6.341l-3.784-5.045H23.784ZM12.909,17.239Z"
-              transform="translate(-2 -8)"/>
-      </svg>
-    </mat-list-item>
-    <mat-list-item>
-
-      <svg xmlns="http://www.w3.org/2000/svg" width="27" height="27" viewBox="0 0 27 27">
-        <path id="Icon_ionic-md-create" data-name="Icon ionic-md-create"
-              d="M4.5,25.875V31.5h5.625L26.7,14.925,21.075,9.3Zm26.55-15.3a1.45,1.45,0,0,0,0-2.1L27.525,4.95a1.45,1.45,0,0,0-2.1,0L22.65,7.725l5.625,5.625Z"
-              transform="translate(-4.5 -4.5)"/>
-      </svg>
-    </mat-list-item>
-    <mat-list-item>
-      <svg xmlns="http://www.w3.org/2000/svg" width="35" height="29.277" viewBox="0 0 35 29.277">
-        <path id="manage_accounts_FILL0_wght400_GRAD0_opsz48"
-              d="M18.088,21.958a6.334,6.334,0,0,1-6.6-6.6,6.334,6.334,0,0,1,6.6-6.6,6.334,6.334,0,0,1,6.6,6.6,6.334,6.334,0,0,1-6.6,6.6ZM4,36.09V31.951a5.125,5.125,0,0,1,.77-2.774,4.962,4.962,0,0,1,2.223-1.893,32.252,32.252,0,0,1,5.877-2.025,23.491,23.491,0,0,1,5.217-.616H19.1a6.848,6.848,0,0,0-.4,1.211,12.97,12.97,0,0,0-.22,1.431h-.4a22.671,22.671,0,0,0-5,.55A22.849,22.849,0,0,0,8.05,29.662a2.388,2.388,0,0,0-1.057.991,2.661,2.661,0,0,0-.352,1.3v1.5H18.484a8.56,8.56,0,0,0,.528,1.431,6.906,6.906,0,0,0,.748,1.211Zm25.843,1.937-.44-2.906a7.811,7.811,0,0,1-1.519-.638,5.6,5.6,0,0,1-1.3-.947l-2.421.528-1.1-1.849,2.069-1.937a6.923,6.923,0,0,1,0-2.2L23.063,26.14l1.1-1.849,2.421.528a5.6,5.6,0,0,1,1.3-.947,7.811,7.811,0,0,1,1.519-.638l.44-2.906H32.22l.44,2.906a7.811,7.811,0,0,1,1.519.638,5.6,5.6,0,0,1,1.3.947l2.421-.528L39,26.14l-2.069,1.937a6.923,6.923,0,0,1,0,2.2L39,32.215l-1.1,1.849-2.421-.528a5.6,5.6,0,0,1-1.3.947,7.811,7.811,0,0,1-1.519.638l-.44,2.906ZM31.031,32.7a3.328,3.328,0,1,0-2.553-.969A3.452,3.452,0,0,0,31.031,32.7ZM18.088,19.316a3.84,3.84,0,0,0,3.962-3.962,3.84,3.84,0,0,0-3.962-3.962,3.84,3.84,0,0,0-3.962,3.962,3.84,3.84,0,0,0,3.962,3.962ZM18.088,15.354ZM18.484,33.448Z"
-              transform="translate(-4 -8.75)"/>
-      </svg>
-    </mat-list-item>
-    <mat-list-item>
-
-      <svg id="_1904675_configuration_edit_gear_options_preferences_icon"
-           data-name="1904675_configuration_edit_gear_options_preferences_icon" xmlns="http://www.w3.org/2000/svg"
-           width="30"
-           height="30" viewBox="0 0 30 30">
-        <path id="Path_1" data-name="Path 1"
-              d="M44.044,39a5.044,5.044,0,1,0,5.044,5.044A5.044,5.044,0,0,0,44.044,39Zm0,8.877a3.833,3.833,0,1,1,3.833-3.833A3.833,3.833,0,0,1,44.044,47.877Z"
-              transform="translate(-29.044 -29.044)"/>
-        <path id="Path_2" data-name="Path 2"
-              d="M28.359,11.25H26.266a.234.234,0,0,1-.22-.159,11.7,11.7,0,0,0-.469-1.137.234.234,0,0,1,.042-.27L27.1,8.2a1.641,1.641,0,0,0,0-2.32L24.115,2.9a1.641,1.641,0,0,0-2.32,0L20.316,4.38a.234.234,0,0,1-.27.042,11.662,11.662,0,0,0-1.137-.469.234.234,0,0,1-.159-.22V1.641A1.641,1.641,0,0,0,17.109,0H12.891A1.641,1.641,0,0,0,11.25,1.641V3.734a.234.234,0,0,1-.159.22,11.7,11.7,0,0,0-1.137.469.234.234,0,0,1-.27-.042L8.2,2.9a1.641,1.641,0,0,0-2.32,0L2.9,5.885a1.641,1.641,0,0,0,0,2.32L4.38,9.684a.234.234,0,0,1,.042.27,11.662,11.662,0,0,0-.469,1.137.234.234,0,0,1-.22.159H1.641A1.641,1.641,0,0,0,0,12.891v4.219A1.641,1.641,0,0,0,1.641,18.75H3.734a.234.234,0,0,1,.22.159,11.7,11.7,0,0,0,.469,1.137.234.234,0,0,1-.042.27L2.9,21.8a1.641,1.641,0,0,0,0,2.32L5.885,27.1a1.641,1.641,0,0,0,2.32,0l1.479-1.479a.234.234,0,0,1,.27-.042,11.662,11.662,0,0,0,1.137.469.234.234,0,0,1,.159.22v2.091A1.641,1.641,0,0,0,12.891,30h4.219a1.641,1.641,0,0,0,1.641-1.641V26.266a.234.234,0,0,1,.159-.22,11.7,11.7,0,0,0,1.137-.469.234.234,0,0,1,.27.042L21.8,27.1a1.641,1.641,0,0,0,2.32,0L27.1,24.115a1.641,1.641,0,0,0,0-2.32l-1.479-1.479a.234.234,0,0,1-.042-.27,11.662,11.662,0,0,0,.469-1.137.234.234,0,0,1,.22-.159h2.091A1.641,1.641,0,0,0,30,17.109V12.891a1.641,1.641,0,0,0-1.641-1.641Zm.234,5.859a.234.234,0,0,1-.234.234H26.266a1.641,1.641,0,0,0-1.547,1.1,10.289,10.289,0,0,1-.413,1,1.641,1.641,0,0,0,.316,1.875L26.1,22.8a.234.234,0,0,1,0,.33L23.121,26.1a.234.234,0,0,1-.33,0l-1.479-1.479a1.641,1.641,0,0,0-1.875-.316,10.282,10.282,0,0,1-1,.413,1.641,1.641,0,0,0-1.1,1.547v2.091a.234.234,0,0,1-.234.234H12.891a.234.234,0,0,1-.234-.234V26.266a1.641,1.641,0,0,0-1.1-1.547,10.289,10.289,0,0,1-1-.413,1.641,1.641,0,0,0-1.875.316L7.2,26.1a.234.234,0,0,1-.33,0L3.9,23.121a.234.234,0,0,1,0-.33l1.479-1.479a1.641,1.641,0,0,0,.316-1.875,10.284,10.284,0,0,1-.413-1,1.641,1.641,0,0,0-1.545-1.092H1.641a.234.234,0,0,1-.234-.234V12.891a.234.234,0,0,1,.234-.234H3.734a1.641,1.641,0,0,0,1.547-1.1,10.289,10.289,0,0,1,.413-1,1.641,1.641,0,0,0-.316-1.875L3.9,7.2a.234.234,0,0,1,0-.33L6.879,3.9a.234.234,0,0,1,.33,0L8.688,5.374a1.641,1.641,0,0,0,1.875.316,10.285,10.285,0,0,1,1-.413,1.641,1.641,0,0,0,1.092-1.545V1.641a.234.234,0,0,1,.234-.234h4.219a.234.234,0,0,1,.234.234V3.734a1.641,1.641,0,0,0,1.1,1.547,10.289,10.289,0,0,1,1,.412,1.641,1.641,0,0,0,1.875-.316L22.8,3.9a.234.234,0,0,1,.33,0l2.984,2.984a.234.234,0,0,1,0,.33L24.63,8.691a1.641,1.641,0,0,0-.316,1.875,10.284,10.284,0,0,1,.413,1,1.641,1.641,0,0,0,1.547,1.1h2.086a.234.234,0,0,1,.234.234Z"
-              transform="translate(0)"/>
-      </svg>
-    </mat-list-item>
-    <mat-list-item>
-
-      <svg xmlns="http://www.w3.org/2000/svg" width="25.241" height="28.992" viewBox="0 0 25.241 28.992">
-        <g id="Group_11" data-name="Group 11" transform="translate(-27 -1029)">
-          <g id="logout" transform="translate(21.07 1027)">
-            <path id="Path_3" data-name="Path 3"
-                  d="M24.568,25.815v3.106H8V4.071H24.568V7.177h2.071V3.035A1.035,1.035,0,0,0,25.6,2H6.965A1.035,1.035,0,0,0,5.93,3.035V29.957a1.035,1.035,0,0,0,1.035,1.035H25.6a1.035,1.035,0,0,0,1.035-1.035V25.815Z"
-                  fill="#000"/>
-            <g id="Group_10" data-name="Group 10">
-              <line id="Line_2" data-name="Line 2" x2="13.502" transform="translate(16.255 16.296)" fill="none"
-                    stroke="#000"
-                    stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
-              <line id="Line_3" data-name="Line 3" x1="3.971" y2="3.971" transform="translate(25.786 16.296)"
-                    fill="none"
-                    stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
-              <line id="Line_4" data-name="Line 4" x1="3.971" y1="3.971" transform="translate(25.786 12.325)"
-                    fill="none"
-                    stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
-              <line id="Line_5" data-name="Line 5" y1="2.071" transform="translate(25.593 6.235)" fill="none"
-                    stroke="#000"
-                    stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
-              <line id="Line_6" data-name="Line 6" y1="1.588" transform="translate(25.786 25.033)" fill="none"
-                    stroke="#000"
-                    stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
-            </g>
-          </g>
-        </g>
-      </svg>
-    </mat-list-item>
-  </mat-list>
-</div>
+<mat-sidenav-container class="m-sidenav-container">
+  <mat-sidenav [ngClass]="{'m-sidenav': true, 'm-sidenav-small': isExpanded}" mode="side" opened #sidenav
+               (mouseover)="mouseenter()" (mouseleave)="mouseleave()">
+    <div class="m-sidenav__handle">
+      <mat-list  (mouseenter)="mouseenter()" (mouseleave)="mouseleave()">
+        <mat-list-item>
+          <img src="assets/icons/home.svg">
+          <span class="menu-item" *ngIf="isExpanded">Inicio</span>
+        </mat-list-item>
+        <mat-list-item>
+          <img src="assets/icons/basket.svg">
+          <span class="menu-item" *ngIf="isExpanded">Carrito</span>
+        </mat-list-item>
+        <mat-list-item>
+          <img src="assets/icons/statistics.svg">
+          <span class="menu-item" *ngIf="isExpanded">Estadisticas</span>
+        </mat-list-item>
+        <mat-list-item>
+          <img src="assets/icons/providers.svg">
+          <span class="menu-item" *ngIf="isExpanded">Proveedores</span>
+        </mat-list-item>
+        <mat-list-item>
+          <img src="assets/icons/product.svg">
+          <span class="menu-item" *ngIf="isExpanded">Productos</span>
+        </mat-list-item>
+        <mat-list-item>
+          <img src="assets/icons/edit-users.svg">
+          <span class="menu-item" *ngIf="isExpanded">Adm. Usuarios</span>
+        </mat-list-item>
+        <mat-list-item>
+          <img src="assets/icons/configuration.svg">
+          <span class="menu-item" *ngIf="isExpanded">Configuracion</span>
+        </mat-list-item>
+        <mat-list-item>
+          <img src="assets/icons/sign-out.svg">
+          <span class="menu-item" *ngIf="isExpanded">Cerrar Sesión</span>
+        </mat-list-item>
+      </mat-list>
+    </div>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <ng-content></ng-content>
+  </mat-sidenav-content>
+</mat-sidenav-container>
