@@ -32,12 +32,20 @@ mat-sidenav-container {
 
       mat-list-item {
         margin: 5px 0;
+
+        &:hover {
+          background-color: $gray-lightest;
+          cursor: pointer;
+          transition: all 0.25s ease-in-out;
+        }
+
         pos-item-menu-bar.sign-out {
           filter: invert(39%) sepia(74%) saturate(4789%) hue-rotate(343deg) brightness(98%) contrast(100%);
         }
 
         pos-item-menu-bar.active {
           filter: invert(79%) sepia(26%) saturate(6845%) hue-rotate(105deg) brightness(96%) contrast(101%);
+          font-weight: 500;
         }
         pos-item-menu-bar {
           filter: invert(53%) sepia(6%) saturate(532%) hue-rotate(164deg) brightness(89%) contrast(88%);
