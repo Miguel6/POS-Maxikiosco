@@ -9,6 +9,9 @@ import {ItemMenuBarComponent} from './components/lateral-menu-bar/item-menu-bar/
 import {PathHelper} from './providers/path-helper';
 import {HttpService} from './services/http.service';
 import {NavigatorHelper} from './providers/navigator-helper';
+import {TranslateLoader, TranslateModule, TranslateService} from '@ngx-translate/core';
+import {PosTranslateLoader} from './translator/pos-translate-loader';
+import {HttpClient, HttpClientModule, HttpHandler} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -17,19 +20,30 @@ import {NavigatorHelper} from './providers/navigator-helper';
   ],
   exports: [
     MaterialModule,
-    LateralMenuBarComponent
+    LateralMenuBarComponent,
   ],
   imports: [
+    HttpClientModule,
     CommonModule,
     MaterialModule,
     BrowserAnimationsModule,
     FormsModule,
-    RouterLink
+    RouterLink,
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useClass: PosTranslateLoader,
+        deps: [HttpClient],
+      },
+    })
   ],
   providers: [
     PathHelper,
     HttpService,
-    NavigatorHelper
+    NavigatorHelper,
+    PosTranslateLoader,
+    HttpClient,
+    TranslateService
   ]
 })
 export class SharedModule { }

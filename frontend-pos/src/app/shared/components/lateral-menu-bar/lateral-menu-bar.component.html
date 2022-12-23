@@ -7,7 +7,7 @@
         <mat-list-item>
           <pos-item-menu-bar [ngClass]="{'active': this.pathHelper.isInHome()}"
                              [url]="'assets/icons/home.svg'"
-                             [text]="'Inicio'"
+                             [text]="'LATERAL-MENU.HOME' | translate"
                              [showText]="isExpanded"
                              (onClick)="navigatorHelper.goToHome()"></pos-item-menu-bar>
         </mat-list-item>
@@ -15,35 +15,35 @@
         <mat-list-item>
           <pos-item-menu-bar [ngClass]="{'active': this.pathHelper.isInBasket()}"
                              [url]="'assets/icons/basket.svg'"
-                             [text]="'Carrito'"
+                             [text]="'LATERAL-MENU.BASKET' | translate"
                              [showText]="isExpanded"
                              (onClick)="navigatorHelper.goToBasket()"></pos-item-menu-bar>
         </mat-list-item>
         <mat-list-item>
           <pos-item-menu-bar [ngClass]="{'active': this.pathHelper.isInStatistics()}"
                              [url]="'assets/icons/statistics.svg'"
-                             [text]="'Estadisticas'"
+                             [text]="'LATERAL-MENU.STATISTICS' | translate"
                              [showText]="isExpanded"
                              (onClick)="navigatorHelper.goToStatistics()"></pos-item-menu-bar>
         </mat-list-item>
         <mat-list-item>
           <pos-item-menu-bar [ngClass]="{'active': this.pathHelper.isInProviders()}"
                              [url]="'assets/icons/providers.svg'"
-                             [text]="'Proveedores'"
+                             [text]="'LATERAL-MENU.PROVIDERS' | translate"
                              [showText]="isExpanded"
                              (onClick)="navigatorHelper.goToProviders()"></pos-item-menu-bar>
         </mat-list-item>
         <mat-list-item>
           <pos-item-menu-bar [ngClass]="{'active': this.pathHelper.isInProducts()}"
                              [url]="'assets/icons/product.svg'"
-                             [text]="'Productos'"
+                             [text]="'LATERAL-MENU.PRODUCTS' | translate"
                              [showText]="isExpanded"
                              (onClick)="navigatorHelper.goToProducts()"></pos-item-menu-bar>
         </mat-list-item>
         <mat-list-item>
           <pos-item-menu-bar [ngClass]="{'active': this.pathHelper.isInUsers()}"
                              [url]="'assets/icons/edit-users.svg'"
-                             [text]="'Adm. Usuarios'"
+                             [text]="'LATERAL-MENU.USERS' | translate"
                              [showText]="isExpanded"
                              (onClick)="navigatorHelper.goToUsers()"></pos-item-menu-bar>
         </mat-list-item>
@@ -53,14 +53,14 @@
         <mat-list-item>
           <pos-item-menu-bar [ngClass]="{'active': this.pathHelper.isInSettings()}"
                              [url]="'assets/icons/configuration.svg'"
-                             [text]="'Configuracion'"
+                             [text]="'LATERAL-MENU.SETTINGS' | translate"
                              [showText]="isExpanded"
                              (onClick)="navigatorHelper.goToSettings()"></pos-item-menu-bar>
         </mat-list-item>
         <mat-list-item>
           <pos-item-menu-bar class="sign-out"
                              [url]="'assets/icons/sign-out.svg'"
-                             [text]="'Cerrar Sesión'"
+                             [text]="'LATERAL-MENU.SIGN-OUT' | translate"
                              [showText]="isExpanded"></pos-item-menu-bar>
         </mat-list-item>
         </span>

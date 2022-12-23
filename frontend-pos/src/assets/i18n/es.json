@@ -1,0 +1,12 @@
+{
+  "LATERAL-MENU": {
+    "HOME": "Inicio",
+    "BASKET": "Carrito",
+    "PRODUCTS": "Productos",
+    "PROVIDERS": "Proveedores",
+    "SETTINGS": "Configuración",
+    "STATISTICS": "Estadísticas",
+    "USERS": "Adm. Usuarios",
+    "SIGN-OUT": "Cerrar Sesión"
+  }
+}

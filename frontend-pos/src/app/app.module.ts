@@ -10,6 +10,7 @@ import {SettingsModule} from './features/settings/settings.module';
 import {StatisticsModule} from './features/statistics/statistics.module';
 import {UsersModule} from './features/users/users.module';
 import {HomeModule} from "./features/home/home.module";
+import {TranslateLoader, TranslateService} from '@ngx-translate/core';
 
 @NgModule({
   declarations: [
