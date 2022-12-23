@@ -1,4 +1,6 @@
-import {Component, Input} from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
+import {Path} from '../../../constants/path';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'pos-item-menu-bar',
@@ -8,8 +10,14 @@ import {Component, Input} from '@angular/core';
 export class ItemMenuBarComponent {
 
   @Input() showText = false;
-  @Input() buttonActive = false;
   @Input() text = '';
   @Input() url: string;
 
+  @Output() onClick = new EventEmitter<void>();
+
+  constructor() {}
+
+  public click(): void {
+    this.onClick.emit();
+  }
 }

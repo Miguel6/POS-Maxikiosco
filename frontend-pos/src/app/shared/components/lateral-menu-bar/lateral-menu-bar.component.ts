@@ -1,5 +1,8 @@
 import {Component, ViewChild} from '@angular/core';
 import {MatSidenav} from '@angular/material/sidenav';
+import {PathHelper} from '../../providers/path-helper';
+import {Path} from '../../constants/path';
+import {NavigatorHelper} from '../../providers/navigator-helper';
 
 @Component({
   selector: 'pos-lateral-menu-bar',
@@ -8,15 +11,19 @@ import {MatSidenav} from '@angular/material/sidenav';
 })
 export class LateralMenuBarComponent {
   @ViewChild('sidenav', {static: false}) sidenav: MatSidenav;
-  isExpanded: boolean = false;
 
-  constructor() { }
+  public isExpanded: boolean = false;
+  public Path = Path;
+
+  constructor(public pathHelper: PathHelper,
+              public navigatorHelper: NavigatorHelper) {
+  }
 
   mouseenter() {
-    this.isExpanded = true
+    this.isExpanded = true;
   }
 
   mouseleave() {
-    this.isExpanded = false
+    this.isExpanded = false;
   }
 }

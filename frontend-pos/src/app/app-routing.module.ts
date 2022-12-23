@@ -14,16 +14,17 @@ import {ProvidersComponent} from './features/providers/providers.component';
 import {SettingsComponent} from './features/settings/settings.component';
 import {StatisticsComponent} from './features/statistics/statistics.component';
 import {UsersComponent} from './features/users/users.component';
+import {Path} from './shared/constants/path';
 
 const routes: Routes = [
-  {path: 'home', loadChildren: () => HomeModule, component: HomeComponent},
-  {path: 'basket', loadChildren: () => BasketModule, component: BasketComponent},
-  {path: 'products', loadChildren: () => ProductsModule, component: ProductsComponent},
-  {path: 'providers', loadChildren: () => ProvidersModule, component: ProvidersComponent},
-  {path: 'settings', loadChildren: () => SettingsModule, component: SettingsComponent},
-  {path: 'statistics', loadChildren: () => StatisticsModule, component: StatisticsComponent},
-  {path: 'users', loadChildren: () => UsersModule, component: UsersComponent},
-  {path: '', redirectTo: '/home', pathMatch: 'full'},
+  {path: Path.Home, loadChildren: () => HomeModule, component: HomeComponent},
+  {path: Path.Basket, loadChildren: () => BasketModule, component: BasketComponent},
+  {path: Path.Products, loadChildren: () => ProductsModule, component: ProductsComponent},
+  {path: Path.Providers, loadChildren: () => ProvidersModule, component: ProvidersComponent},
+  {path: Path.Settings, loadChildren: () => SettingsModule, component: SettingsComponent},
+  {path: Path.Statistics, loadChildren: () => StatisticsModule, component: StatisticsComponent},
+  {path: Path.Users, loadChildren: () => UsersModule, component: UsersComponent},
+  {path: Path.Empty, redirectTo: '/home', pathMatch: 'full'},
   {path: '**', redirectTo: 'home'},
 ];
 

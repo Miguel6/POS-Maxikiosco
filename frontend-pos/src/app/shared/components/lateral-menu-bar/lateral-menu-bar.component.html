@@ -2,31 +2,68 @@
   <mat-sidenav [ngClass]="{'m-sidenav': true, 'm-sidenav-small': isExpanded}" mode="side" opened #sidenav
                (mouseover)="mouseenter()" (mouseleave)="mouseleave()">
     <div class="m-sidenav__handle">
-      <mat-list  (mouseenter)="mouseenter()" (mouseleave)="mouseleave()">
+      <mat-list (mouseenter)="mouseenter()" (mouseleave)="mouseleave()">
+        <span>
         <mat-list-item>
-          <pos-item-menu-bar [url]="'assets/icons/home.svg'" [text]="'Inicio'" [showText]="isExpanded"></pos-item-menu-bar>
+          <pos-item-menu-bar [ngClass]="{'active': this.pathHelper.isInHome()}"
+                             [url]="'assets/icons/home.svg'"
+                             [text]="'Inicio'"
+                             [showText]="isExpanded"
+                             (onClick)="navigatorHelper.goToHome()"></pos-item-menu-bar>
+        </mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-list-item>
+          <pos-item-menu-bar [ngClass]="{'active': this.pathHelper.isInBasket()}"
+                             [url]="'assets/icons/basket.svg'"
+                             [text]="'Carrito'"
+                             [showText]="isExpanded"
+                             (onClick)="navigatorHelper.goToBasket()"></pos-item-menu-bar>
         </mat-list-item>
         <mat-list-item>
-          <pos-item-menu-bar [url]="'assets/icons/basket.svg'" [text]="'Carrito'" [showText]="isExpanded"></pos-item-menu-bar>
+          <pos-item-menu-bar [ngClass]="{'active': this.pathHelper.isInStatistics()}"
+                             [url]="'assets/icons/statistics.svg'"
+                             [text]="'Estadisticas'"
+                             [showText]="isExpanded"
+                             (onClick)="navigatorHelper.goToStatistics()"></pos-item-menu-bar>
         </mat-list-item>
         <mat-list-item>
-          <pos-item-menu-bar [url]="'assets/icons/statistics.svg'" [text]="'Estadisticas'" [showText]="isExpanded"></pos-item-menu-bar>
+          <pos-item-menu-bar [ngClass]="{'active': this.pathHelper.isInProviders()}"
+                             [url]="'assets/icons/providers.svg'"
+                             [text]="'Proveedores'"
+                             [showText]="isExpanded"
+                             (onClick)="navigatorHelper.goToProviders()"></pos-item-menu-bar>
         </mat-list-item>
         <mat-list-item>
-          <pos-item-menu-bar [url]="'assets/icons/providers.svg'" [text]="'Proveedores'" [showText]="isExpanded"></pos-item-menu-bar>
+          <pos-item-menu-bar [ngClass]="{'active': this.pathHelper.isInProducts()}"
+                             [url]="'assets/icons/product.svg'"
+                             [text]="'Productos'"
+                             [showText]="isExpanded"
+                             (onClick)="navigatorHelper.goToProducts()"></pos-item-menu-bar>
         </mat-list-item>
         <mat-list-item>
-          <pos-item-menu-bar [url]="'assets/icons/product.svg'" [text]="'Productos'" [showText]="isExpanded"></pos-item-menu-bar>
+          <pos-item-menu-bar [ngClass]="{'active': this.pathHelper.isInUsers()}"
+                             [url]="'assets/icons/edit-users.svg'"
+                             [text]="'Adm. Usuarios'"
+                             [showText]="isExpanded"
+                             (onClick)="navigatorHelper.goToUsers()"></pos-item-menu-bar>
+        </mat-list-item>
+        </span>
+        <span>
+        <mat-divider></mat-divider>
+        <mat-list-item>
+          <pos-item-menu-bar [ngClass]="{'active': this.pathHelper.isInSettings()}"
+                             [url]="'assets/icons/configuration.svg'"
+                             [text]="'Configuracion'"
+                             [showText]="isExpanded"
+                             (onClick)="navigatorHelper.goToSettings()"></pos-item-menu-bar>
         </mat-list-item>
         <mat-list-item>
-          <pos-item-menu-bar [url]="'assets/icons/edit-users.svg'" [text]="'Adm. Usuarios'" [showText]="isExpanded"></pos-item-menu-bar>
+          <pos-item-menu-bar class="sign-out"
+                             [url]="'assets/icons/sign-out.svg'"
+                             [text]="'Cerrar Sesión'"
+                             [showText]="isExpanded"></pos-item-menu-bar>
         </mat-list-item>
-        <mat-list-item>
-          <pos-item-menu-bar [url]="'assets/icons/configuration.svg'" [text]="'Configuracion'" [showText]="isExpanded"></pos-item-menu-bar>
-        </mat-list-item>
-        <mat-list-item>
-          <pos-item-menu-bar [url]="'assets/icons/sign-out.svg'" [text]="'Cerrar Sesión'" [showText]="isExpanded"></pos-item-menu-bar>
-        </mat-list-item>
+        </span>
       </mat-list>
     </div>
   </mat-sidenav>

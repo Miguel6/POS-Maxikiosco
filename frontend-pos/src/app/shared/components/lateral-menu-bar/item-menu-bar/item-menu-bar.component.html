@@ -1,4 +1,4 @@
-<span class="menu-item-container">
-  <img src="{{url}}">
+<span class="menu-item-container" (click)="click()">
+  <img src="{{url}}" alt="{{text}}">
   <span class="menu-item" *ngIf="showText">{{text}}</span>
 </span>
