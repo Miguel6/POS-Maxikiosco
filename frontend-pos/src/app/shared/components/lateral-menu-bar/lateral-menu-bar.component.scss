@@ -2,11 +2,18 @@
 mat-sidenav-container {
   min-height: 100%;
 
-  .m-sidenav-small {
-    width: auto;
+  .m-sidenav-big {
+    //width: auto;
+  }
+
+  mat-sidenav:hover {
+    width: 240px;
+    animation-name: example;
+    animation-duration: 4s;
   }
 
   mat-sidenav {
+    transition: width 0.25s;
     height: 100%;
     width: 70px;
     min-height: 100%;
@@ -36,7 +43,6 @@ mat-sidenav-container {
         &:hover {
           background-color: $gray-lightest;
           cursor: pointer;
-          transition: all 0.25s ease-in-out;
         }
 
         pos-item-menu-bar.sign-out {
