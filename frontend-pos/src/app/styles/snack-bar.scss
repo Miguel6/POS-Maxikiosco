@@ -1,0 +1,52 @@
+@import "src/app/styles/colors";
+
+$border-radius-value: 1em;
+//mat-snack-bar-container.pos-snack-bar-test.information-snack-bar div div
+::ng-deep mat-snack-bar-container.pos-snack-bar-test {
+  position: absolute;
+
+  &.information-snack-bar div {
+    border: 0.75px solid $blue-lighter;
+  }
+
+  &.error-snack-bar div {
+    border: 0.75px solid $red-lighter;
+  }
+
+  &.warning-snack-bar div {
+    border: 0.75px solid $yellow-medium;
+  }
+
+  &.success-snack-bar div {
+    border: 0.75px solid $green-medium;
+  }
+
+  & .mdc-snackbar__surface {
+    padding: 0;
+    border-radius: $border-radius-value;
+
+    .mdc-snackbar__label {
+      padding: 0;
+    }
+  }
+
+  & div {
+    border-radius: $border-radius-value;
+  }
+
+  &.error-snack-bar div {
+    background-color: $red-lighter;
+  }
+
+  &.information-snack-bar div {
+    background-color: $blue-lighter;
+  }
+
+  &.success-snack-bar div {
+    background-color: $green-medium;
+  }
+
+  &.warning-snack-bar div {
+    background-color: $yellow-medium;
+  }
+}

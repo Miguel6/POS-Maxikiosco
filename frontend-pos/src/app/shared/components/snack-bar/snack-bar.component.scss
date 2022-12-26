@@ -1,0 +1,43 @@
+@import "src/app/styles/colors";
+
+div.snack-bar-container {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  flex-direction: row;
+  justify-content: space-between;
+  min-height: 75px;
+  height: 1px;
+  min-width: 500px;
+  align-items: center;
+
+  span.icon-snack-bar {
+    width: 60px;
+    height: 100%;
+    font-size: 2em;
+    color: $white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+  }
+
+  span.description-snack-bar {
+    background-color: $white;
+    color: $black;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding-left: 5px;
+
+    &:last-child {
+      border-top-right-radius: 13px;
+      border-bottom-right-radius: 13px;
+    }
+
+  }
+
+  span.dismiss-snack-bar {
+
+  }
+}

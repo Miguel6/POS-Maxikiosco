@@ -1,0 +1,13 @@
+<div class="snack-bar-container">
+  <span class="icon-snack-bar material-icons" *ngIf="data.type == 'Success'">done</span>
+  <span class="icon-snack-bar material-icons-outlined" *ngIf="data.type == 'Information'">info</span>
+  <span class="icon-snack-bar material-icons" *ngIf="data.type == 'Warning'">warning</span>
+  <span class="icon-snack-bar material-icons" *ngIf="data.type == 'Error'">close</span>
+  <span class="description-snack-bar">{{data.description}}</span>
+  <span class="dismiss-snack-bar" *ngIf="data.showDismiss">
+    <button mat-icon-button (click)="snackBarRef.dismiss()">
+      <mat-icon>close</mat-icon>
+    </button>
+  </span>
+</div>
+
