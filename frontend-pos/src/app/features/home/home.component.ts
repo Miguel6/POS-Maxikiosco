@@ -1,24 +1,30 @@
-import {Component} from '@angular/core';
+import {Component, OnDestroy} from '@angular/core';
 import {SnackBarBuilder} from '../../shared/builders/snack-bar-builder';
 import {SnackBarConstants} from '../../shared/components/snack-bar/snack-bar.component';
+import {MatSnackBarRef} from '@angular/material/snack-bar';
 
 @Component({
   selector: 'pos-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
-export class HomeComponent {
+export class HomeComponent implements OnDestroy{
   message = `Esto debería aparecer en ${SnackBarConstants.openingBoldTag} negrita ${SnackBarConstants.closingBoldTag} pos negrita`;
-
+  private matSnackbarRef: MatSnackBarRef<any>;
   constructor(private snackbarBuilder: SnackBarBuilder) {
 
   }
 
+  ngOnDestroy() {
+     this.matSnackbarRef.dismiss();
+  }
+
   pizzaParty() {
-    this.snackbarBuilder
-      .startAsWarning()
+    this.matSnackbarRef = this.snackbarBuilder
+      .startAsSuccess()
       .setDescription(this.message)
       .setPanelClass('pos-snack-bar-container')
-      .setDuration(1000000).show()
+      .setDuration(1000000)
+      .show();
   }
 }
