@@ -21,10 +21,9 @@ export class HomeComponent implements OnDestroy{
 
   pizzaParty() {
     this.matSnackbarRef = this.snackbarBuilder
-      .startAsSuccess()
       .setDescription(this.message)
       .setPanelClass('pos-snack-bar-container')
       .setDuration(1000000)
-      .show();
+      .startAsSuccess();
   }
 }

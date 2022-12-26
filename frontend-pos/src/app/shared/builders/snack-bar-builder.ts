@@ -4,13 +4,13 @@ import {MatSnackBar, MatSnackBarRef} from '@angular/material/snack-bar';
 import {Injectable} from '@angular/core';
 
 export interface ISnackBarBuilder {
-  startAsError(): ISnackBarBuilder;
+  startAsError(): MatSnackBarRef<any>;
 
-  startAsWarning(): ISnackBarBuilder;
+  startAsWarning(): MatSnackBarRef<any>;
 
-  startAsSuccess(): ISnackBarBuilder;
+  startAsSuccess(): MatSnackBarRef<any>;
 
-  startAsInformation(): ISnackBarBuilder;
+  startAsInformation(): MatSnackBarRef<any>;
 
   setDescription(description: string): ISnackBarBuilder;
 
@@ -20,7 +20,6 @@ export interface ISnackBarBuilder {
 
   showDismiss(): ISnackBarBuilder;
 
-  show(): MatSnackBarRef<any>;
 }
 
 @Injectable()
@@ -40,24 +39,24 @@ export class SnackBarBuilder implements ISnackBarBuilder {
     return this;
   }
 
-  startAsError(): ISnackBarBuilder {
+  startAsError(): MatSnackBarRef<any> {
     this.type = 'Error'
-    return this;
+    return this.show();
   }
 
-  startAsWarning(): ISnackBarBuilder {
+  startAsWarning(): MatSnackBarRef<any> {
     this.type = 'Warning'
-    return this;
+    return this.show();
   }
 
-  startAsSuccess(): ISnackBarBuilder {
+  startAsSuccess(): MatSnackBarRef<any> {
     this.type = 'Success'
-    return this;
+    return this.show();
   }
 
-  startAsInformation(): ISnackBarBuilder {
+  startAsInformation(): MatSnackBarRef<any> {
     this.type = 'Information'
-    return this;
+    return this.show();
   }
 
   setPanelClass(panelClass: string = 'pos-snack-bar-container'): ISnackBarBuilder {
@@ -75,7 +74,7 @@ export class SnackBarBuilder implements ISnackBarBuilder {
     return this;
   }
 
-  show(): MatSnackBarRef<any> {
+  private show(): MatSnackBarRef<any> {
     const data = new SnackbarModel();
     data.description = this.description;
     data.type = this.type;
