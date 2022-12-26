@@ -2,6 +2,11 @@ import {Component, Inject, ViewEncapsulation} from '@angular/core';
 import {MAT_SNACK_BAR_DATA, MatSnackBarRef} from '@angular/material/snack-bar';
 import {SnackbarModel} from '../../models/snackbar-model';
 
+export const SnackBarConstants = {
+  openingBoldTag: `<span class="colored">`,
+  closingBoldTag: `</span>`
+}
+
 @Component({
   selector: 'pos-snack-bar',
   templateUrl: './snack-bar.component.html',

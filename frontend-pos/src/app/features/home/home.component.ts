@@ -1,5 +1,6 @@
 import {Component} from '@angular/core';
 import {SnackBarBuilder} from '../../shared/builders/snack-bar-builder';
+import {SnackBarConstants} from '../../shared/components/snack-bar/snack-bar.component';
 
 @Component({
   selector: 'pos-home',
@@ -7,7 +8,7 @@ import {SnackBarBuilder} from '../../shared/builders/snack-bar-builder';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent {
-  message = `Esto debería aparecer en <span class="colored">negrita</span> pos negrita`;
+  message = `Esto debería aparecer en ${SnackBarConstants.openingBoldTag} negrita ${SnackBarConstants.closingBoldTag} pos negrita`;
 
   constructor(private snackbarBuilder: SnackBarBuilder) {
 

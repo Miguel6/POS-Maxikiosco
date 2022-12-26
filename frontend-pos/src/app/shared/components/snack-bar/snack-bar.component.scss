@@ -34,10 +34,12 @@ div.snack-bar-container {
       border-top-right-radius: 13px;
       border-bottom-right-radius: 13px;
     }
+
     span.colored {
       margin: 0 5px;
       font-weight: bold;
     }
+
     &.information-snack-bar span.colored {
       color: $blue-lighter;
     }
