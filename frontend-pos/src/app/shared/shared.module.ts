@@ -12,11 +12,14 @@ import {NavigatorHelper} from './providers/navigator-helper';
 import {TranslateLoader, TranslateModule, TranslateService} from '@ngx-translate/core';
 import {PosTranslateLoader} from './translator/pos-translate-loader';
 import {HttpClient, HttpClientModule, HttpHandler} from '@angular/common/http';
+import { ToasterComponent } from './components/toaster/toaster.component';
+import {MAT_SNACK_BAR_DATA} from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [
     LateralMenuBarComponent,
-    ItemMenuBarComponent
+    ItemMenuBarComponent,
+    ToasterComponent
   ],
   exports: [
     MaterialModule,
@@ -43,7 +46,8 @@ import {HttpClient, HttpClientModule, HttpHandler} from '@angular/common/http';
     NavigatorHelper,
     PosTranslateLoader,
     HttpClient,
-    TranslateService
+    TranslateService,
+    { provide: MAT_SNACK_BAR_DATA, useValue: {} }
   ]
 })
 export class SharedModule { }
