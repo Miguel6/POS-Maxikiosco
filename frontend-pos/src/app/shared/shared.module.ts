@@ -15,16 +15,19 @@ import {HttpClient, HttpClientModule, HttpHandler} from '@angular/common/http';
 import { SnackBarComponent } from './components/snack-bar/snack-bar.component';
 import {MAT_SNACK_BAR_DATA} from '@angular/material/snack-bar';
 import {SnackBarBuilder} from './builders/snack-bar-builder';
+import { MenuBarComponent } from './components/menu-bar/menu-bar.component';
 
 @NgModule({
   declarations: [
     LateralMenuBarComponent,
     ItemMenuBarComponent,
-    SnackBarComponent
+    SnackBarComponent,
+    MenuBarComponent
   ],
   exports: [
     MaterialModule,
     LateralMenuBarComponent,
+    MenuBarComponent,
   ],
   imports: [
     HttpClientModule,
