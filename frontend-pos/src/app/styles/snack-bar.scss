@@ -1,8 +1,8 @@
 @import "src/app/styles/colors";
 
 $border-radius-value: 1em;
-//mat-snack-bar-container.pos-snack-bar-test.information-snack-bar div div
-::ng-deep mat-snack-bar-container.pos-snack-bar-test {
+//mat-snack-bar-container.pos-snack-bar-container.information-snack-bar div div
+::ng-deep mat-snack-bar-container.pos-snack-bar-container {
   position: absolute;
 
   &.information-snack-bar div {

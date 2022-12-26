@@ -60,7 +60,7 @@ export class SnackBarBuilder implements ISnackBarBuilder {
     return this;
   }
 
-  setPanelClass(panelClass: string = 'pos-snack-bar-test'): ISnackBarBuilder {
+  setPanelClass(panelClass: string = 'pos-snack-bar-container'): ISnackBarBuilder {
     this.panelClass = panelClass;
     return this;
   }

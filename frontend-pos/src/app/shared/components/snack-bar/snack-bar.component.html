@@ -3,7 +3,11 @@
   <span class="icon-snack-bar material-icons-outlined" *ngIf="data.type == 'Information'">info</span>
   <span class="icon-snack-bar material-icons" *ngIf="data.type == 'Warning'">warning</span>
   <span class="icon-snack-bar material-icons" *ngIf="data.type == 'Error'">close</span>
-  <span class="description-snack-bar">{{data.description}}</span>
+  <span class="description-snack-bar" [ngClass]="{'success-snack-bar': data.type == 'Success',
+  'information-snack-bar': data.type == 'Information',
+  'warning-snack-bar': data.type == 'Warning',
+  'error-snack-bar': data.type == 'Error' }" [innerHTML]="data.description"></span>
+
   <span class="dismiss-snack-bar" *ngIf="data.showDismiss">
     <button mat-icon-button (click)="snackBarRef.dismiss()">
       <mat-icon>close</mat-icon>
