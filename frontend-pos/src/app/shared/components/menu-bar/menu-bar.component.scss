@@ -3,5 +3,38 @@ div.menu-container {
   width: 100%;
   height: 3em;
   background-color: $white;
-  box-shadow: 0 3px 9px #747D84;
+  box-shadow: 0 3px 9px $gray-medium;
+  display: flex;
+  justify-content: space-between;
+
+  span.route {
+
+  }
+
+  span.user {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-right: 50px;
+    padding: 0 20px;
+
+    &:hover {
+      background-color: $gray-lightest;
+      cursor: pointer;
+    }
+
+    span.profile-image {
+      color: $green-medium;
+      display: flex;
+      align-items: center;
+
+      span {
+        font-size: 36px;
+      }
+    }
+
+    span.user-name {
+    }
+  }
 }
