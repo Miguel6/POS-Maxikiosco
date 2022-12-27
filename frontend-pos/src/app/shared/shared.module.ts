@@ -16,13 +16,15 @@ import { SnackBarComponent } from './components/snack-bar/snack-bar.component';
 import {MAT_SNACK_BAR_DATA} from '@angular/material/snack-bar';
 import {SnackBarBuilder} from './builders/snack-bar-builder';
 import { MenuBarComponent } from './components/menu-bar/menu-bar.component';
+import { BreadcrumbsComponent } from './components/breadcrumbs/breadcrumbs.component';
 
 @NgModule({
   declarations: [
     LateralMenuBarComponent,
     ItemMenuBarComponent,
     SnackBarComponent,
-    MenuBarComponent
+    MenuBarComponent,
+    BreadcrumbsComponent
   ],
   exports: [
     MaterialModule,

@@ -1,0 +1,15 @@
+@import "src/app/styles/colors";
+
+span.breadcrumb, span.active-path {
+  font-weight: 400;
+  font-size: 20px;
+}
+
+span.breadcrumb {
+  color: $gray-lighter;
+}
+
+span.active-path {
+  color: $green-medium;
+  font-weight: 600;
+}

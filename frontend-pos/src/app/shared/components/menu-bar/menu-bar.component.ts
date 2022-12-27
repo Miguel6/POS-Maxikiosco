@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./menu-bar.component.scss']
 })
 export class MenuBarComponent {
-
+  //TODO: terminar el translate y los title de los routes
 }

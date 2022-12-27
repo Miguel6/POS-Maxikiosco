@@ -16,7 +16,7 @@ export class HomeComponent implements OnDestroy{
   }
 
   ngOnDestroy() {
-     this.matSnackbarRef.dismiss();
+     this.matSnackbarRef?.dismiss();
   }
 
   pizzaParty() {

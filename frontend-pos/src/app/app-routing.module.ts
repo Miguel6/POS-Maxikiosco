@@ -24,7 +24,7 @@ const routes: Routes = [
   {path: Path.Settings, loadChildren: () => SettingsModule, component: SettingsComponent},
   {path: Path.Statistics, loadChildren: () => StatisticsModule, component: StatisticsComponent},
   {path: Path.Users, loadChildren: () => UsersModule, component: UsersComponent},
-  {path: Path.Empty, redirectTo: '/home', pathMatch: 'full'},
+  {path: Path.Empty, redirectTo: `/${Path.Home}`, pathMatch: 'full'},
   {path: '**', redirectTo: 'home'},
 ];
 
