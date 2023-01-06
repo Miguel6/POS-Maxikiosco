@@ -8,5 +8,17 @@
     "STATISTICS": "Estadísticas",
     "USERS": "Adm. Usuarios",
     "SIGN-OUT": "Cerrar Sesión"
+  },
+  "TITLE": {
+    "HOME": "Inicio",
+    "BASKET": "Carrito",
+    "PRODUCTS": "Productos",
+    "NEW-PRODUCT": "Nuevo Producto",
+    "EDIT-PRODUCT": "Editar Producto",
+    "PROVIDERS": "Proveedores",
+    "SETTINGS": "Configuración",
+    "STATISTICS": "Estadísticas",
+    "USERS": "Adm. Usuarios",
+    "SIGN-OUT": "Cerrar Sesión"
   }
 }

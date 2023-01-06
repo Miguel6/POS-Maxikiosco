@@ -1,7 +1,9 @@
 export enum Path {
   Home = 'home',
-  Basket = 'basket',
+  Basket = 'asdasd/qweqeqwe/zxczxczc/basket',
   Products = 'products',
+  NewProduct = 'new-product',
+  EditProduct = 'edit-product',
   Providers = 'providers',
   Settings = 'settings',
   Statistics = 'statistics',

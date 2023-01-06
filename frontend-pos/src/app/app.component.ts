@@ -13,6 +13,15 @@ export class AppComponent {
   constructor(public translateService: TranslateService) {
     this.translateService.addLangs(Object.keys(this.langs));
     this.translateService.setDefaultLang('es');
+    console.log('AppComponent')
+    setTimeout(() => {
+      console.log('ChangingLanguage')
+      this.translateService.use('en');
+    }, 5000);
+    setTimeout(() => {
+      console.log('ChangingLanguage')
+      this.translateService.use('es');
+    }, 10000);
     // this.translateService.setDefaultLang('en');
   }
 }

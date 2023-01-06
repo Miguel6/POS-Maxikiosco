@@ -1,2 +1,4 @@
-<span *ngIf="breadcrumb" class="breadcrumb">{{breadcrumb}}/</span>
+<span *ngIf="breadcrumbs" class="breadcrumb">
+  <a *ngFor="let breadcrumb of breadcrumbs" (click)="clickOnRoute(breadcrumb)">{{breadcrumb}}/</a>
+</span>
 <span class="active-path">{{activePath}}</span>

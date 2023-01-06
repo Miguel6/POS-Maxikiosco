@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
-import {PathHelper} from '../../providers/path-helper';
 import {ResolveStart, Router} from '@angular/router';
+import {BreadcrumbTranslator} from '../../translator/pos-breadcrumb-translator';
 
 @Component({
   selector: 'pos-breadcrumbs',
@@ -9,18 +9,26 @@ import {ResolveStart, Router} from '@angular/router';
 })
 export class BreadcrumbsComponent {
   public activePath: string;
-  public breadcrumb: string;
+  public breadcrumbs: string[];
   private fullPath: string;
 
-
-  constructor(private router: Router) {
+  constructor(private router: Router,
+              private breadcrumbTranslator: BreadcrumbTranslator) {
     router.events.subscribe((event) => {
       if (event instanceof ResolveStart) {
-        this.fullPath = event.url.slice(1, event.url.length);
+        this.fullPath = this.removeFirstSlash(event.url);
         this.activePath = this.getActivePath();
-        this.breadcrumb = this.getBreadcrumbs();
+        this.breadcrumbs = this.getBreadcrumbs();
       }
     });
+  }
+
+  public clickOnRoute(route: string) {
+    console.log(route);
+  }
+
+  private removeFirstSlash(route: string) {
+    return route?.slice(1, route.length);
   }
 
   //TODO: Mejorar usando un regex
@@ -31,10 +39,10 @@ export class BreadcrumbsComponent {
   }
 
   //TODO: Mejorar usando un regex
-  private getBreadcrumbs(): string {
+  private getBreadcrumbs(): string[] {
     const urls = this.fullPath.split('/');
     urls.pop();
 
-    return urls.join('/');
+    return urls;
   }
 }

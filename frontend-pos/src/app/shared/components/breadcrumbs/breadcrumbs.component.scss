@@ -7,6 +7,13 @@ span.breadcrumb, span.active-path {
 
 span.breadcrumb {
   color: $gray-lighter;
+  a {
+    cursor: pointer;
+    &:hover {
+      color: $green-medium;
+      transition: color 0.25s ;
+    }
+  }
 }
 
 span.active-path {

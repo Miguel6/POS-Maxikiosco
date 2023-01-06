@@ -1,0 +1,48 @@
+{
+  "HOME": {
+    "ROUTE": "home",
+    "DESCRIPTION": "Home",
+    "CHILDREN": ""
+  },
+  "BASKET": {
+    "ROUTE": "basket",
+    "DESCRIPTION": "Basket",
+    "CHILDREN": ""
+  },
+  "PRODUCTS": {
+    "ROUTE": "products",
+    "DESCRIPTION": "Products",
+    "CHILDREN": [
+      {
+        "ROUTE": "/new-product",
+        "DESCRIPTION": "New Product",
+        "CHILDREN": {}
+      },
+      {
+        "ROUTE": ":id/edit-product",
+        "DESCRIPTION": "Edit Product",
+        "CHILDREN": {}
+      }
+    ]
+  },
+  "PROVIDERS": {
+    "ROUTE": "providers",
+    "DESCRIPTION": "Providers",
+    "CHILDREN": ""
+  },
+  "SETTINGS": {
+    "ROUTE": "settings",
+    "DESCRIPTION": "Settings",
+    "CHILDREN": ""
+  },
+  "STATISTICS": {
+    "ROUTE": "statistics",
+    "DESCRIPTION": "Statistics",
+    "CHILDREN": ""
+  },
+  "USERS": {
+    "ROUTE": "users",
+    "DESCRIPTION": "Users",
+    "CHILDREN": ""
+  }
+}

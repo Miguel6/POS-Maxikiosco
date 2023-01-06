@@ -11,12 +11,13 @@ import {HttpService} from './services/http.service';
 import {NavigatorHelper} from './providers/navigator-helper';
 import {TranslateLoader, TranslateModule, TranslateService} from '@ngx-translate/core';
 import {PosTranslateLoader} from './translator/pos-translate-loader';
-import {HttpClient, HttpClientModule, HttpHandler} from '@angular/common/http';
-import { SnackBarComponent } from './components/snack-bar/snack-bar.component';
+import {HttpClient, HttpClientModule} from '@angular/common/http';
+import {SnackBarComponent} from './components/snack-bar/snack-bar.component';
 import {MAT_SNACK_BAR_DATA} from '@angular/material/snack-bar';
 import {SnackBarBuilder} from './builders/snack-bar-builder';
-import { MenuBarComponent } from './components/menu-bar/menu-bar.component';
-import { BreadcrumbsComponent } from './components/breadcrumbs/breadcrumbs.component';
+import {MenuBarComponent} from './components/menu-bar/menu-bar.component';
+import {BreadcrumbsComponent} from './components/breadcrumbs/breadcrumbs.component';
+import {BreadcrumbTranslator} from './translator/pos-breadcrumb-translator';
 
 @NgModule({
   declarations: [
@@ -54,7 +55,8 @@ import { BreadcrumbsComponent } from './components/breadcrumbs/breadcrumbs.compo
     HttpClient,
     TranslateService,
     SnackBarBuilder,
-    { provide: MAT_SNACK_BAR_DATA, useValue: {} }
+    {provide: MAT_SNACK_BAR_DATA, useValue: {}},
+    BreadcrumbTranslator
   ]
 })
 export class SharedModule { }

@@ -14,6 +14,6 @@ export class PosTranslateLoader implements TranslateLoader {
   getTranslation(lang: string): Observable<any> {
     return this.http.get(Environment.baseUrl + `/assets/i18n/${lang}.json`)
       .pipe(catchError((_) =>
-        this.http.get(Environment.baseUrl + `/assets/i18n/en.json`)));
+        this.http.get(Environment.baseUrl + `/assets/i18n/es.json`)));
   }
 }

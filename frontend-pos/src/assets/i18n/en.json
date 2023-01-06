@@ -8,5 +8,17 @@
     "STATISTICS": "Statistics",
     "USERS": "Users",
     "SIGN-OUT": "Log out"
+  },
+  "TITLE": {
+    "HOME": "Home",
+    "BASKET": "Basket",
+    "PRODUCTS": "Products",
+    "NEW-PRODUCT": "New Product",
+    "EDIT-PRODUCT": "Edit Product",
+    "PROVIDERS": "Providers",
+    "SETTINGS": "Settings",
+    "STATISTICS": "Statistics",
+    "USERS": "Users",
+    "SIGN-OUT": "Log out"
   }
 }
