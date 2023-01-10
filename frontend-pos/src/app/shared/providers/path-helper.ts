@@ -12,30 +12,34 @@ export class PathHelper {
   }
 
   public isInHome(): boolean {
-    return this.getCurrentLocation() === `/${Path.Home}`;
+    return this.isIn(Path.Home);
   }
 
   public isInBasket(): boolean {
-    return this.getCurrentLocation() === `/${Path.Basket}`;
+    return this.isIn(Path.Basket);
   }
 
   public isInProviders(): boolean {
-    return this.getCurrentLocation() === `/${Path.Providers}`;
+    return this.isIn(Path.Providers);
   }
 
   public isInProducts(): boolean {
-    return this.getCurrentLocation() === `/${Path.Products}`;
+    return this.isIn(Path.Products);
   }
 
   public isInSettings(): boolean {
-    return this.getCurrentLocation() === `/${Path.Settings}`;
+    return this.isIn(Path.Settings);
   }
 
   public isInStatistics(): boolean {
-    return this.getCurrentLocation() === `/${Path.Statistics}`;
+    return this.isIn(Path.Statistics);
   }
 
   public isInUsers(): boolean {
-    return this.getCurrentLocation() === `/${Path.Users}`;
+    return this.isIn(Path.Users);
+  }
+
+  public isIn(path: string): boolean {
+    return this.getCurrentLocation().split('/')[1] === path;
   }
 }
