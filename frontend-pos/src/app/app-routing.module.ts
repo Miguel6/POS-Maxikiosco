@@ -19,6 +19,7 @@ export interface CustomRoute extends Route {
 export interface CustomRouteData extends Data {
   titleTranslationKey: string;
   initOrExitState?: boolean;
+  path?: string;
   breadcrumb?: BreadcrumbEntryConfig[];
 }
 
@@ -36,7 +37,8 @@ const routes: CustomRoutes = [
   {path: Path.Home, component: HomeComponent, data: {titleTranslationKey: 'TITLE.HOME'}},
   {path: Path.Basket, component: BasketComponent, data: {titleTranslationKey: 'TITLE.BASKET'}},
   {
-    path: Path.Products, children: [
+    path: Path.Products,
+    children: [
       {
         path: '',
         component: ProductsComponent,
@@ -53,13 +55,11 @@ const routes: CustomRoutes = [
         component: NewProductComponent,
         data: {
           titleTranslationKey: 'TITLE.NEW-PRODUCT',
+          path: Path.NewProduct,
           breadcrumb: [
             {
               path: Path.Products,
               titleTranslationKey: 'TITLE.PRODUCTS'
-            }, {
-              path: Path.NewProduct,
-              titleTranslationKey: 'TITLE.NEW-PRODUCT'
             }
           ]
         }
@@ -69,13 +69,11 @@ const routes: CustomRoutes = [
         component: EditProductComponent,
         data: {
           titleTranslationKey: 'TITLE.EDIT-PRODUCT',
+          path: Path.EditProduct,
           breadcrumb: [
             {
               path: Path.Products,
               titleTranslationKey: 'TITLE.PRODUCTS'
-            }, {
-              path: Path.EditProduct,
-              titleTranslationKey: 'TITLE.EDIT-PRODUCT'
             }
           ]
         }
@@ -91,7 +89,7 @@ const routes: CustomRoutes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, {onSameUrlNavigation: 'reload'})],
+  imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
 export class AppRoutingModule {

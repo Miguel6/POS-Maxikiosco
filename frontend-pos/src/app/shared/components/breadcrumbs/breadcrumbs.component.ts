@@ -1,6 +1,7 @@
 import {Component} from '@angular/core';
-import {ResolveStart, Router} from '@angular/router';
-import {BreadcrumbTranslator} from '../../translator/pos-breadcrumb-translator';
+import {BreadcrumbService} from '../../services/breadcrumb.service';
+import {BreadcrumbEntryConfig, CustomRouteData} from '../../../app-routing.module';
+import {PathName} from '../../models/path-name';
 
 @Component({
   selector: 'pos-breadcrumbs',
@@ -8,41 +9,33 @@ import {BreadcrumbTranslator} from '../../translator/pos-breadcrumb-translator';
   styleUrls: ['./breadcrumbs.component.scss']
 })
 export class BreadcrumbsComponent {
-  public activePath: string;
-  public breadcrumbs: string[];
-  private fullPath: string;
+  public activePath: PathName;
+  public breadcrumbs: PathName[];
 
-  constructor(private router: Router,
-              private breadcrumbTranslator: BreadcrumbTranslator) {
-    router.events.subscribe((event) => {
-      if (event instanceof ResolveStart) {
-        this.fullPath = this.removeFirstSlash(event.url);
-        this.activePath = this.getActivePath();
-        this.breadcrumbs = this.getBreadcrumbs();
+  constructor(private breadcrumbService: BreadcrumbService) {
+    this.breadcrumbService.getObservable().subscribe(data => {
+      this.activePath = this.getActivePath(data);
+      this.breadcrumbs = this.mapBreadcrumbs(data.breadcrumb?? []);
+    })
+  }
+
+  private mapBreadcrumbs(breadcrumbs: BreadcrumbEntryConfig[]): PathName[]{
+    return breadcrumbs.map(breadcrumb => {
+      return <PathName>{
+        path: breadcrumb.path,
+        name: breadcrumb.titleTranslationKey
       }
-    });
+    })
+  }
+
+  private getActivePath(data: CustomRouteData): PathName {
+    return <PathName>{
+      path: data.path,
+      name: data.titleTranslationKey
+    }
   }
 
   public clickOnRoute(route: string) {
     console.log(route);
-  }
-
-  private removeFirstSlash(route: string) {
-    return route?.slice(1, route.length);
-  }
-
-  //TODO: Mejorar usando un regex
-  private getActivePath(): string {
-    const urls = this.fullPath.split('/');
-
-    return urls[urls.length - 1];
-  }
-
-  //TODO: Mejorar usando un regex
-  private getBreadcrumbs(): string[] {
-    const urls = this.fullPath.split('/');
-    urls.pop();
-
-    return urls;
   }
 }

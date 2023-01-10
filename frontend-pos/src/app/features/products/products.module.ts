@@ -6,7 +6,6 @@ import {EditProductComponent} from './edit-product/edit-product.component';
 import {RouterOutlet} from '@angular/router';
 import {TranslateModule} from '@ngx-translate/core';
 
-
 @NgModule({
   declarations: [
     ProductsComponent,

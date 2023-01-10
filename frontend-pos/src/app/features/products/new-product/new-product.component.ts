@@ -1,5 +1,4 @@
 import {Component, OnInit} from '@angular/core';
-import {ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'pos-new-product',
@@ -7,11 +6,9 @@ import {ActivatedRoute} from '@angular/router';
   styleUrls: ['./new-product.component.scss']
 })
 export class NewProductComponent implements OnInit {
-  constructor(public route: ActivatedRoute) {
+  constructor() {
   }
 
   ngOnInit() {
-    console.log('On Init')
-    console.log(this.route.snapshot);
   }
 }

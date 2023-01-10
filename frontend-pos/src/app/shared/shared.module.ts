@@ -17,7 +17,7 @@ import {MAT_SNACK_BAR_DATA} from '@angular/material/snack-bar';
 import {SnackBarBuilder} from './builders/snack-bar-builder';
 import {MenuBarComponent} from './components/menu-bar/menu-bar.component';
 import {BreadcrumbsComponent} from './components/breadcrumbs/breadcrumbs.component';
-import {BreadcrumbTranslator} from './translator/pos-breadcrumb-translator';
+import {BreadcrumbService} from './services/breadcrumb.service';
 
 @NgModule({
   declarations: [
@@ -30,7 +30,7 @@ import {BreadcrumbTranslator} from './translator/pos-breadcrumb-translator';
   exports: [
     MaterialModule,
     LateralMenuBarComponent,
-    MenuBarComponent,
+    MenuBarComponent
   ],
   imports: [
     HttpClientModule,
@@ -56,7 +56,7 @@ import {BreadcrumbTranslator} from './translator/pos-breadcrumb-translator';
     TranslateService,
     SnackBarBuilder,
     {provide: MAT_SNACK_BAR_DATA, useValue: {}},
-    BreadcrumbTranslator
+    BreadcrumbService
   ]
 })
 export class SharedModule { }
