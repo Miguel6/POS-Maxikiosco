@@ -1,4 +1,6 @@
+import {Path} from '../constants/path';
+
 export interface PathName {
-  path: string;
+  path: Path;
   name: string;
 }
