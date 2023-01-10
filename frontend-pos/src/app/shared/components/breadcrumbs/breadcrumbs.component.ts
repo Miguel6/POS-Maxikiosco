@@ -9,12 +9,12 @@ import {PathName} from '../../models/path-name';
   styleUrls: ['./breadcrumbs.component.scss']
 })
 export class BreadcrumbsComponent {
-  public activePath: PathName;
+  public activePathName: string;
   public breadcrumbs: PathName[];
 
   constructor(private breadcrumbService: BreadcrumbService) {
     this.breadcrumbService.getObservable().subscribe(data => {
-      this.activePath = this.getActivePath(data);
+      this.activePathName = this.getActivePath(data);
       this.breadcrumbs = this.mapBreadcrumbs(data.breadcrumb?? []);
     })
   }
@@ -28,11 +28,8 @@ export class BreadcrumbsComponent {
     })
   }
 
-  private getActivePath(data: CustomRouteData): PathName {
-    return <PathName>{
-      path: data.path,
-      name: data.titleTranslationKey
-    }
+  private getActivePath(data: CustomRouteData): string {
+    return data.titleTranslationKey;
   }
 
   public clickOnRoute(route: string) {

@@ -13,13 +13,11 @@ import {EditProductComponent} from './features/products/edit-product/edit-produc
 
 export interface CustomRoute extends Route {
   data?: CustomRouteData;
-  // children?: CustomRoute[];
 }
 
 export interface CustomRouteData extends Data {
   titleTranslationKey: string;
   initOrExitState?: boolean;
-  path?: string;
   breadcrumb?: BreadcrumbEntryConfig[];
 }
 
@@ -34,7 +32,7 @@ export interface BreadcrumbEntryConfig {
 export type CustomRoutes = CustomRoute[];
 
 const routes: CustomRoutes = [
-  {path: Path.Home, component: HomeComponent, data: {titleTranslationKey: 'TITLE.HOME'}},
+  {path: Path.Home, component: HomeComponent, data: { titleTranslationKey: 'TITLE.HOME'}},
   {path: Path.Basket, component: BasketComponent, data: {titleTranslationKey: 'TITLE.BASKET'}},
   {
     path: Path.Products,
@@ -44,10 +42,6 @@ const routes: CustomRoutes = [
         component: ProductsComponent,
         data: {
           titleTranslationKey: 'TITLE.PRODUCTS',
-          breadcrumb: [{
-            path: Path.Products,
-            titleTranslationKey: 'TITLE.PRODUCTS',
-          }]
         }
       },
       {
@@ -55,7 +49,6 @@ const routes: CustomRoutes = [
         component: NewProductComponent,
         data: {
           titleTranslationKey: 'TITLE.NEW-PRODUCT',
-          path: Path.NewProduct,
           breadcrumb: [
             {
               path: Path.Products,
@@ -69,7 +62,6 @@ const routes: CustomRoutes = [
         component: EditProductComponent,
         data: {
           titleTranslationKey: 'TITLE.EDIT-PRODUCT',
-          path: Path.EditProduct,
           breadcrumb: [
             {
               path: Path.Products,
