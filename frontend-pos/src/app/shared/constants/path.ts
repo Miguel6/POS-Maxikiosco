@@ -1,6 +1,6 @@
 export enum Path {
   Home = 'home',
-  Basket = 'asdasd/qweqeqwe/zxczxczc/basket',
+  Basket = 'basket',
   Products = 'products',
   NewProduct = 'new-product',
   EditProduct = 'edit-product',
