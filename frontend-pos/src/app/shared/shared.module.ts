@@ -18,6 +18,8 @@ import {SnackBarBuilder} from './builders/snack-bar-builder';
 import {MenuBarComponent} from './components/menu-bar/menu-bar.component';
 import {BreadcrumbsComponent} from './components/breadcrumbs/breadcrumbs.component';
 import {BreadcrumbService} from './services/breadcrumb.service';
+import { ItemCardComponent } from './components/item-card/item-card.component';
+import {Base64Converter} from './providers/base64-converter';
 
 @NgModule({
   declarations: [
@@ -25,12 +27,14 @@ import {BreadcrumbService} from './services/breadcrumb.service';
     ItemMenuBarComponent,
     SnackBarComponent,
     MenuBarComponent,
-    BreadcrumbsComponent
+    BreadcrumbsComponent,
+    ItemCardComponent
   ],
   exports: [
     MaterialModule,
     LateralMenuBarComponent,
-    MenuBarComponent
+    MenuBarComponent,
+    ItemCardComponent
   ],
   imports: [
     HttpClientModule,
@@ -56,7 +60,8 @@ import {BreadcrumbService} from './services/breadcrumb.service';
     TranslateService,
     SnackBarBuilder,
     {provide: MAT_SNACK_BAR_DATA, useValue: {}},
-    BreadcrumbService
+    BreadcrumbService,
+    Base64Converter
   ]
 })
 export class SharedModule { }

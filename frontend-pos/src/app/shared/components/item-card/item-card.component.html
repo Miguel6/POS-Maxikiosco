@@ -1,0 +1,11 @@
+<div class="item-card-container">
+  <img mat-card-image [src]="imagePath">
+  <span class="title">Title</span>
+  <span class="category" *ngIf="item?.category">{{item.category}}</span>
+  <span class="barcode" *ngIf="item?.barCode">{{item.barCode}}</span>
+  <!--  <span class="price" *ngIf="item?.price">{{item.price | currency :'CAD':'symbol-narrow':'1.2-2'}}</span>-->
+  <span class="price-quantity">
+      <span class="price" *ngIf="item?.price">{{item.price}}</span>
+      <span class="quantity" *ngIf="item?.quantity">{{item.quantity}}</span>
+  </span>
+</div>

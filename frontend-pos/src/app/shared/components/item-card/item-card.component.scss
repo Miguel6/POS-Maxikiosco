@@ -1,0 +1,53 @@
+@import "src/app/styles/colors";
+@import "src/app/styles/fonts-size";
+
+div.item-card-container {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 5px 40px 0 $gray-lighter;
+
+  img {
+    object-fit: scale-down;
+    height: 100%;
+    width: 100%;
+  }
+
+  .title {
+    font-weight: bold;
+    font-size: $font-size-16-points;
+  }
+
+  .category {
+    font-size: $font-size-14-points;
+    color: $gray-lighter;
+  }
+
+  .barcode {
+    font-size: $font-size-14-points;
+    color: $gray-lighter;
+  }
+
+  .price-quantity {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    .quantity {
+      &::before {
+        content: "/";
+      }
+
+      font-size: $font-size-14-points;
+      color: $gray-lighter;
+    }
+
+    .price {
+
+      color: $green-medium;
+      font-weight: bold;
+      font-size: $font-size-16-points;
+    }
+  }
+
+}
