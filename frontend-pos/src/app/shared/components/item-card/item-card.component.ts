@@ -20,7 +20,6 @@ export class ItemCardComponent implements OnInit, AfterViewInit {
   onResize(event: any) {
     this.availableWidthForAnimation = this.titleContainer?.nativeElement.clientWidth;
     this.updateWidth(this.availableWidthForAnimation);
-    console.log(this.availableWidthForAnimation);
   }
 
   constructor(private base64Converter: Base64Converter) {
@@ -28,13 +27,10 @@ export class ItemCardComponent implements OnInit, AfterViewInit {
 
   ngOnInit() {
     this.imagePath = this.base64Converter.deserializeFromBase64(this.item?.image ?? '')
-    console.log(this.availableWidthForAnimation);
   }
 
   ngAfterViewInit() {
     this.availableWidthForAnimation = this.titleContainer?.nativeElement.clientWidth;
-    console.log('Property');
-    console.log(this.availableWidthForAnimation);
     this.updateWidth(this.availableWidthForAnimation);
   }
 

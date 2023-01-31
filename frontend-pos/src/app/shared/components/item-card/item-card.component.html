@@ -3,7 +3,6 @@
     <img *ngIf="imagePath" mat-card-image [src]="imagePath">
     <mat-icon *ngIf="!imagePath" class="material-icons-outlined empty-image">image</mat-icon>
   </span>
-<!--  <span #titleContainer [ngClass]="{'title-container'}"  *ngIf="item?.title">-->
   <span #titleContainer  class="title-container" *ngIf="item?.title">
     <span class="title " [ngClass]="{'title-infinite-cycling': textOverflows()}">{{item.title}}</span>
   </span>
