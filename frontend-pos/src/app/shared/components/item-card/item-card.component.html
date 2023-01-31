@@ -1,8 +1,14 @@
 <div class="item-card-container">
-  <img mat-card-image [src]="imagePath">
-  <span class="title">Title</span>
-  <span class="category" *ngIf="item?.category">{{item.category}}</span>
-  <span class="barcode" *ngIf="item?.barCode">{{item.barCode}}</span>
+  <span class="image-container">
+    <img *ngIf="imagePath" mat-card-image [src]="imagePath">
+    <mat-icon *ngIf="!imagePath" class="material-icons-outlined empty-image">image</mat-icon>
+  </span>
+<!--  <span #titleContainer [ngClass]="{'title-container'}"  *ngIf="item?.title">-->
+  <span #titleContainer  class="title-container" *ngIf="item?.title">
+    <span class="title " [ngClass]="{'title-infinite-cycling': textOverflows()}">{{item.title}}</span>
+  </span>
+  <span class="category" *ngIf="item?.category">{{'ITEM-CARD.CATEGORY' | translate}}: {{item.category}}</span>
+  <span class="barcode" *ngIf="item?.barCode">{{'ITEM-CARD.CODE' | translate}}: {{item.barCode}}</span>
   <!--  <span class="price" *ngIf="item?.price">{{item.price | currency :'CAD':'symbol-narrow':'1.2-2'}}</span>-->
   <span class="price-quantity">
       <span class="price" *ngIf="item?.price">{{item.price}}</span>

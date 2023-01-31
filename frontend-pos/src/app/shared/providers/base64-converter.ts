@@ -10,6 +10,9 @@ export class Base64Converter {
   public serializeToBase64(){}
 
   public deserializeFromBase64(dataInBase64: string): SafeResourceUrl{
+    if (!dataInBase64) {
+      return null;
+    }
     return this.domSanitizer.bypassSecurityTrustResourceUrl(dataInBase64);
   }
 

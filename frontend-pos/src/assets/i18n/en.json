@@ -20,5 +20,9 @@
     "STATISTICS": "Statistics",
     "USERS": "Users",
     "SIGN-OUT": "Log out"
+  },
+  "ITEM-CARD": {
+    "CATEGORY":"Cat.",
+    "CODE":"Cod."
   }
 }

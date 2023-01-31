@@ -1,5 +1,8 @@
 span.home-item-container {
-  display: flex;
+  padding: 0 10px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  //grid-template-rows: repeat(auto-fill, 250px);
   flex-direction: row;
   flex-wrap: wrap;
   gap: 10px;

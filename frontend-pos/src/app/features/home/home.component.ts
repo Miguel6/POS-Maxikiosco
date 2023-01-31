@@ -15,12 +15,194 @@ export class HomeComponent {
 
   public items: ItemCardModel[] = [
     {
-      image: this.imageInBase64,
-      title: 'producto uno',
+      image: null,
+      title: 'Nombre recontra mega archi largo y aun mas largo',
       barCode: '123123123123',
       price: 1231.33,
       category: 'drinks',
       quantity: 1
-    }
+    }, {
+      image: this.imageInBase64,
+      title: 'Producto uno',
+      barCode: '123123123123',
+      price: 1231.33,
+      category: 'drinks',
+      quantity: 1
+    }, {
+      image: this.imageInBase64,
+      title: 'Producto uno',
+      barCode: '123123123123',
+      price: 1231.33,
+      category: 'drinks',
+      quantity: 1
+    }, {
+      image: this.imageInBase64,
+      title: 'Producto uno',
+      barCode: '123123123123',
+      price: 1231.33,
+      category: 'drinks',
+      quantity: 1
+    }, {
+      image: this.imageInBase64,
+      title: 'Producto uno',
+      barCode: '123123123123',
+      price: 1231.33,
+      category: 'drinks',
+      quantity: 1
+    }, {
+      image: this.imageInBase64,
+      title: 'Producto uno',
+      barCode: '123123123123',
+      price: 1231.33,
+      category: 'drinks',
+      quantity: 1
+    }, {
+      image: this.imageInBase64,
+      title: 'Producto uno',
+      barCode: '123123123123',
+      price: 1231.33,
+      category: 'drinks',
+      quantity: 1
+    }, {
+      image: this.imageInBase64,
+      title: 'Producto uno',
+      barCode: '123123123123',
+      price: 1231.33,
+      category: 'drinks',
+      quantity: 1
+    }, /*{
+      image: this.imageInBase64,
+      title: 'Producto uno',
+      barCode: '123123123123',
+      price: 1231.33,
+      category: 'drinks',
+      quantity: 1
+    }, {
+      image: this.imageInBase64,
+      title: 'Producto uno',
+      barCode: '123123123123',
+      price: 1231.33,
+      category: 'drinks',
+      quantity: 1
+    }, {
+      image: this.imageInBase64,
+      title: 'Producto uno',
+      barCode: '123123123123',
+      price: 1231.33,
+      category: 'drinks',
+      quantity: 1
+    }, {
+      image: this.imageInBase64,
+      title: 'Producto uno',
+      barCode: '123123123123',
+      price: 1231.33,
+      category: 'drinks',
+      quantity: 1
+    }, {
+      image: this.imageInBase64,
+      title: 'Producto uno',
+      barCode: '123123123123',
+      price: 1231.33,
+      category: 'drinks',
+      quantity: 1
+    }, {
+      image: this.imageInBase64,
+      title: 'Producto uno',
+      barCode: '123123123123',
+      price: 1231.33,
+      category: 'drinks',
+      quantity: 1
+    }, {
+      image: this.imageInBase64,
+      title: 'Producto uno',
+      barCode: '123123123123',
+      price: 1231.33,
+      category: 'drinks',
+      quantity: 1
+    }, {
+      image: this.imageInBase64,
+      title: 'Producto uno',
+      barCode: '123123123123',
+      price: 1231.33,
+      category: 'drinks',
+      quantity: 1
+    }, {
+      image: this.imageInBase64,
+      title: 'Producto uno',
+      barCode: '123123123123',
+      price: 1231.33,
+      category: 'drinks',
+      quantity: 1
+    }, {
+      image: this.imageInBase64,
+      title: 'Producto uno',
+      barCode: '123123123123',
+      price: 1231.33,
+      category: 'drinks',
+      quantity: 1
+    }, {
+      image: this.imageInBase64,
+      title: 'Producto uno',
+      barCode: '123123123123',
+      price: 1231.33,
+      category: 'drinks',
+      quantity: 1
+    }, {
+      image: this.imageInBase64,
+      title: 'Producto uno',
+      barCode: '123123123123',
+      price: 1231.33,
+      category: 'drinks',
+      quantity: 1
+    }, {
+      image: this.imageInBase64,
+      title: 'Producto uno',
+      barCode: '123123123123',
+      price: 1231.33,
+      category: 'drinks',
+      quantity: 1
+    }, {
+      image: this.imageInBase64,
+      title: 'Producto uno',
+      barCode: '123123123123',
+      price: 1231.33,
+      category: 'drinks',
+      quantity: 1
+    }, {
+      image: this.imageInBase64,
+      title: 'Producto uno',
+      barCode: '123123123123',
+      price: 1231.33,
+      category: 'drinks',
+      quantity: 1
+    }, {
+      image: this.imageInBase64,
+      title: 'Producto uno',
+      barCode: '123123123123',
+      price: 1231.33,
+      category: 'drinks',
+      quantity: 1
+    }, {
+      image: null,
+      title: 'Producto uno',
+      barCode: '123123123123',
+      price: 1231.33,
+      category: 'drinks',
+      quantity: 1
+    }, {
+      image: this.imageInBase64,
+      title: 'Producto uno',
+      barCode: '123123123123',
+      price: 1231.33,
+      category: 'drinks',
+      quantity: 1
+    }, {
+      image: this.imageInBase64,
+      title: 'Producto uno',
+      barCode: '123123123123',
+      price: 1231.33,
+      category: 'drinks',
+      quantity: 1
+    }*/
   ]
 }

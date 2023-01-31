@@ -6,18 +6,84 @@ div.item-card-container {
   flex-direction: column;
   background-color: white;
   border-radius: 10px;
-  box-shadow: 0 5px 40px 0 $gray-lighter;
+  box-shadow: 1px 1px 5px 0 $gray-lighter;
+  height: 100%;
+  padding: 10px;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
 
-  img {
-    object-fit: scale-down;
+  & > span {
+    flex: 0 1 auto;
+  }
+
+  .image-container {
+    flex: 1 1 auto;
     height: 100%;
-    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    margin-bottom: 10px;
+
+    & > img, & > mat-icon {
+
+    }
+
+    &:has(.empty-image) {
+      background-color: $gray-lightest;
+    }
+
+    img {
+      object-fit: scale-down;
+      height: 100%;
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    mat-icon.empty-image {
+      color: $gray-medium;
+      font-size: 2.5em;
+      height: auto;
+      width: auto;
+    }
   }
 
-  .title {
-    font-weight: bold;
-    font-size: $font-size-16-points;
+  .title-container {
+    width: 100%;
+    height: 20px;
+    min-height: 20px;
+    overflow-x: hidden;
+
+    .title-infinite-cycling {
+      &:hover {
+        animation: infinite-text 10s linear infinite;
+        text-overflow: unset;
+      }
+
+      @keyframes infinite-text {
+        0% {
+          transform: translateX(0);
+        }
+        75%, 100% {
+          transform: translateX(calc(calc(var(--width-title) * 1px) - 100%));
+        }
+      }
+    }
+
+    .title {
+      font-weight: bold;
+      width: auto;
+      font-size: $font-size-16-points;
+      text-overflow: ellipsis;
+      display: inline-block;
+      overflow-x: hidden;
+      white-space: nowrap;
+
+
+    }
   }
+
 
   .category {
     font-size: $font-size-14-points;
@@ -33,6 +99,7 @@ div.item-card-container {
     display: flex;
     flex-direction: row;
     align-items: center;
+
     .quantity {
       &::before {
         content: "/";
@@ -50,4 +117,8 @@ div.item-card-container {
     }
   }
 
+}
+
+.test {
+  background-color: blue;
 }
