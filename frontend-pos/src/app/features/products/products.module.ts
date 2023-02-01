@@ -5,17 +5,21 @@ import {NewProductComponent} from './new-product/new-product.component';
 import {EditProductComponent} from './edit-product/edit-product.component';
 import {RouterOutlet} from '@angular/router';
 import {TranslateModule} from '@ngx-translate/core';
+import {ItemCardComponent} from './item-card/item-card.component';
+import {SharedModule} from '../../shared/shared.module';
 
 @NgModule({
   declarations: [
     ProductsComponent,
     NewProductComponent,
-    EditProductComponent
+    EditProductComponent,
+    ItemCardComponent
   ],
   imports: [
     CommonModule,
     RouterOutlet,
-    TranslateModule
+    TranslateModule,
+    SharedModule
   ]
 })
 export class ProductsModule { }

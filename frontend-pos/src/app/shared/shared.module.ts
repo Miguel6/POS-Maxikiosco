@@ -18,7 +18,7 @@ import {SnackBarBuilder} from './builders/snack-bar-builder';
 import {MenuBarComponent} from './components/menu-bar/menu-bar.component';
 import {BreadcrumbsComponent} from './components/breadcrumbs/breadcrumbs.component';
 import {BreadcrumbService} from './services/breadcrumb.service';
-import { ItemCardComponent } from './components/item-card/item-card.component';
+import { ItemCardComponent } from '../features/products/item-card/item-card.component';
 import {Base64Converter} from './providers/base64-converter';
 
 @NgModule({
@@ -27,14 +27,12 @@ import {Base64Converter} from './providers/base64-converter';
     ItemMenuBarComponent,
     SnackBarComponent,
     MenuBarComponent,
-    BreadcrumbsComponent,
-    ItemCardComponent
+    BreadcrumbsComponent
   ],
   exports: [
     MaterialModule,
     LateralMenuBarComponent,
-    MenuBarComponent,
-    ItemCardComponent
+    MenuBarComponent
   ],
   imports: [
     HttpClientModule,

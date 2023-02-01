@@ -1,6 +1,6 @@
 import {AfterViewInit, Component, ElementRef, HostListener, Input, OnInit, ViewChild} from '@angular/core';
-import {Base64Converter} from '../../providers/base64-converter';
-import {ItemCardModel} from '../../models/item-card-model';
+import {Base64Converter} from '../../../shared/providers/base64-converter';
+import {ItemCardModel} from '../models/item-card-model';
 import {SafeResourceUrl} from '@angular/platform-browser';
 
 @Component({
@@ -39,7 +39,7 @@ export class ItemCardComponent implements OnInit, AfterViewInit {
   }
 
   private updateWidth(width: number): void {
-    this.titleContainer?.nativeElement.style.removeProperty('--width-title')
-    this.titleContainer?.nativeElement.style.setProperty('--width-title', width.toString())
+    this.titleContainer?.nativeElement?.style?.removeProperty('--width-title')
+    this.titleContainer?.nativeElement?.style?.setProperty('--width-title', width.toString())
   }
 }

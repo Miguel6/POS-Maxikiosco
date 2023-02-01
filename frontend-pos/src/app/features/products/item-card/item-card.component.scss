@@ -1,5 +1,5 @@
-@import "src/app/styles/colors";
-@import "src/app/styles/fonts-size";
+@import "../../../styles/colors";
+@import "../../../styles/fonts-size";
 
 div.item-card-container {
   display: flex;
@@ -27,7 +27,7 @@ div.item-card-container {
     margin-bottom: 10px;
 
     & > img, & > mat-icon {
-
+      max-height: 7em;
     }
 
     &:has(.empty-image) {
@@ -79,8 +79,6 @@ div.item-card-container {
       display: inline-block;
       overflow-x: hidden;
       white-space: nowrap;
-
-
     }
   }
 
@@ -104,7 +102,7 @@ div.item-card-container {
       &::before {
         content: "/";
       }
-
+      font-weight: bold;
       font-size: $font-size-14-points;
       color: $gray-lighter;
     }
