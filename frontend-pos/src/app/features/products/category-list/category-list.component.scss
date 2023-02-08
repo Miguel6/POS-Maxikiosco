@@ -3,11 +3,11 @@
 .list-category-container {
   display: flex;
   flex-direction: row;
-  overflow: hidden;
   width: 100%;
   height: 100%;
   align-items: center;
-
+  overflow: auto;
+  
   button.category-button {
     color: $green-medium;
     min-width: fit-content;
