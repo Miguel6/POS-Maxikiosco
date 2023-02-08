@@ -21,7 +21,18 @@ export class ProductsComponent {
     new Category(7, 'Categoria 7'),
     new Category(8, 'Categoria 8'),
     new Category(9, 'Categoria 9'),
-    new Category(10, 'Categoria 10')
+    new Category(10, 'Categoria 10'),
+    new Category(10, 'Categoria 10'),
+    new Category(10, 'Categoria 10'),
+    new Category(10, 'Categoria 10'),
+    new Category(10, 'Categoria 10'),
+    new Category(10, 'Categoria 10'),
+    new Category(10, 'Categoria 10'),
+    new Category(10, 'Categoria 10'),
+    new Category(10, 'Categoria 10'),
+    new Category(10, 'Categoria 10'),
+    new Category(10, 'Categoria 10'),
+    new Category(10, 'Categoria 10'),
   ]
   public items: ItemCardModel[] = [
     {

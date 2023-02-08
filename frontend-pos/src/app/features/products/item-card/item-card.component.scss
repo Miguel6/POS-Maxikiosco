@@ -53,7 +53,7 @@ div.item-card-container {
     width: 100%;
     height: 20px;
     min-height: 20px;
-    overflow-x: hidden;
+    overflow: hidden;
 
     .title-infinite-cycling {
       &:hover {
