@@ -4,6 +4,7 @@
 @import "app/styles/fonts-size";
 @import "app/styles/snack-bar";
 @import "material-icons/iconfont/material-icons.css";
+//@import "@angular/material/prebuilt-themes/indigo-pink.css";
 
 * {
   font-family: Poppins;
@@ -14,5 +15,5 @@
 body {
   margin: 0;
   height: 100vh;
-  background-color: lightgray;
+  background-color: $gray-lightest;
 }

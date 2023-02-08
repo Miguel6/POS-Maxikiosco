@@ -1,0 +1,8 @@
+<span class="list-category-container">
+  <button mat-flat-button *ngFor="let category of categories"
+          (click)="clickOnCategory(category.id)"
+          class="category-button"
+          color="primary"
+          [ngClass]="{'active': activeCategory == category.id, 'all': category.isAll }">
+    {{category.description}}</button>
+</span>

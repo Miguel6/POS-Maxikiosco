@@ -32,7 +32,8 @@ import {Base64Converter} from './providers/base64-converter';
   exports: [
     MaterialModule,
     LateralMenuBarComponent,
-    MenuBarComponent
+    MenuBarComponent,
+    BreadcrumbsComponent
   ],
   imports: [
     HttpClientModule,

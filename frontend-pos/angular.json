@@ -30,7 +30,9 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "src/app/styles/buttons.scss",
+              "src/app/styles/material-themes.scss"
             ],
             "scripts": []
           },
@@ -99,7 +101,9 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "src/app/styles/buttons.scss",
+              "src/app/styles/material-themes.scss"
             ],
             "scripts": []
           }

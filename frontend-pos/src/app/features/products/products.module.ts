@@ -7,13 +7,15 @@ import {RouterOutlet} from '@angular/router';
 import {TranslateModule} from '@ngx-translate/core';
 import {ItemCardComponent} from './item-card/item-card.component';
 import {SharedModule} from '../../shared/shared.module';
+import { CategoryListComponent } from './category-list/category-list.component';
 
 @NgModule({
   declarations: [
     ProductsComponent,
     NewProductComponent,
     EditProductComponent,
-    ItemCardComponent
+    ItemCardComponent,
+    CategoryListComponent
   ],
   imports: [
     CommonModule,

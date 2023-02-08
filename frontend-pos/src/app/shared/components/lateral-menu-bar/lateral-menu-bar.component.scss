@@ -65,6 +65,7 @@ mat-sidenav-container {
   mat-sidenav-content {
     height: 92vh;
     overflow-y: auto;
+    background-color: $gray-lightest;
     //background-color: transparent;
   }
 }

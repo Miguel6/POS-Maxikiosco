@@ -1,0 +1,88 @@
+@use '@angular/material' as mat;
+@include mat.core();
+
+$palette-green: (
+  50 : #e0fbf1,
+  100 : #b3f6db,
+  200 : #80f0c4,
+  300 : #4deaac,
+  400 : #26e69a,
+  500 : #00e188,
+  600 : #00dd80,
+  700 : #00d975,
+  800 : #00d56b,
+  900 : #00cd58,
+  A100 : #f5fff8,
+  A200 : #c2ffd8,
+  A400 : #8fffb8,
+  A700 : #75ffa7,
+  contrast: (
+    50 : #000000,
+    100 : #000000,
+    200 : #000000,
+    300 : #000000,
+    400 : #000000,
+    500 : #000000,
+    600 : #000000,
+    700 : #000000,
+    800 : #000000,
+    900 : #000000,
+    A100 : #000000,
+    A200 : #000000,
+    A400 : #000000,
+    A700 : #000000,
+  ));
+
+$palette-blue: (
+  50 : #e8f5fd,
+  100 : #c5e5fa,
+  200 : #9ed4f7,
+  300 : #77c3f3,
+  400 : #59b6f1,
+  500 : #3ca9ee,
+  600 : #36a2ec,
+  700 : #2e98e9,
+  800 : #278fe7,
+  900 : #1a7ee2,
+  A100 : #ffffff,
+  A200 : #e2f0ff,
+  A400 : #afd5ff,
+  A700 : #96c7ff,
+  contrast: (
+    50 : #000000,
+    100 : #000000,
+    200 : #000000,
+    300 : #000000,
+    400 : #000000,
+    500 : #000000,
+    600 : #000000,
+    700 : #000000,
+    800 : #ffffff,
+    900 : #ffffff,
+    A100 : #000000,
+    A200 : #000000,
+    A400 : #000000,
+    A700 : #000000,
+  )
+);
+
+
+$my-primary: mat.define-palette($palette-green);
+$my-accent: mat.define-palette($palette-blue);
+
+// The "warn" palette is optional and defaults to red if not specified.
+$my-warn: mat.define-palette(mat.$green-palette);
+
+$my-theme: mat.define-light-theme((
+  color: (
+    primary: $my-primary,
+    accent: $my-accent,
+    warn: $my-warn,
+  ),
+  typography: mat.define-typography-config(),
+  density: 0,
+));
+@include mat.core-theme($my-theme);
+
+//@include mat.core-theme($my-theme);
+@include mat.all-component-themes($my-theme);
