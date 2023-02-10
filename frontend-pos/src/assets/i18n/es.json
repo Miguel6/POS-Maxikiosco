@@ -24,5 +24,8 @@
   "ITEM-CARD": {
     "CATEGORY":"Cat.",
     "CODE":"Cod."
+  },
+  "PRODUCTS": {
+    "CATEGORY-ALL-DESCRIPTION": "TODAS"
   }
 }

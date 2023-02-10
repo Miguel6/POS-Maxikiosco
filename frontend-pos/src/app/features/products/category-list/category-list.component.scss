@@ -6,20 +6,33 @@
   width: 100%;
   height: 100%;
   align-items: center;
-  overflow: auto;
+  overflow-y: hidden;
 
-  button.category-button {
-    color: $green-medium;
-    min-width: fit-content;
-    background-color: $white;
-    margin: 0 5px;
-    box-shadow: 1px 1px 5px 0 $gray-lighter;
-    font-weight: bold;
+  span.customs-categories {
+    display: inherit;
+    overflow-x: auto;
+    height: inherit;
 
-    &.active, &.all {
-      color: $white;
-      background-color: $green-medium;
+    &::-webkit-scrollbar {
+      display: none;
     }
   }
+}
 
+button.category-button {
+  color: $green-medium;
+  min-width: fit-content;
+  background-color: $white;
+  margin: 0 5px;
+  box-shadow: 1px 1px 5px 0 $gray-lighter;
+  font-weight: bold;
+
+  &.active, &.all {
+    color: $white;
+    background-color: $green-medium;
+  }
+
+  &.all {
+    height: 100%;
+  }
 }
