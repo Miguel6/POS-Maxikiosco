@@ -5,7 +5,7 @@
           color="primary">
     {{'PRODUCTS.CATEGORY-ALL-DESCRIPTION'| translate}}
   </button>
-  <span class="customs-categories">
+  <span class="customs-categories" posHorizontalScroll>
     <button mat-flat-button *ngFor="let category of categories"
             (click)="clickOnCategory(category.id)"
             class="category-button"

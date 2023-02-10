@@ -20,6 +20,7 @@ import {BreadcrumbsComponent} from './components/breadcrumbs/breadcrumbs.compone
 import {BreadcrumbService} from './services/breadcrumb.service';
 import { ItemCardComponent } from '../features/products/item-card/item-card.component';
 import {Base64Converter} from './providers/base64-converter';
+import { HorizontalScrollDirective } from './directives/horizontal-scroll.directive';
 
 @NgModule({
   declarations: [
@@ -27,13 +28,15 @@ import {Base64Converter} from './providers/base64-converter';
     ItemMenuBarComponent,
     SnackBarComponent,
     MenuBarComponent,
-    BreadcrumbsComponent
+    BreadcrumbsComponent,
+    HorizontalScrollDirective
   ],
   exports: [
     MaterialModule,
     LateralMenuBarComponent,
     MenuBarComponent,
-    BreadcrumbsComponent
+    BreadcrumbsComponent,
+    HorizontalScrollDirective
   ],
   imports: [
     HttpClientModule,

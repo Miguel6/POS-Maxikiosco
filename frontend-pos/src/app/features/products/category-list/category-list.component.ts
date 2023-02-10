@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, Output} from '@angular/core';
+import {Component, ElementRef, EventEmitter, HostListener, Input, Output} from '@angular/core';
 import {Category} from '../models/category';
 
 @Component({
@@ -14,6 +14,8 @@ export class CategoryListComponent {
   @Output() onClickAll: EventEmitter<void> = new EventEmitter<void>();
   @Output() onClickCategory: EventEmitter<Category> = new EventEmitter<Category>();
 
+  constructor() {
+  }
 
   public activeCategory: number = 0;
 
