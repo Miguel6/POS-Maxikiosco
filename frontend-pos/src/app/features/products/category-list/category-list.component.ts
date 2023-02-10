@@ -18,11 +18,20 @@ export class CategoryListComponent {
   public activeCategory: number = 0;
 
   public clickOnCategory(id: number): void {
-    this.activeCategory = id;
+    this.setSelection(id);
     this.onClickCategory.emit(this.categories.find(c => c.id == this.activeCategory))
   }
 
   public clickOnCategoryAll(): void {
     this.onClickAll.emit();
+    this.clearSelection();
+  }
+
+  private clearSelection(): void {
+    this.setSelection(null);
+  }
+
+  private setSelection(id: number): void {
+    this.activeCategory = id;
   }
 }

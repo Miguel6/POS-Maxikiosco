@@ -6,12 +6,13 @@
   width: 100%;
   height: 100%;
   align-items: center;
-  overflow-y: hidden;
+  overflow-y: unset;
 
   span.customs-categories {
     display: inherit;
     overflow-x: auto;
     height: inherit;
+    overflow-y: hidden;
 
     &::-webkit-scrollbar {
       display: none;
@@ -22,6 +23,7 @@
 button.category-button {
   color: $green-medium;
   min-width: fit-content;
+  height: 100%;
   background: $white;
   margin: 0 5px;
   box-shadow: 1px 1px 5px 0 $gray-lighter;
