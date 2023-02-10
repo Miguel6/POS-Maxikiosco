@@ -29,6 +29,10 @@ export class CategoryListComponent {
     this.clearSelection();
   }
 
+  public scrollTo(direction: string): void {
+    console.log(direction);
+  }
+
   private clearSelection(): void {
     this.setSelection(null);
   }

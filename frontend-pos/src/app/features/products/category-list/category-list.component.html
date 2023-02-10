@@ -5,12 +5,18 @@
           color="primary">
     {{'PRODUCTS.CATEGORY-ALL-DESCRIPTION'| translate}}
   </button>
-  <span class="customs-categories" posHorizontalScroll>
-    <button mat-flat-button *ngFor="let category of categories"
-            (click)="clickOnCategory(category.id)"
-            class="category-button"
-            color="primary"
-            [ngClass]="{'active': activeCategory == category.id }">
-      {{category.description}}</button>
+  <span class="example-container" posHorizontalScroll>
+      <span class="arrow-buttons-scrollbar intangible">
+            <mat-icon (mouseover)="scrollTo('left')" class="material-icons-outlined left">chevron_left</mat-icon>
+            <mat-icon (mouseover)="scrollTo('left')" class="material-icons-outlined right">chevron_right</mat-icon>
+      </span>
+      <span class="customs-categories" posHorizontalScroll>
+        <button mat-flat-button *ngFor="let category of categories"
+                (click)="clickOnCategory(category.id)"
+                class="category-button"
+                color="primary"
+                [ngClass]="{'active': activeCategory == category.id }">
+          {{category.description}}</button>
+      </span>
   </span>
 </span>

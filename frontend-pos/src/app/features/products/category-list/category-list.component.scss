@@ -10,6 +10,7 @@
 
   span.customs-categories {
     display: inherit;
+    position: relative;
     overflow-x: auto;
     height: inherit;
     overflow-y: hidden;
@@ -17,6 +18,8 @@
     &::-webkit-scrollbar {
       display: none;
     }
+
+
   }
 }
 
@@ -42,5 +45,51 @@ button.category-button {
 
   &.all {
     height: 100%;
+  }
+}
+
+span.example-container {
+  display: inherit;
+  position: relative;
+  overflow-x: auto;
+  height: inherit;
+  overflow-y: hidden;
+
+  & .arrow-buttons-scrollbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+
+    mat-icon {
+      pointer-events: auto;
+
+      &.left{
+        height: 100%;
+        display: flex;
+        align-items: center;
+        border-radius: 0 50% 50% 0;
+        background-color: $gray-medium;
+      }
+
+      &.right{
+        height: 100%;
+        display: flex;
+        align-items: center;
+        border-radius: 50% 0 0 50%;
+        background-color: $gray-medium;
+      }
+    }
+  }
+
+  &:hover .arrow-buttons-scrollbar {
+    display: inline-flex;
+    z-index: 3;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    align-items: center;
+    justify-content: space-between;
   }
 }
