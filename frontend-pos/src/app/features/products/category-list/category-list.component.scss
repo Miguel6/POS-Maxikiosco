@@ -18,8 +18,6 @@
     &::-webkit-scrollbar {
       display: none;
     }
-
-
   }
 }
 
@@ -40,6 +38,7 @@ button.category-button {
   &.active {
     position: sticky;
     left: 0;
+    right: 0;
     z-index: 2;
   }
 
@@ -63,21 +62,22 @@ span.example-container {
 
     mat-icon {
       pointer-events: auto;
+      opacity: 0.5;
 
-      &.left{
+      &.left {
         height: 100%;
         display: flex;
         align-items: center;
         border-radius: 0 50% 50% 0;
-        background-color: $gray-medium;
+        background-color: $gray-lighter;
       }
 
-      &.right{
+      &.right {
         height: 100%;
         display: flex;
         align-items: center;
         border-radius: 50% 0 0 50%;
-        background-color: $gray-medium;
+        background-color: $gray-lighter;
       }
     }
   }

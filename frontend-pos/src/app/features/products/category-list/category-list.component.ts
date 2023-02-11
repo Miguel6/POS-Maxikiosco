@@ -1,12 +1,13 @@
-import {Component, ElementRef, EventEmitter, HostListener, Input, Output} from '@angular/core';
+import {Component, EventEmitter, Input, OnDestroy, Output, ViewChild} from '@angular/core';
 import {Category} from '../models/category';
+import {Direction, HorizontalScrollDirective} from '../../../shared/directives/horizontal-scroll.directive';
 
 @Component({
   selector: 'pos-category-list',
   templateUrl: './category-list.component.html',
   styleUrls: ['./category-list.component.scss']
 })
-export class CategoryListComponent {
+export class CategoryListComponent implements OnDestroy {
 
   @Input() categories: Category[];
   @Input() showCategoryAll: boolean = false;
@@ -14,10 +15,19 @@ export class CategoryListComponent {
   @Output() onClickAll: EventEmitter<void> = new EventEmitter<void>();
   @Output() onClickCategory: EventEmitter<Category> = new EventEmitter<Category>();
 
+  @ViewChild(HorizontalScrollDirective) horizontalScrollDirective: HorizontalScrollDirective;
+
+  public direction = Direction;
+  public activeCategory: number = null;
+
+  private scrollIntervalId: NodeJS.Timer = null;
+
   constructor() {
   }
 
-  public activeCategory: number = 0;
+  ngOnDestroy(): void {
+    this.stopScroll()
+  }
 
   public clickOnCategory(id: number): void {
     this.setSelection(id);
@@ -29,8 +39,19 @@ export class CategoryListComponent {
     this.clearSelection();
   }
 
-  public scrollTo(direction: string): void {
-    console.log(direction);
+  public scrollTo(direction: Direction): void {
+    if (!this.scrollIntervalId) {
+      this.scrollIntervalId = setInterval(() => {
+        this.horizontalScrollDirective.scrollTo(direction);
+      }, 50);
+    }
+  }
+
+  public stopScroll(): void {
+    if (this.scrollIntervalId) {
+      clearInterval(this.scrollIntervalId);
+      this.scrollIntervalId = null;
+    }
   }
 
   private clearSelection(): void {
