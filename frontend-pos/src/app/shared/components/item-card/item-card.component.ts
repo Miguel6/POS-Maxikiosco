@@ -1,6 +1,6 @@
 import {AfterViewInit, Component, ElementRef, HostListener, Input, OnInit, ViewChild} from '@angular/core';
-import {Base64Converter} from '../../../shared/providers/base64-converter';
-import {ItemCardModel} from '../models/item-card-model';
+import {Base64Converter} from '../../providers/base64-converter';
+import {ItemCardModel} from '../../../features/products/models/item-card-model';
 import {SafeResourceUrl} from '@angular/platform-browser';
 
 @Component({

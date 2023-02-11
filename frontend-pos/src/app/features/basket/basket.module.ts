@@ -1,7 +1,7 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
-
 import {BasketComponent} from './basket.component';
+import {SharedModule} from '../../shared/shared.module';
 
 
 @NgModule({
@@ -9,7 +9,8 @@ import {BasketComponent} from './basket.component';
     BasketComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    SharedModule
   ]
 })
 export class BasketModule {

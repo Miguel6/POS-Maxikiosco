@@ -1,6 +1,6 @@
 import {Component, EventEmitter, Input, OnDestroy, Output, ViewChild} from '@angular/core';
-import {Category} from '../models/category';
-import {Direction, HorizontalScrollDirective} from '../../../shared/directives/horizontal-scroll.directive';
+import {Category} from '../../../features/products/models/category';
+import {Direction, HorizontalScrollDirective} from '../../directives/horizontal-scroll.directive';
 
 @Component({
   selector: 'pos-category-list',

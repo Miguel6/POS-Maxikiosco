@@ -18,9 +18,10 @@ import {SnackBarBuilder} from './builders/snack-bar-builder';
 import {MenuBarComponent} from './components/menu-bar/menu-bar.component';
 import {BreadcrumbsComponent} from './components/breadcrumbs/breadcrumbs.component';
 import {BreadcrumbService} from './services/breadcrumb.service';
-import { ItemCardComponent } from '../features/products/item-card/item-card.component';
+import { ItemCardComponent } from './components/item-card/item-card.component';
 import {Base64Converter} from './providers/base64-converter';
 import { HorizontalScrollDirective } from './directives/horizontal-scroll.directive';
+import {CategoryListComponent} from './components/category-list/category-list.component';
 
 @NgModule({
   declarations: [
@@ -29,13 +30,17 @@ import { HorizontalScrollDirective } from './directives/horizontal-scroll.direct
     SnackBarComponent,
     MenuBarComponent,
     BreadcrumbsComponent,
-    HorizontalScrollDirective
+    HorizontalScrollDirective,
+    ItemCardComponent,
+    CategoryListComponent
   ],
   exports: [
     MaterialModule,
     LateralMenuBarComponent,
     MenuBarComponent,
     BreadcrumbsComponent,
+    ItemCardComponent,
+    CategoryListComponent,
     HorizontalScrollDirective
   ],
   imports: [
