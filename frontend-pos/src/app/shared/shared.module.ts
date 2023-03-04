@@ -3,7 +3,7 @@ import {CommonModule} from '@angular/common';
 import {LateralMenuBarComponent} from './components/lateral-menu-bar/lateral-menu-bar.component';
 import {MaterialModule} from './material/material.module';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {RouterLink} from '@angular/router';
 import {ItemMenuBarComponent} from './components/lateral-menu-bar/item-menu-bar/item-menu-bar.component';
 import {PathHelper} from './providers/path-helper';
@@ -22,6 +22,7 @@ import { ItemCardComponent } from './components/item-card/item-card.component';
 import {Base64Converter} from './providers/base64-converter';
 import { HorizontalScrollDirective } from './directives/horizontal-scroll.directive';
 import {CategoryListComponent} from './components/category-list/category-list.component';
+import { SearchInputComponent } from './components/search-input/search-input.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import {CategoryListComponent} from './components/category-list/category-list.co
     BreadcrumbsComponent,
     HorizontalScrollDirective,
     ItemCardComponent,
-    CategoryListComponent
+    CategoryListComponent,
+    SearchInputComponent
   ],
   exports: [
     MaterialModule,
@@ -41,6 +43,7 @@ import {CategoryListComponent} from './components/category-list/category-list.co
     BreadcrumbsComponent,
     ItemCardComponent,
     CategoryListComponent,
+    SearchInputComponent,
     HorizontalScrollDirective
   ],
   imports: [
@@ -56,7 +59,8 @@ import {CategoryListComponent} from './components/category-list/category-list.co
         useClass: PosTranslateLoader,
         deps: [HttpClient],
       },
-    })
+    }),
+    ReactiveFormsModule
   ],
   providers: [
     PathHelper,
