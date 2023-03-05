@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, Input} from '@angular/core';
 import {FormControl} from '@angular/forms';
 import {map, Observable, startWith} from 'rxjs';
 
@@ -11,6 +11,9 @@ export class SearchInputComponent {
   myControl = new FormControl('');
   options: string[] = ['One', 'Two', 'Three'];
   filteredOptions: Observable<string[]>;
+
+  @Input() label = ''
+  @Input() placeholder = ''
 
   ngOnInit() {
     this.filteredOptions = this.myControl.valueChanges.pipe(

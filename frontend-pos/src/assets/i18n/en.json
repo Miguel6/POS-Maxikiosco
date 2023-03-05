@@ -27,5 +27,9 @@
   },
   "PRODUCTS": {
     "CATEGORY-ALL-DESCRIPTION": "ALL"
+  },
+  "BASKET": {
+    "SEARCH-PRODUCT-BAR-LABEL": "Search product",
+    "SEARCH-PRODUCT-BAR-PLACEHOLDER": "Enter a description or barcode"
   }
 }

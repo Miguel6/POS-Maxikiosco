@@ -1,8 +1,8 @@
 <form class="point-of-sales-form">
   <mat-form-field class="point-of-sales-form-field disable-ripple" >
-    <mat-label>Number</mat-label>
+    <mat-label *ngIf="label">{{label}}</mat-label>
     <input type="text"
-           placeholder="Pick one"
+           placeholder="{{placeholder}}"
            aria-label="Number"
            matInput
            [formControl]="myControl"
