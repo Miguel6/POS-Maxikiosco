@@ -14,6 +14,10 @@ export class SearchInputComponent {
 
   @Input() label = ''
   @Input() placeholder = ''
+  @Input() prefixIcon = '';
+  @Input() prefixMaterialIconStyle: 'material-icons' | 'material-icons-outlined' | 'material-icons-round' | 'material-icons-sharp' | 'material-icons-two-tone';
+  @Input() showClear = true;
+  public value = '';
 
   ngOnInit() {
     this.filteredOptions = this.myControl.valueChanges.pipe(

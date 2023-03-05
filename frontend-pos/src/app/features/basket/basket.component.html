@@ -1,4 +1,7 @@
-<pos-search-input [label]="'BASKET.SEARCH-PRODUCT-BAR-LABEL'|translate" [placeholder]="'BASKET.SEARCH-PRODUCT-BAR-PLACEHOLDER'|translate"></pos-search-input>
+<pos-search-input [label]="'BASKET.SEARCH-PRODUCT-BAR-LABEL'|translate"
+                  [placeholder]="'BASKET.SEARCH-PRODUCT-BAR-PLACEHOLDER'|translate"
+                  [prefixIcon]="'search'"
+                  [prefixMaterialIconStyle]="'material-icons-outlined'"></pos-search-input>
 <pos-category-list [categories]="categories" [showCategoryAll]="true"></pos-category-list>
 <span class="home-item-container">
   <pos-item-card *ngFor="let item of items" [item]="item"></pos-item-card>
