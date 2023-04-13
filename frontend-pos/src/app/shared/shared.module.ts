@@ -18,11 +18,12 @@ import {SnackBarBuilder} from './builders/snack-bar-builder';
 import {MenuBarComponent} from './components/menu-bar/menu-bar.component';
 import {BreadcrumbsComponent} from './components/breadcrumbs/breadcrumbs.component';
 import {BreadcrumbService} from './services/breadcrumb.service';
-import { ItemCardComponent } from './components/item-card/item-card.component';
+import {ItemCardComponent} from './components/item-card/item-card.component';
 import {Base64Converter} from './providers/base64-converter';
-import { HorizontalScrollDirective } from './directives/horizontal-scroll.directive';
+import {HorizontalScrollDirective} from './directives/horizontal-scroll.directive';
 import {CategoryListComponent} from './components/category-list/category-list.component';
-import { SearchInputComponent } from './components/search-input/search-input.component';
+import {SearchInputComponent} from './components/search-input/search-input.component';
+import {SearchInputOptionComponent} from './components/search-input-option/search-input-option.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { SearchInputComponent } from './components/search-input/search-input.com
     HorizontalScrollDirective,
     ItemCardComponent,
     CategoryListComponent,
-    SearchInputComponent
+    SearchInputComponent,
+    SearchInputOptionComponent
   ],
   exports: [
     MaterialModule,
@@ -44,7 +46,8 @@ import { SearchInputComponent } from './components/search-input/search-input.com
     ItemCardComponent,
     CategoryListComponent,
     SearchInputComponent,
-    HorizontalScrollDirective
+    HorizontalScrollDirective,
+    SearchInputOptionComponent
   ],
   imports: [
     HttpClientModule,
@@ -75,4 +78,5 @@ import { SearchInputComponent } from './components/search-input/search-input.com
     Base64Converter
   ]
 })
-export class SharedModule { }
+export class SharedModule {
+}

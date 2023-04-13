@@ -2,7 +2,7 @@ import {TranslateLoader} from '@ngx-translate/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {catchError} from 'rxjs/operators';
-import {Environment} from '../../../environment/environment';
+import {Environment} from '../../../environments/environment';
 import {Injectable} from '@angular/core';
 
 @Injectable()

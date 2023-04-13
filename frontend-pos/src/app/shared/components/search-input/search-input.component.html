@@ -11,9 +11,9 @@
            [formControl]="myControl"
            [matAutocomplete]="auto"
            [(ngModel)]="value">
-    <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
-      <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
-        {{option}}
+    <mat-autocomplete #auto="matAutocomplete" (click)="onClickSelect($event)">
+      <mat-option *ngFor="let option of filteredOptions | async" (onSelectionChange)="onSelectionOption(option)">
+        <pos-search-input-option [value]="option" [searchText]="myControl.value" [innerHTML]="getHighlightedOption(option)"></pos-search-input-option>
       </mat-option>
     </mat-autocomplete>
   </mat-form-field>
