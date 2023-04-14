@@ -11,30 +11,16 @@ import {ProductSearch} from '../models/product-search';
 export class SearchProductsService {
 
   private readonly BaseURL = Environment.searchProductsUrl;
-  // public opts: ProductSearch[] = [];
-  public opts: ProductSearch[] = this.mock();
 
   constructor(private httpService: HttpService) {
   }
 
+  // Todo: Add a ProxyPattern as a cache to avoid calling the backend constantly
   public getByDescription(description: string): Observable<ProductSearch[]> {
     const httpParams = new HttpParams()
       .set('description', description);
 
-    return this.opts.length ?
-      of(this.opts) :
-      this.httpService.doTypedGet<ProductSearch[]>(`${this.BaseURL}/getByDescription`, httpParams)
-        .pipe(tap(data => this.opts = data));
-  }
-
-  public mock(): ProductSearch[] {
-    const productOne = new ProductSearch();
-    productOne.id = 1;
-    productOne.price = 123;
-    productOne.barcode = '';
-    productOne.description = 'product 1';
-
-    return [productOne]
+    return this.httpService.doTypedGet<ProductSearch[]>(`${this.BaseURL}/getByDescription`, httpParams);
   }
 }
 

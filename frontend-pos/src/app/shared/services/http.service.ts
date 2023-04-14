@@ -18,7 +18,8 @@ export class HttpService {
   }
 
   private get baseUrl(): string {
-    return localStorage.getItem(Environment.baseUrl);
+    // return localStorage.getItem(Environment.baseUrl);
+    return Environment.apiBaseUrl;
   }
 
   public doTypedGet<T>(service: string, params?: HttpParams): Observable<T> {

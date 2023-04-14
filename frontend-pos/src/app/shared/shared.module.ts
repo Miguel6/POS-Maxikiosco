@@ -24,6 +24,7 @@ import {HorizontalScrollDirective} from './directives/horizontal-scroll.directiv
 import {CategoryListComponent} from './components/category-list/category-list.component';
 import {SearchInputComponent} from './components/search-input/search-input.component';
 import {SearchInputOptionComponent} from './components/search-input-option/search-input-option.component';
+import {ProductSearchAdapter} from '../features/basket/models/product-search';
 
 @NgModule({
   declarations: [
@@ -75,7 +76,8 @@ import {SearchInputOptionComponent} from './components/search-input-option/searc
     SnackBarBuilder,
     {provide: MAT_SNACK_BAR_DATA, useValue: {}},
     BreadcrumbService,
-    Base64Converter
+    Base64Converter,
+    ProductSearchAdapter
   ]
 })
 export class SharedModule {
