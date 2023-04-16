@@ -2,7 +2,8 @@
                   [placeholder]="'BASKET.SEARCH-PRODUCT-BAR-PLACEHOLDER'|translate"
                   [prefixIcon]="'search'"
                   [prefixMaterialIconStyle]="'material-icons-outlined'"
-                  [options]="options">
+                  [options]="options"
+                  (onSelect)="onSelectOption($event)">
 
   <!--  <pos-search-input-option *ngFor="let option of options | async" [value]="option" ></pos-search-input-option>-->
 </pos-search-input>

@@ -1,4 +1,4 @@
-import {AfterViewInit, Component, Input, OnChanges, OnInit, SimpleChanges} from '@angular/core';
+import {AfterViewInit, Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges} from '@angular/core';
 import {FormControl} from '@angular/forms';
 import {debounceTime, distinctUntilChanged, finalize, switchMap, tap} from 'rxjs';
 import {IFiltereableOptionMatSelect} from '../../models/filtereable-option-mat-select';
@@ -9,7 +9,7 @@ import {SearchProductProxyService} from '../../../features/proxies/search-produc
   templateUrl: './search-input.component.html',
   styleUrls: ['./search-input.component.scss']
 })
-export class SearchInputComponent implements OnChanges, OnInit, AfterViewInit {
+export class SearchInputComponent<T> implements OnChanges, OnInit, AfterViewInit {
   myControl = new FormControl('');
   filteredOptions: IFiltereableOptionMatSelect[];
 
@@ -19,6 +19,8 @@ export class SearchInputComponent implements OnChanges, OnInit, AfterViewInit {
   @Input() prefixMaterialIconStyle: 'material-icons' | 'material-icons-outlined' | 'material-icons-round' | 'material-icons-sharp' | 'material-icons-two-tone';
   @Input() showClear = true;
   @Input() options: IFiltereableOptionMatSelect[];
+
+  @Output() onSelect = new EventEmitter<T>();
 
   public value = '';
   public isLoading = false;
@@ -32,8 +34,9 @@ export class SearchInputComponent implements OnChanges, OnInit, AfterViewInit {
 
   }
 
+  //Todo: This method could be improved trying to use the input directly
   ngOnChanges(changes: SimpleChanges) {
-    if (changes.options.currentValue) {
+    if (changes.options?.currentValue) {
       this.filteredOptions = this.options;
     }
   }
@@ -62,15 +65,16 @@ export class SearchInputComponent implements OnChanges, OnInit, AfterViewInit {
 
   public onFocus(event: any) {
     console.log(event);
-    console.log(this.options);
   }
 
   public onClickSelect(event: any) {
+    console.log('onClickSelect');
     console.log(event);
+    this.onSelect.emit(event);
   }
 
   public onSelectionOption(event: any): void {
-    console.log(event);
+    this.onSelect.emit(event as T);
   }
 
   getHighlightedOption(option: IFiltereableOptionMatSelect): string {
