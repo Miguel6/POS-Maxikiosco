@@ -1,4 +1,4 @@
-import {AfterViewInit, Component, Input, OnInit} from '@angular/core';
+import {AfterViewInit, Component, Input, OnChanges, OnInit, SimpleChanges} from '@angular/core';
 import {FormControl} from '@angular/forms';
 import {debounceTime, distinctUntilChanged, finalize, switchMap, tap} from 'rxjs';
 import {IFiltereableOptionMatSelect} from '../../models/filtereable-option-mat-select';
@@ -9,9 +9,7 @@ import {SearchProductProxyService} from '../../../features/proxies/search-produc
   templateUrl: './search-input.component.html',
   styleUrls: ['./search-input.component.scss']
 })
-export class SearchInputComponent implements OnInit, AfterViewInit {
-  private readonly minLengthTerm = 3;
-
+export class SearchInputComponent implements OnChanges, OnInit, AfterViewInit {
   myControl = new FormControl('');
   filteredOptions: IFiltereableOptionMatSelect[];
 
@@ -34,6 +32,12 @@ export class SearchInputComponent implements OnInit, AfterViewInit {
 
   }
 
+  ngOnChanges(changes: SimpleChanges) {
+    if (changes.options.currentValue) {
+      this.filteredOptions = this.options;
+    }
+  }
+
   ngAfterViewInit(): void {
     this.myControl
       .valueChanges
@@ -53,18 +57,12 @@ export class SearchInputComponent implements OnInit, AfterViewInit {
         )
       ).subscribe(result => {
       this.filteredOptions = result;
-      console.log('result');
-      console.log(result);
     });
   }
 
-  private _filter(value: string): IFiltereableOptionMatSelect[] {
-    const filterValue = value.toLowerCase();
-    if (!value) {
-      return this.options;
-    }
-
-    return this.options?.filter(option => option.getTextToFilter().toLowerCase().includes(filterValue));
+  public onFocus(event: any) {
+    console.log(event);
+    console.log(this.options);
   }
 
   public onClickSelect(event: any) {
@@ -74,7 +72,7 @@ export class SearchInputComponent implements OnInit, AfterViewInit {
   public onSelectionOption(event: any): void {
     console.log(event);
   }
-  
+
   getHighlightedOption(option: IFiltereableOptionMatSelect): string {
     const searchText = this.myControl.value?.toLowerCase() ?? '';
     const regex = new RegExp(searchText, 'gi');

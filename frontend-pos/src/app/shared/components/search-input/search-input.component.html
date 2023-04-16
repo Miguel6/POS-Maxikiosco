@@ -8,6 +8,7 @@
            placeholder="{{placeholder}}"
            aria-label="Number"
            matInput
+           (focus)="onFocus($event)"
            [formControl]="myControl"
            [matAutocomplete]="auto"
            [(ngModel)]="value">
