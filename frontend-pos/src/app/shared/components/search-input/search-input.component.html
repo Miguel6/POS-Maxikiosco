@@ -2,7 +2,8 @@
   <mat-form-field class="point-of-sales-form-field disable-ripple">
     <mat-label *ngIf="label">{{label}}</mat-label>
     <span matPrefix *ngIf="prefixIcon" class="{{prefixMaterialIconStyle}}">{{prefixIcon}}</span>
-    <button matSuffix mat-icon-button *ngIf="showClear" class="material-icons-outlined" (click)="value=''">close
+<!--    <button matSuffix mat-icon-button *ngIf="showClear" class="material-icons-outlined" (click)="value=''">close-->
+    <button matSuffix mat-icon-button *ngIf="showClear" class="material-icons-outlined" (click)="test()">close
     </button>
     <input type="text"
            placeholder="{{placeholder}}"
@@ -12,9 +13,15 @@
            [matAutocomplete]="auto"
            [(ngModel)]="value">
     <mat-autocomplete #auto="matAutocomplete" (click)="onClickSelect($event)">
-      <mat-option *ngFor="let option of filteredOptions | async" (onSelectionChange)="onSelectionOption(option)">
-        <pos-search-input-option [value]="option" [searchText]="myControl.value" [innerHTML]="getHighlightedOption(option)"></pos-search-input-option>
-      </mat-option>
+      <mat-option *ngIf="isLoading">{{'MISCELLANEOUS.SEARCHING'| translate}}</mat-option>
+      <mat-option *ngIf="!isLoading && filteredOptions?.length == 0"
+                  disabled>{{'MISCELLANEOUS.NOT-FOUND'| translate}}</mat-option>
+      <ng-container *ngIf="!isLoading && filteredOptions">
+        <mat-option *ngFor="let option of filteredOptions" (onSelectionChange)="onSelectionOption(option)">
+          <pos-search-input-option [value]="option" [searchText]="myControl.value"
+                                   [innerHTML]="getHighlightedOption(option)"></pos-search-input-option>
+        </mat-option>
+      </ng-container>
     </mat-autocomplete>
   </mat-form-field>
 </form>

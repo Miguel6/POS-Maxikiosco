@@ -1,18 +1,20 @@
 import {Injectable} from '@angular/core';
 import {Environment} from '../../../../environments/environment';
 import {HttpService} from '../../../shared/services/http.service';
-import {Observable, of, tap} from 'rxjs';
+import {map, Observable} from 'rxjs';
 import {HttpParams} from '@angular/common/http';
-import {ProductSearch} from '../models/product-search';
+import {ProductSearch, ProductSearchAdapter} from '../models/product-search';
+import {SearchProducts} from '../models/search-products';
 
 @Injectable({
   providedIn: 'root'
 })
-export class SearchProductsService {
+export class SearchProductsService implements SearchProducts {
 
   private readonly BaseURL = Environment.searchProductsUrl;
 
-  constructor(private httpService: HttpService) {
+  constructor(private httpService: HttpService,
+              private productSearchAdapter: ProductSearchAdapter) {
   }
 
   // Todo: Add a ProxyPattern as a cache to avoid calling the backend constantly
@@ -20,7 +22,7 @@ export class SearchProductsService {
     const httpParams = new HttpParams()
       .set('description', description);
 
-    return this.httpService.doTypedGet<ProductSearch[]>(`${this.BaseURL}/getByDescription`, httpParams);
+    return this.httpService.doTypedGet<ProductSearch[]>(`${this.BaseURL}/getByDescription`, httpParams).pipe(map(result => result.map(r => this.productSearchAdapter.adapt(r))));
   }
 }
 

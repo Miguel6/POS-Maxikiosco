@@ -3,8 +3,8 @@ import {Injectable} from '@angular/core';
 import {Adapter} from '../../../shared/models/adapter';
 
 @Injectable()
-export class ProductSearchAdapter implements Adapter<IProductSearch> {
-  public adapt(toAdapt: any): IProductSearch {
+export class ProductSearchAdapter implements Adapter<ProductSearch> {
+  public adapt(toAdapt: any): ProductSearch {
 
     return new ProductSearch({
       id: toAdapt.id,

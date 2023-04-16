@@ -31,5 +31,9 @@
   "BASKET": {
     "SEARCH-PRODUCT-BAR-LABEL": "Buscar Producto",
     "SEARCH-PRODUCT-BAR-PLACEHOLDER": "Ingrese una descripción o Código de barras..."
+  },
+  "MISCELLANEOUS": {
+    "SEARCHING": "Buscando ...",
+    "NOT-FOUND": "No encontrado"
   }
 }

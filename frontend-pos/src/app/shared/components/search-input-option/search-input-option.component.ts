@@ -15,10 +15,6 @@ export class SearchInputOptionComponent {
   }
 
   public getText(): string {
-    if (!this.searchText) {
-      return this.value.getTextToShow();
-    }
-
-    return this.value.getTextToShow().replace(new RegExp(this.searchText, 'gi'), '<b>$&</b>')
+    return this.value.getTextToShow();
   }
 }

@@ -1,8 +1,8 @@
 import {AfterViewInit, Component, Input, OnInit} from '@angular/core';
 import {FormControl} from '@angular/forms';
-import {map, Observable, startWith} from 'rxjs';
-import {SearchProductsService} from '../../../features/basket/services/search-products.service';
+import {debounceTime, distinctUntilChanged, finalize, switchMap, tap} from 'rxjs';
 import {IFiltereableOptionMatSelect} from '../../models/filtereable-option-mat-select';
+import {SearchProductProxyService} from '../../../features/proxies/search-product-proxy.service';
 
 @Component({
   selector: 'pos-search-input',
@@ -10,8 +10,10 @@ import {IFiltereableOptionMatSelect} from '../../models/filtereable-option-mat-s
   styleUrls: ['./search-input.component.scss']
 })
 export class SearchInputComponent implements OnInit, AfterViewInit {
+  private readonly minLengthTerm = 3;
+
   myControl = new FormControl('');
-  filteredOptions: Observable<IFiltereableOptionMatSelect[]>;
+  filteredOptions: IFiltereableOptionMatSelect[];
 
   @Input() label = ''
   @Input() placeholder = ''
@@ -21,8 +23,10 @@ export class SearchInputComponent implements OnInit, AfterViewInit {
   @Input() options: IFiltereableOptionMatSelect[];
 
   public value = '';
+  public isLoading = false;
+  public errorMsg = '';
 
-  constructor(private _searchProductsService: SearchProductsService) {
+  constructor(private searchProductProxyService: SearchProductProxyService) {
 
   }
 
@@ -31,12 +35,27 @@ export class SearchInputComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit(): void {
-    this.filteredOptions = this.myControl
+    this.myControl
       .valueChanges
       .pipe(
-        startWith(''),
-        map(value => this._filter(value || '')),
-      );
+        distinctUntilChanged(),
+        debounceTime(300),
+        tap(() => {
+          this.errorMsg = '';
+          this.isLoading = true;
+        }),
+        switchMap(value => this.searchProductProxyService.getByDescription(value)
+          .pipe(
+            finalize(() => {
+              this.isLoading = false
+            }),
+          )
+        )
+      ).subscribe(result => {
+      this.filteredOptions = result;
+      console.log('result');
+      console.log(result);
+    });
   }
 
   private _filter(value: string): IFiltereableOptionMatSelect[] {
@@ -56,9 +75,15 @@ export class SearchInputComponent implements OnInit, AfterViewInit {
     console.log(event);
   }
 
+  test() {
+    console.log(this.options);
+  }
+
   getHighlightedOption(option: IFiltereableOptionMatSelect): string {
-    const searchText = this.myControl.value.toLowerCase();
+    const searchText = this.myControl.value?.toLowerCase() ?? '';
     const regex = new RegExp(searchText, 'gi');
+    // const regex = new RegExp(`${searchText.split("").map((c) => `${c}[\\w\\W]*?`).join("")}`, "i");
+
     const highlighted = option.getTextToShow().replace(regex, `<span class="highlighted-coincident-text-mat-option">$&</span>`);
 
     return highlighted;
