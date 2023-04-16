@@ -2,8 +2,7 @@
   <mat-form-field class="point-of-sales-form-field disable-ripple">
     <mat-label *ngIf="label">{{label}}</mat-label>
     <span matPrefix *ngIf="prefixIcon" class="{{prefixMaterialIconStyle}}">{{prefixIcon}}</span>
-<!--    <button matSuffix mat-icon-button *ngIf="showClear" class="material-icons-outlined" (click)="value=''">close-->
-    <button matSuffix mat-icon-button *ngIf="showClear" class="material-icons-outlined" (click)="test()">close
+    <button matSuffix mat-icon-button *ngIf="showClear" class="material-icons-outlined" (click)="value=''">close
     </button>
     <input type="text"
            placeholder="{{placeholder}}"

@@ -74,11 +74,7 @@ export class SearchInputComponent implements OnInit, AfterViewInit {
   public onSelectionOption(event: any): void {
     console.log(event);
   }
-
-  test() {
-    console.log(this.options);
-  }
-
+  
   getHighlightedOption(option: IFiltereableOptionMatSelect): string {
     const searchText = this.myControl.value?.toLowerCase() ?? '';
     const regex = new RegExp(searchText, 'gi');
