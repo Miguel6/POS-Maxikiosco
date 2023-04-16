@@ -15,6 +15,6 @@ export class SearchInputOptionComponent {
   }
 
   public getText(): string {
-    return this.value.getTextToShow();
+    return this.value.getLeftTextToShow();
   }
 }

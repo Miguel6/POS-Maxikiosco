@@ -1,1 +1,4 @@
-<span>{{getText()}}</span>
+<span class="lane">
+  <span [innerHTML]="value.getTextToFilter() | highlight: searchText"></span>
+  <span>{{value.getRightTextToShow()}}</span>
+</span>

@@ -75,15 +75,7 @@ export class SearchInputComponent<T> implements OnChanges, OnInit, AfterViewInit
 
   public onSelectionOption(event: any): void {
     this.onSelect.emit(event as T);
-  }
-
-  getHighlightedOption(option: IFiltereableOptionMatSelect): string {
-    const searchText = this.myControl.value?.toLowerCase() ?? '';
-    const regex = new RegExp(searchText, 'gi');
-    // const regex = new RegExp(`${searchText.split("").map((c) => `${c}[\\w\\W]*?`).join("")}`, "i");
-
-    const highlighted = option.getTextToShow().replace(regex, `<span class="highlighted-coincident-text-mat-option">$&</span>`);
-
-    return highlighted;
+    console.log(this.filteredOptions);
+    console.log(this.options);
   }
 }

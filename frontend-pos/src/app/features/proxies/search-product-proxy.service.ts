@@ -15,6 +15,9 @@ export class SearchProductProxyService implements SearchProducts {
   }
 
   public getByDescription(description: string): Observable<ProductSearch[]> {
+    if (!description) {
+      description = '';
+    }
     let recoveredFromCache = this.cacheManagerService.getByKey(description);
     if (recoveredFromCache) {
       return of(recoveredFromCache);

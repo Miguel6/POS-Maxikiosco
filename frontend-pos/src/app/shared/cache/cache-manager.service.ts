@@ -25,7 +25,9 @@ export class CacheManagerService<K, V> {
   }
 
   public addElement(key: K, value: V): void {
-    this.cache.set(key, {data: value, timestamp: this.getCurrentTime()})
+    if (key) {
+      this.cache.set(key, {data: value, timestamp: this.getCurrentTime()})
+    }
   }
 
   private getCurrentTime(): number {

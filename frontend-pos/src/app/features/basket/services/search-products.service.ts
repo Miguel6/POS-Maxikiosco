@@ -17,7 +17,6 @@ export class SearchProductsService implements SearchProducts {
               private productSearchAdapter: ProductSearchAdapter) {
   }
 
-  // Todo: Add a ProxyPattern as a cache to avoid calling the backend constantly
   public getByDescription(description: string): Observable<ProductSearch[]> {
     const httpParams = new HttpParams()
       .set('description', description);

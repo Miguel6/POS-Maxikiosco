@@ -25,6 +25,7 @@ import {CategoryListComponent} from './components/category-list/category-list.co
 import {SearchInputComponent} from './components/search-input/search-input.component';
 import {SearchInputOptionComponent} from './components/search-input-option/search-input-option.component';
 import {ProductSearchAdapter} from '../features/basket/models/product-search';
+import {HighlightPipe} from './pipes/highlight-pipe';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import {ProductSearchAdapter} from '../features/basket/models/product-search';
     ItemCardComponent,
     CategoryListComponent,
     SearchInputComponent,
-    SearchInputOptionComponent
+    SearchInputOptionComponent,
+    HighlightPipe
   ],
   exports: [
     MaterialModule,

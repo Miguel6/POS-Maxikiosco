@@ -18,8 +18,7 @@
                   disabled>{{'MISCELLANEOUS.NOT-FOUND'| translate}}</mat-option>
       <ng-container *ngIf="!isLoading && filteredOptions">
         <mat-option *ngFor="let option of filteredOptions" (onSelectionChange)="onSelectionOption(option)">
-          <pos-search-input-option [value]="option" [searchText]="myControl.value"
-                                   [innerHTML]="getHighlightedOption(option)"></pos-search-input-option>
+          <pos-search-input-option [value]="option" [searchText]="myControl.value"></pos-search-input-option>
         </mat-option>
       </ng-container>
     </mat-autocomplete>

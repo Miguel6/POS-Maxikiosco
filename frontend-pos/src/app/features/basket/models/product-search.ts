@@ -33,10 +33,14 @@ export class ProductSearch implements IFiltereableOptionMatSelect, IProductSearc
   }
 
   public getTextToFilter(): string {
-    return this.getTextToShow();
+    return this.getLeftTextToShow();
   }
 
-  public getTextToShow(): string {
+  public getLeftTextToShow(): string {
     return `${this.id} - ${this.description}`;
+  }
+
+  getRightTextToShow(): string {
+    return this.price.toString();
   }
 }

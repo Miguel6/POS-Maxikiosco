@@ -5,7 +5,7 @@ mat-form-field {
   min-height: 55px;
 
   &.mat-focused {
-    .mat-mdc-text-field-wrapper .mat-mdc-form-field-flex{
+    .mat-mdc-text-field-wrapper .mat-mdc-form-field-flex {
       .mat-mdc-form-field-icon-prefix {
         color: $green-medium
       }
@@ -107,4 +107,37 @@ mat-form-field {
       background-color: red;
     }
   }
+}
+
+
+//overlay
+.cdk-overlay-container {
+  mat-option {
+    .mdc-list-item__primary-text {
+      width: 100%;
+
+      pos-search-input-option {
+        width: 100%;
+        display: flex;
+
+        .lane {
+          display: flex;
+          width: 100%;
+          justify-content: space-between;
+
+          span {
+            &:last-child {
+              font-weight: bold;
+              color: $green-medium;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+::ng-deep span.highlighted-coincident-text-mat-option {
+  color: $green-medium;
+  font-weight: bold;
 }
