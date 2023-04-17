@@ -124,6 +124,20 @@ mat-form-field {
           display: flex;
           width: 100%;
           justify-content: space-between;
+          font-variant-numeric: tabular-nums;
+
+          span.left-text {
+            color: $gray-lighter;
+
+            &:after {
+              content: "-";
+              margin: 0 0.3rem;
+            }
+          }
+
+          span.middle-text {
+            flex: 2;
+          }
 
           span {
             &:last-child {

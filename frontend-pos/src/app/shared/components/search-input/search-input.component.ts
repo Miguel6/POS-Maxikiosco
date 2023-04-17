@@ -63,19 +63,11 @@ export class SearchInputComponent<T> implements OnChanges, OnInit, AfterViewInit
     });
   }
 
-  public onFocus(event: any) {
-    console.log(event);
-  }
-
   public onClickSelect(event: any) {
-    console.log('onClickSelect');
-    console.log(event);
     this.onSelect.emit(event);
   }
 
   public onSelectionOption(event: any): void {
     this.onSelect.emit(event as T);
-    console.log(this.filteredOptions);
-    console.log(this.options);
   }
 }

@@ -1,4 +1,5 @@
 <span class="lane">
-  <span [innerHTML]="value.getTextToFilter() | highlight: searchText"></span>
-  <span>{{value.getRightTextToShow()}}</span>
+  <span *ngIf="value.getLeftTextToShow" class="left-text">{{value.getLeftTextToShow()}}</span>
+  <span [innerHTML]="value.getTextToFilter() | highlight: searchText" class="middle-text"></span>
+  <span class="right-text">{{value.getRightTextToShow() | currency:'$': 'symbol-narrow':'1.2-2' }}</span>
 </span>

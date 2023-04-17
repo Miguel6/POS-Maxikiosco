@@ -1,4 +1,4 @@
-import {NgModule} from '@angular/core';
+import {LOCALE_ID, NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {LateralMenuBarComponent} from './components/lateral-menu-bar/lateral-menu-bar.component';
 import {MaterialModule} from './material/material.module';
@@ -77,6 +77,8 @@ import {HighlightPipe} from './pipes/highlight-pipe';
     TranslateService,
     SnackBarBuilder,
     {provide: MAT_SNACK_BAR_DATA, useValue: {}},
+    {provide: LOCALE_ID, useValue: 'en-EN'},
+
     BreadcrumbService,
     Base64Converter,
     ProductSearchAdapter
