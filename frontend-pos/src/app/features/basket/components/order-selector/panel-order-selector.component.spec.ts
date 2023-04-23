@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { OrderSelectorComponent } from './order-selector.component';
+import { PanelOrderSelectorComponent } from './panel-order-selector.component';
 
 describe('OrderSelectorComponent', () => {
-  let component: OrderSelectorComponent;
-  let fixture: ComponentFixture<OrderSelectorComponent>;
+  let component: PanelOrderSelectorComponent;
+  let fixture: ComponentFixture<PanelOrderSelectorComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ OrderSelectorComponent ]
+      declarations: [ PanelOrderSelectorComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(OrderSelectorComponent);
+    fixture = TestBed.createComponent(PanelOrderSelectorComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

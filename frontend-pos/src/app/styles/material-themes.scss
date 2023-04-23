@@ -71,7 +71,7 @@ $my-primary: mat.define-palette($palette-green);
 $my-accent: mat.define-palette($palette-blue);
 
 // The "warn" palette is optional and defaults to red if not specified.
-$my-warn: mat.define-palette(mat.$green-palette);
+$my-warn: mat.define-palette(mat.$red-palette);
 
 $my-theme: mat.define-light-theme((
   color: (

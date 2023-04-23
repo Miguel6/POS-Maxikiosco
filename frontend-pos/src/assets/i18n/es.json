@@ -22,15 +22,20 @@
     "SIGN-OUT": "Cerrar Sesión"
   },
   "ITEM-CARD": {
-    "CATEGORY":"Cat.",
-    "CODE":"Cod."
+    "CATEGORY": "Cat.",
+    "CODE": "Cod."
   },
   "PRODUCTS": {
     "CATEGORY-ALL-DESCRIPTION": "TODAS"
   },
   "BASKET": {
     "SEARCH-PRODUCT-BAR-LABEL": "Buscar Producto",
-    "SEARCH-PRODUCT-BAR-PLACEHOLDER": "Ingrese una descripción o Código de barras..."
+    "SEARCH-PRODUCT-BAR-PLACEHOLDER": "Ingrese una descripción o Código de barras...",
+    "ORDER-SELECTOR": {
+      "CURRENT-ORDER": "Orden actual",
+      "FINISH-ORDER": "Finalizar orden",
+      "SUBTOTAL": "Subtotal"
+    }
   },
   "MISCELLANEOUS": {
     "SEARCHING": "Buscando ...",

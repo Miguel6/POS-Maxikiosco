@@ -1,8 +1,7 @@
-$grid-gap: 0.5rem;
+$grid-gap: 5px;
 
 
 div.basket-container {
-  margin: $grid-gap;
   display: grid;
   grid-template-columns: 5fr 2fr 3fr;
   grid-template-rows: 0.7fr 0.7fr 10fr;

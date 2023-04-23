@@ -30,7 +30,12 @@
   },
   "BASKET": {
     "SEARCH-PRODUCT-BAR-LABEL": "Search product",
-    "SEARCH-PRODUCT-BAR-PLACEHOLDER": "Enter a description or barcode"
+    "SEARCH-PRODUCT-BAR-PLACEHOLDER": "Enter a description or barcode",
+    "ORDER-SELECTOR": {
+      "CURRENT-ORDER": "Current order",
+      "FINISH-ORDER": "Finish order",
+      "SUBTOTAL": "Subtotal"
+    }
   },
   "MISCELLANEOUS": {
     "SEARCHING": "Searching ...",

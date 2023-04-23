@@ -1,0 +1,18 @@
+<span class="panel-order-selector-container">
+  <span class="current-order-container">
+    <span class="current-order-text">{{'BASKET.ORDER-SELECTOR.CURRENT-ORDER' | translate}}</span>
+    <span class="current-order-indicator">{{currentOrder + 1}}</span>
+    <button class="delete-order" color="warn" mat-flat-button>
+      <mat-icon class="material-icons-outlined">delete</mat-icon>
+    </button>
+  </span>
+  <span class="order-selector-container">Buttons here</span>
+  <span class="items-container"> ITEMS HERE</span>
+  <span class="subtotal-container">
+    <span class="subtotal-text">{{'BASKET.ORDER-SELECTOR.SUBTOTAL'| translate}}</span>
+    <span class="subtotal-amount">{{orders[currentOrder].total| currency:'$': 'symbol-narrow':'1.2-2': 'es-Ar' }}</span>
+  </span>
+  <button class="finish-order white-font" color="primary"
+          mat-flat-button>{{'BASKET.ORDER-SELECTOR.FINISH-ORDER' | translate}}</button>
+</span>
+
