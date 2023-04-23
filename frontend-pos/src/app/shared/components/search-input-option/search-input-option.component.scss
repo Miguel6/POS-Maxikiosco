@@ -1,0 +1,10 @@
+span {
+  span.right-text {
+    font-variant-numeric: tabular-nums;
+    font-family: sans-serif;
+
+    &::first-letter {
+      padding-right: 0.3em;
+    }
+  }
+}

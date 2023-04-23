@@ -22,10 +22,18 @@
     "SIGN-OUT": "Log out"
   },
   "ITEM-CARD": {
-    "CATEGORY":"Cat.",
-    "CODE":"Cod."
+    "CATEGORY": "Cat.",
+    "CODE": "Cod."
   },
   "PRODUCTS": {
     "CATEGORY-ALL-DESCRIPTION": "ALL"
+  },
+  "BASKET": {
+    "SEARCH-PRODUCT-BAR-LABEL": "Search product",
+    "SEARCH-PRODUCT-BAR-PLACEHOLDER": "Enter a description or barcode"
+  },
+  "MISCELLANEOUS": {
+    "SEARCHING": "Searching ...",
+    "NOT-FOUND": "Not found"
   }
 }

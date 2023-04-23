@@ -1,9 +1,9 @@
-import {NgModule} from '@angular/core';
+import {LOCALE_ID, NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {LateralMenuBarComponent} from './components/lateral-menu-bar/lateral-menu-bar.component';
 import {MaterialModule} from './material/material.module';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {RouterLink} from '@angular/router';
 import {ItemMenuBarComponent} from './components/lateral-menu-bar/item-menu-bar/item-menu-bar.component';
 import {PathHelper} from './providers/path-helper';
@@ -18,10 +18,14 @@ import {SnackBarBuilder} from './builders/snack-bar-builder';
 import {MenuBarComponent} from './components/menu-bar/menu-bar.component';
 import {BreadcrumbsComponent} from './components/breadcrumbs/breadcrumbs.component';
 import {BreadcrumbService} from './services/breadcrumb.service';
-import { ItemCardComponent } from './components/item-card/item-card.component';
+import {ItemCardComponent} from './components/item-card/item-card.component';
 import {Base64Converter} from './providers/base64-converter';
-import { HorizontalScrollDirective } from './directives/horizontal-scroll.directive';
+import {HorizontalScrollDirective} from './directives/horizontal-scroll.directive';
 import {CategoryListComponent} from './components/category-list/category-list.component';
+import {SearchInputComponent} from './components/search-input/search-input.component';
+import {SearchInputOptionComponent} from './components/search-input-option/search-input-option.component';
+import {ProductSearchAdapter} from '../features/basket/models/product-search';
+import {HighlightPipe} from './pipes/highlight-pipe';
 
 @NgModule({
   declarations: [
@@ -32,7 +36,10 @@ import {CategoryListComponent} from './components/category-list/category-list.co
     BreadcrumbsComponent,
     HorizontalScrollDirective,
     ItemCardComponent,
-    CategoryListComponent
+    CategoryListComponent,
+    SearchInputComponent,
+    SearchInputOptionComponent,
+    HighlightPipe
   ],
   exports: [
     MaterialModule,
@@ -41,7 +48,9 @@ import {CategoryListComponent} from './components/category-list/category-list.co
     BreadcrumbsComponent,
     ItemCardComponent,
     CategoryListComponent,
-    HorizontalScrollDirective
+    SearchInputComponent,
+    HorizontalScrollDirective,
+    SearchInputOptionComponent
   ],
   imports: [
     HttpClientModule,
@@ -56,7 +65,8 @@ import {CategoryListComponent} from './components/category-list/category-list.co
         useClass: PosTranslateLoader,
         deps: [HttpClient],
       },
-    })
+    }),
+    ReactiveFormsModule
   ],
   providers: [
     PathHelper,
@@ -67,8 +77,12 @@ import {CategoryListComponent} from './components/category-list/category-list.co
     TranslateService,
     SnackBarBuilder,
     {provide: MAT_SNACK_BAR_DATA, useValue: {}},
+    {provide: LOCALE_ID, useValue: 'en-EN'},
+
     BreadcrumbService,
-    Base64Converter
+    Base64Converter,
+    ProductSearchAdapter
   ]
 })
-export class SharedModule { }
+export class SharedModule {
+}
