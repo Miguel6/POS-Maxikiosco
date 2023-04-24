@@ -1,56 +1,71 @@
+@import "src/app/styles/colors";
+
 $grid-gap: 5px;
 
-
 div.basket-container {
-  display: grid;
-  grid-template-columns: 5fr 2fr 3fr;
-  grid-template-rows: 0.7fr 0.7fr 10fr;
-  grid-template-areas:
-    'search-input action-buttons order-selector'
-    'category-list category-list order-selector'
-    'products-wrapper products-wrapper order-selector';
-  height: 100%;
-  gap: $grid-gap;
-  align-items: center;
-  justify-content: center;
+  display: flex;
+  flex-direction: row;
+  height: 92vh; //Todo: Revisar esto. No me convence tener que usar esta medida y no un height 100%
+  gap: 10px;
 
-  pos-search-input {
-    grid-area: search-input;
-    height: 100%;
-  }
-
-  pos-category-list {
-    grid-area: category-list;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    display: block;
-    margin: 5px 0;
-  }
-
-  span.action-buttons {
-    grid-area: action-buttons;
-    background-color: white;
-    height: 100%;
-    width: 100%;
-  }
-
-  pos-order-selector {
-    grid-area: order-selector;
-    background-color: white;
-    height: 100%;
-    width: 100%;
-  }
-
-  span.products-wrapper {
-    grid-area: products-wrapper;
-    padding: 0 10px;
+  span.left-container {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 10px;
-    overflow-y: auto;
+    width: 70%;
     height: 100%;
+    grid-template-columns: 5fr 2fr;
+    grid-template-rows: 0.25fr 0.75fr 10fr;
+    grid-template-areas:
+  'search-input action-buttons'
+  'category-list category-list'
+  'products-wrapper products-wrapper';
+    gap: $grid-gap;
+    align-items: center;
+    justify-content: center;
+
+    pos-search-input {
+      grid-area: search-input;
+      height: 100%;
+    }
+
+    span.action-buttons {
+      grid-area: action-buttons;
+      background-color: $white;
+      height: 100%;
+      width: 100%;
+    }
+
+    pos-category-list {
+      grid-area: category-list;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      display: block;
+      margin: 5px 0;
+    }
+
+    span.products-wrapper {
+      grid-area: products-wrapper;
+      padding: 0 10px;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 10px;
+      overflow-y: auto;
+      height: 100%;
+    }
+  }
+
+  span.right-container {
+    width: 30%;
+    overflow-y: auto;
+    background-color: $white;
+    padding: 0.5rem;
+
+    pos-order-selector {
+      display: flex;
+      width: 100%;
+      height: 100%;
+    }
   }
 }

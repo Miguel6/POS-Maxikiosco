@@ -10,9 +10,11 @@
   <span class="items-container"> ITEMS HERE</span>
   <span class="subtotal-container">
     <span class="subtotal-text">{{'BASKET.ORDER-SELECTOR.SUBTOTAL'| translate}}</span>
-    <span class="subtotal-amount">{{orders[currentOrder].total| currency:'$': 'symbol-narrow':'1.2-2': 'es-Ar' }}</span>
+    <span
+      class="subtotal-amount">{{orders[currentOrder].total| currency:'$': 'symbol-narrow':'1.2-2': 'es-Ar' }}</span>
   </span>
-  <button class="finish-order white-font" color="primary"
-          mat-flat-button>{{'BASKET.ORDER-SELECTOR.FINISH-ORDER' | translate}}</button>
+  <span class="finish-order-wrapper">
+    <button class="finish-order white-font" color="primary"
+            mat-flat-button>{{'BASKET.ORDER-SELECTOR.FINISH-ORDER' | translate}}</button>
+  </span>
 </span>
-
