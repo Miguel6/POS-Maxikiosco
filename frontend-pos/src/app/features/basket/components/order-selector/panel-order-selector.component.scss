@@ -1,10 +1,12 @@
+@import "src/app/styles/colors";
+
 span.panel-order-selector-container {
   display: flex;
   flex-direction: column;
   width: 100%;
 
   & * {
-    //flex-grow: 1;
+    font-size: 1.25rem;
   }
 
   span.current-order-container {
@@ -13,13 +15,15 @@ span.panel-order-selector-container {
     align-items: center;
 
     span.current-order-text {
+      margin-right: 0.5rem;
+
       &::after {
         content: ':';
       }
     }
 
     span.current-order-indicator {
-
+      color: $green-medium;
     }
 
     button.delete-order {
@@ -46,6 +50,9 @@ span.panel-order-selector-container {
   }
 
   span.subtotal-container {
+    margin: 10px 0;
+    display: flex;
+    justify-content: space-between;
 
     span.subtotal-text {
       &::after {
@@ -55,8 +62,12 @@ span.panel-order-selector-container {
   }
 
   span.finish-order-wrapper {
-    button.finish-order {
+    flex-grow: 0.05;
+    width: 100%;
 
+    button.finish-order {
+      width: 100%;
+      height: 100%;
     }
   }
 }

@@ -34,7 +34,8 @@
     "ORDER-SELECTOR": {
       "CURRENT-ORDER": "Orden actual",
       "FINISH-ORDER": "Finalizar orden",
-      "SUBTOTAL": "Subtotal"
+      "SUBTOTAL": "Subtotal",
+      "DELETE-ORDER": "Eliminar Orden"
     }
   },
   "MISCELLANEOUS": {

@@ -1,13 +1,15 @@
 <div class="basket-container">
   <span class="left-container">
-    <pos-search-input (onSelect)="onSelectOption($event)"
-                      [label]="'BASKET.SEARCH-PRODUCT-BAR-LABEL'|translate"
-                      [options]="options"
-                      [placeholder]="'BASKET.SEARCH-PRODUCT-BAR-PLACEHOLDER'|translate"
-                      [prefixIcon]="'search'"
-                      [prefixMaterialIconStyle]="'material-icons-outlined'">
-    </pos-search-input>
-    <span class="action-buttons rounded-corners"></span>
+    <span class="search-control-container">
+      <pos-search-input (onSelect)="onSelectOption($event)"
+                          [label]="'BASKET.SEARCH-PRODUCT-BAR-LABEL'|translate"
+                          [options]="options"
+                          [placeholder]="'BASKET.SEARCH-PRODUCT-BAR-PLACEHOLDER'|translate"
+                          [prefixIcon]="'search'"
+                          [prefixMaterialIconStyle]="'material-icons-outlined'">
+      </pos-search-input>
+      <span class="action-buttons rounded-corners"></span>
+    </span>
     <pos-category-list [categories]="categories" [showCategoryAll]="true"></pos-category-list>
     <span class="products-wrapper">
       <pos-item-card *ngFor="let item of items" [item]="item"></pos-item-card>

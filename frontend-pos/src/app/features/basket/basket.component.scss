@@ -9,42 +9,42 @@ div.basket-container {
   gap: 10px;
 
   span.left-container {
-    display: grid;
+    display: flex;
+    flex-direction: column;
     width: 70%;
     height: 100%;
-    grid-template-columns: 5fr 2fr;
-    grid-template-rows: 0.25fr 0.75fr 10fr;
-    grid-template-areas:
-  'search-input action-buttons'
-  'category-list category-list'
-  'products-wrapper products-wrapper';
-    gap: $grid-gap;
     align-items: center;
     justify-content: center;
 
-    pos-search-input {
-      grid-area: search-input;
-      height: 100%;
+    & * {
+      width: 100%;
     }
 
-    span.action-buttons {
-      grid-area: action-buttons;
-      background-color: $white;
-      height: 100%;
+    span.search-control-container {
+      display: flex;
+      flex-direction: row;
       width: 100%;
+
+      pos-search-input {
+        height: 100%;
+        width: 80%;
+      }
+
+      span.action-buttons {
+        background-color: $white;
+        height: 100%;
+        width: 20%;
+      }
     }
 
     pos-category-list {
-      grid-area: category-list;
-      width: 100%;
-      height: 100%;
       overflow: auto;
       display: block;
       margin: 5px 0;
+      min-height: 3rem;
     }
 
     span.products-wrapper {
-      grid-area: products-wrapper;
       padding: 0 10px;
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
