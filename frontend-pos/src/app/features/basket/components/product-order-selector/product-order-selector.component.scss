@@ -1,0 +1,131 @@
+@import "src/app/styles/colors";
+@import "src/app/styles/fonts";
+
+div.item-card-container {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  grid-template-rows: repeat(3, 1fr);
+  grid-template-areas: "image title"
+  "image barcode"
+  "image price-quantity";
+  flex-direction: column;
+  background-color: $white;
+  border-radius: 10px;
+  box-shadow: 1px 1px 5px 0 $gray-lighter;
+  padding: 10px;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+
+  & > span {
+    flex: 0 1 auto;
+  }
+
+  .image-container {
+    flex: 1 1 auto;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    grid-area: image;
+
+    & > img, & > mat-icon {
+      max-height: 7em;
+    }
+
+    &:has(.empty-image) {
+      background-color: $gray-lightest;
+    }
+
+    img {
+      object-fit: scale-down;
+      height: 100%;
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    mat-icon.empty-image {
+      color: $gray-medium;
+      font-size: 2.5em;
+      height: auto;
+      width: auto;
+    }
+  }
+
+  .title-container {
+    width: 100%;
+    height: 20px;
+    min-height: 20px;
+    overflow: hidden;
+    grid-area: title;
+
+    .title-infinite-cycling {
+      &:hover {
+        animation: infinite-text 10s linear infinite;
+        text-overflow: unset;
+      }
+
+      @keyframes infinite-text {
+        0% {
+          transform: translateX(0);
+        }
+        75%, 100% {
+          transform: translateX(calc(calc(var(--width-title) * 1px) - 100%));
+        }
+      }
+    }
+
+    .title {
+      font-weight: bold;
+      width: auto;
+      font-size: $font-size-16-points;
+      text-overflow: ellipsis;
+      display: inline-block;
+      overflow-x: hidden;
+      white-space: nowrap;
+    }
+  }
+
+
+  .category {
+    font-size: $font-size-14-points;
+    color: $gray-lighter;
+  }
+
+  .barcode {
+    font-size: $font-size-14-points;
+    color: $gray-lighter;
+    grid-area: barcode;
+  }
+
+  .price-quantity {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    grid-area: price-quantity;
+
+    .quantity {
+      &::before {
+        content: "/";
+      }
+
+      font-weight: bold;
+      font-size: $font-size-14-points;
+      color: $gray-lighter;
+    }
+
+    .price {
+
+      color: $green-medium;
+      font-weight: bold;
+      font-size: $font-size-16-points;
+    }
+  }
+
+}
+
+.test {
+  background-color: blue;
+}

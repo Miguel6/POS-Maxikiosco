@@ -1,0 +1,15 @@
+<div class="item-card-container">
+  <span class="image-container">
+    <img *ngIf="imagePath" mat-card-image [src]="imagePath">
+        <mat-icon *ngIf="!imagePath" class="material-icons-outlined empty-image">image</mat-icon>
+  </span>
+  <span #titleContainer class="title-container" *ngIf="product?.description">
+    <span class="title" [ngClass]="{'title-infinite-cycling': textOverflows()}">{{product.description}}</span>
+  </span>
+  <!--  <span class="category" *ngIf="product?.category">{{'ITEM-CARD.CATEGORY' | translate}}: {{product.category}}</span>-->
+  <span class="barcode" *ngIf="product?.barcode">{{'ITEM-CARD.CODE' | translate}}: {{product.barcode}}</span>
+  <span class="price-quantity">
+      <span class="price" *ngIf="product?.price">{{product.price}}</span>
+      <span class="quantity" *ngIf="product?.quantity">{{product.quantity}}</span>
+  </span>
+</div>

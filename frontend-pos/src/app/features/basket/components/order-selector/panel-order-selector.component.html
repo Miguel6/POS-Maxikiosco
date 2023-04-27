@@ -26,12 +26,18 @@
 
   <mat-divider class="regular-divider"></mat-divider>
 
-  <span class="items-container">ITEMS HERE</span>
+  <span class="products-container">
+    <pos-product-order-selector *ngFor="let product of orders[currentOrder].products"
+                                [product]="product"></pos-product-order-selector>
+  </span>
   <span class="subtotal-container">
     <span class="subtotal-text fw-700">{{'BASKET.ORDER-SELECTOR.SUBTOTAL'| translate}}</span>
     <span
       class="subtotal-amount">{{orders[currentOrder].total| currency:'$': 'symbol-narrow':'1.2-2': 'es-Ar' }}</span>
   </span>
+
+  <mat-divider class="regular-divider"></mat-divider>
+
   <span class="finish-order-wrapper">
     <button class="finish-order white-font fw-700" color="primary"
             mat-flat-button>{{'BASKET.ORDER-SELECTOR.FINISH-ORDER' | translate}}</button>

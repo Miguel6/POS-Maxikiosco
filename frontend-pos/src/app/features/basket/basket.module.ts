@@ -5,12 +5,14 @@ import {SharedModule} from '../../shared/shared.module';
 import {TranslateModule} from '@ngx-translate/core';
 import {PanelOrderSelectorComponent} from './components/order-selector/panel-order-selector.component';
 import {FormsModule} from '@angular/forms';
+import { ProductOrderSelectorComponent } from './components/product-order-selector/product-order-selector.component';
 
 
 @NgModule({
   declarations: [
     BasketComponent,
-    PanelOrderSelectorComponent
+    PanelOrderSelectorComponent,
+    ProductOrderSelectorComponent
   ],
   imports: [
     CommonModule,

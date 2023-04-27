@@ -4,12 +4,16 @@ import {HttpService} from '../../../shared/services/http.service';
 import {map, Observable} from 'rxjs';
 import {HttpParams} from '@angular/common/http';
 import {ProductSearch, ProductSearchAdapter} from '../models/product-search';
-import {SearchProducts} from '../models/search-products';
+
+
+export interface ISearchProductsService {
+  getByDescription(description: string): Observable<ProductSearch[]>;
+}
 
 @Injectable({
   providedIn: 'root'
 })
-export class SearchProductsService implements SearchProducts {
+export class SearchProductsService implements ISearchProductsService {
 
   private readonly BaseURL = Environment.searchProductsUrl;
 

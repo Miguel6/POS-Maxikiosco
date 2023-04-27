@@ -1,5 +1,6 @@
 import {Component} from '@angular/core';
 import {Order} from '../../models/order';
+import {ItemCardModel} from '../../../products/models/item-card-model';
 
 @Component({
   selector: 'pos-order-selector',
@@ -13,42 +14,19 @@ export class PanelOrderSelectorComponent {
   public orderIndexes: number[] = [];
 
   constructor() {
-    this.orders.push(
-      {total: 192873}
-    )
-    this.orders.push(
-      {total: 11111111}
-    )
-    this.orders.push(
-      {total: 2222222.32}
-    )
-    this.orders.push(
-      {total: 3333333.45}
-    )
-    this.orders.push(
-      {total: 4444444.56}
-    )
-    this.orders.push(
-      {total: 55555555.67}
-    )
-    this.orders.push(
-      {total: 6666666.78}
-    )
-    this.orders.push(
-      {total: 777777.89}
-    )
-    this.orders.push(
-      {total: 888888.90}
-    )
-    this.orders.push(
-      {total: 99999999.01}
-    )
-    this.orders.push(
-      {total: 111111.23}
-    )
-    this.orders.push(
-      {total: 22222222.34}
-    )
+    const product = new ItemCardModel();
+    product.id = 1;
+    product.image = null;
+    product.description = 'Soy un producto';
+    product.barcode = '123123123123';
+    product.price = 10.10;
+    product.category = 'drinks';
+    product.quantity = 1
+
+    const order = new Order();
+    order.products = [product, product, product, product, product, product, product, product, product, product, product, product];
+    this.orders.push(order);
+    this.orders.push(new Order());
 
     this.updateOrderIndexes();
   }

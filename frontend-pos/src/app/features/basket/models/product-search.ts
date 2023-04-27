@@ -15,20 +15,20 @@ export class ProductSearchAdapter implements Adapter<ProductSearch> {
   }
 }
 
-export interface IProductSearch {
+export interface IProduct {
   id?: number;
   description?: string;
   barcode?: string;
   price?: number;
 }
 
-export class ProductSearch implements IFiltereableOptionMatSelect, IProductSearch {
+export class ProductSearch implements IProduct, IFiltereableOptionMatSelect {
   public id: number;
   public description: string;
   public barcode: string;
   public price: number;
 
-  constructor(values: IProductSearch = {}) {
+  constructor(values: IProduct = {}) {
     Object.assign(this, values);
   }
 

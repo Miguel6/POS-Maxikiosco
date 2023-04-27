@@ -1,14 +1,13 @@
 import {Injectable} from '@angular/core';
-import {SearchProducts} from '../basket/models/search-products';
 import {Observable, of, tap} from 'rxjs';
 import {ProductSearch} from '../basket/models/product-search';
 import {CacheManagerService} from '../../shared/cache/cache-manager.service';
-import {SearchProductsService} from '../basket/services/search-products.service';
+import {ISearchProductsService, SearchProductsService} from '../basket/services/search-products.service';
 
 @Injectable({
   providedIn: 'root'
 })
-export class SearchProductProxyService implements SearchProducts {
+export class SearchProductProxyService implements ISearchProductsService {
 
   constructor(private cacheManagerService: CacheManagerService<string, ProductSearch[]>,
               private searchProductsService: SearchProductsService) {
