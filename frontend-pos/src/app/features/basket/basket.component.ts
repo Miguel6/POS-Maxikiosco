@@ -74,7 +74,7 @@ export class BasketComponent implements OnInit {
       category: 'drinks',
       quantity: 1
     }, {
-      id: 3,
+      id: 2,
       image: this.imageInBase64,
       description: 'Producto uno',
       barcode: '123123123123',
@@ -82,7 +82,7 @@ export class BasketComponent implements OnInit {
       category: 'drinks',
       quantity: 1
     }, {
-      id: 4,
+      id: 2,
       image: this.imageInBase64,
       description: 'Producto uno',
       barcode: '123123123123',
@@ -90,7 +90,7 @@ export class BasketComponent implements OnInit {
       category: 'drinks',
       quantity: 1
     }, {
-      id: 5,
+      id: 2,
       image: this.imageInBase64,
       description: 'Producto uno',
       barcode: '123123123123',
@@ -98,7 +98,7 @@ export class BasketComponent implements OnInit {
       category: 'drinks',
       quantity: 1
     }, {
-      id: 6,
+      id: 2,
       image: this.imageInBase64,
       description: 'Producto uno',
       barcode: '123123123123',
@@ -106,7 +106,7 @@ export class BasketComponent implements OnInit {
       category: 'drinks',
       quantity: 1
     }, {
-      id: 7,
+      id: 2,
       image: this.imageInBase64,
       description: 'Producto uno',
       barcode: '123123123123',
@@ -114,7 +114,7 @@ export class BasketComponent implements OnInit {
       category: 'drinks',
       quantity: 1
     }, {
-      id: 8,
+      id: 2,
       image: this.imageInBase64,
       description: 'Producto uno',
       barcode: '123123123123',
@@ -122,7 +122,7 @@ export class BasketComponent implements OnInit {
       category: 'drinks',
       quantity: 1
     }, {
-      id: 9,
+      id: 2,
       image: this.imageInBase64,
       description: 'Producto uno',
       barcode: '123123123123',
@@ -130,7 +130,239 @@ export class BasketComponent implements OnInit {
       category: 'drinks',
       quantity: 1
     }, {
-      id: 10,
+      id: 2,
+      image: this.imageInBase64,
+      description: 'Producto uno',
+      barcode: '123123123123',
+      price: 1231.33,
+      category: 'drinks',
+      quantity: 1
+    }, {
+      id: 2,
+      image: this.imageInBase64,
+      description: 'Producto uno',
+      barcode: '123123123123',
+      price: 1231.33,
+      category: 'drinks',
+      quantity: 1
+    }, {
+      id: 2,
+      image: this.imageInBase64,
+      description: 'Producto uno',
+      barcode: '123123123123',
+      price: 1231.33,
+      category: 'drinks',
+      quantity: 1
+    }, {
+      id: 2,
+      image: this.imageInBase64,
+      description: 'Producto uno',
+      barcode: '123123123123',
+      price: 1231.33,
+      category: 'drinks',
+      quantity: 1
+    }, {
+      id: 2,
+      image: this.imageInBase64,
+      description: 'Producto uno',
+      barcode: '123123123123',
+      price: 1231.33,
+      category: 'drinks',
+      quantity: 1
+    }, {
+      id: 2,
+      image: this.imageInBase64,
+      description: 'Producto uno',
+      barcode: '123123123123',
+      price: 1231.33,
+      category: 'drinks',
+      quantity: 1
+    }, {
+      id: 2,
+      image: this.imageInBase64,
+      description: 'Producto uno',
+      barcode: '123123123123',
+      price: 1231.33,
+      category: 'drinks',
+      quantity: 1
+    }, {
+      id: 2,
+      image: this.imageInBase64,
+      description: 'Producto uno',
+      barcode: '123123123123',
+      price: 1231.33,
+      category: 'drinks',
+      quantity: 1
+    }, {
+      id: 2,
+      image: this.imageInBase64,
+      description: 'Producto uno',
+      barcode: '123123123123',
+      price: 1231.33,
+      category: 'drinks',
+      quantity: 1
+    }, {
+      id: 2,
+      image: this.imageInBase64,
+      description: 'Producto uno',
+      barcode: '123123123123',
+      price: 1231.33,
+      category: 'drinks',
+      quantity: 1
+    }, {
+      id: 2,
+      image: this.imageInBase64,
+      description: 'Producto uno',
+      barcode: '123123123123',
+      price: 1231.33,
+      category: 'drinks',
+      quantity: 1
+    }, {
+      id: 2,
+      image: this.imageInBase64,
+      description: 'Producto uno',
+      barcode: '123123123123',
+      price: 1231.33,
+      category: 'drinks',
+      quantity: 1
+    }, {
+      id: 2,
+      image: this.imageInBase64,
+      description: 'Producto uno',
+      barcode: '123123123123',
+      price: 1231.33,
+      category: 'drinks',
+      quantity: 1
+    }, {
+      id: 2,
+      image: this.imageInBase64,
+      description: 'Producto uno',
+      barcode: '123123123123',
+      price: 1231.33,
+      category: 'drinks',
+      quantity: 1
+    }, {
+      id: 2,
+      image: this.imageInBase64,
+      description: 'Producto uno',
+      barcode: '123123123123',
+      price: 1231.33,
+      category: 'drinks',
+      quantity: 1
+    }, {
+      id: 2,
+      image: this.imageInBase64,
+      description: 'Producto uno',
+      barcode: '123123123123',
+      price: 1231.33,
+      category: 'drinks',
+      quantity: 1
+    }, {
+      id: 2,
+      image: this.imageInBase64,
+      description: 'Producto uno',
+      barcode: '123123123123',
+      price: 1231.33,
+      category: 'drinks',
+      quantity: 1
+    }, {
+      id: 2,
+      image: this.imageInBase64,
+      description: 'Producto uno',
+      barcode: '123123123123',
+      price: 1231.33,
+      category: 'drinks',
+      quantity: 1
+    }, {
+      id: 2,
+      image: this.imageInBase64,
+      description: 'Producto uno',
+      barcode: '123123123123',
+      price: 1231.33,
+      category: 'drinks',
+      quantity: 1
+    }, {
+      id: 2,
+      image: this.imageInBase64,
+      description: 'Producto uno',
+      barcode: '123123123123',
+      price: 1231.33,
+      category: 'drinks',
+      quantity: 1
+    }, {
+      id: 2,
+      image: this.imageInBase64,
+      description: 'Producto uno',
+      barcode: '123123123123',
+      price: 1231.33,
+      category: 'drinks',
+      quantity: 1
+    }, {
+      id: 2,
+      image: this.imageInBase64,
+      description: 'Producto uno',
+      barcode: '123123123123',
+      price: 1231.33,
+      category: 'drinks',
+      quantity: 1
+    }, {
+      id: 2,
+      image: this.imageInBase64,
+      description: 'Producto uno',
+      barcode: '123123123123',
+      price: 1231.33,
+      category: 'drinks',
+      quantity: 1
+    }, {
+      id: 2,
+      image: this.imageInBase64,
+      description: 'Producto uno',
+      barcode: '123123123123',
+      price: 1231.33,
+      category: 'drinks',
+      quantity: 1
+    }, {
+      id: 2,
+      image: this.imageInBase64,
+      description: 'Producto uno',
+      barcode: '123123123123',
+      price: 1231.33,
+      category: 'drinks',
+      quantity: 1
+    }, {
+      id: 2,
+      image: this.imageInBase64,
+      description: 'Producto uno',
+      barcode: '123123123123',
+      price: 1231.33,
+      category: 'drinks',
+      quantity: 1
+    }, {
+      id: 2,
+      image: this.imageInBase64,
+      description: 'Producto uno',
+      barcode: '123123123123',
+      price: 1231.33,
+      category: 'drinks',
+      quantity: 1
+    }, {
+      id: 2,
+      image: this.imageInBase64,
+      description: 'Producto uno',
+      barcode: '123123123123',
+      price: 1231.33,
+      category: 'drinks',
+      quantity: 1
+    }, {
+      id: 2,
+      image: this.imageInBase64,
+      description: 'Producto uno',
+      barcode: '123123123123',
+      price: 1231.33,
+      category: 'drinks',
+      quantity: 1
+    }, {
+      id: 2,
       image: this.imageInBase64,
       description: 'Producto uno',
       barcode: '123123123123',
