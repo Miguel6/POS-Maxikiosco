@@ -1,12 +1,31 @@
 <span class="panel-order-selector-container">
+  <span class="order-details-wrapper fw-700">{{'BASKET.ORDER-SELECTOR.ORDER-DETAIL' | translate}}</span>
+
+  <mat-divider class="regular-divider"></mat-divider>
+
   <span class="current-order-container">
-    <span class="current-order-text fw-700">{{'BASKET.ORDER-SELECTOR.CURRENT-ORDER' | translate}}</span>
-    <span class="current-order-indicator fw-700">{{currentOrder + 1}}</span>
-    <button class="delete-order" color="warn" mat-flat-button [matTooltip]="'BASKET.ORDER-SELECTOR.DELETE-ORDER' | translate">
-      <mat-icon class="material-icons-outlined">delete</mat-icon>
-    </button>
+    <span class="order-selector">
+      <span class="current-order-text fw-700">{{'BASKET.ORDER-SELECTOR.CURRENT-ORDER' | translate}}</span>
+      <mat-form-field class="order-selector-form-field">
+        <mat-select [(ngModel)]="currentOrder" name="orders">
+          <mat-option *ngFor="let orderIndex of orderIndexes" [value]="orderIndex-1">{{orderIndex}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </span>
+    <span class="action-buttons-container">
+      <button [matTooltip]="'BASKET.ORDER-SELECTOR.ADD-ORDER' | translate" class="add-order white-font" color="primary"
+              mat-flat-button>
+        <mat-icon class="material-icons-outlined">add</mat-icon>
+      </button>
+      <button [matTooltip]="'BASKET.ORDER-SELECTOR.DELETE-ORDER' | translate" class="delete-order" color="warn"
+              mat-flat-button>
+        <mat-icon class="material-icons-outlined">delete</mat-icon>
+      </button>
+    </span>
   </span>
-  <span class="order-selector-container">Buttons here</span>
+
+  <mat-divider class="regular-divider"></mat-divider>
+
   <span class="items-container">ITEMS HERE</span>
   <span class="subtotal-container">
     <span class="subtotal-text fw-700">{{'BASKET.ORDER-SELECTOR.SUBTOTAL'| translate}}</span>

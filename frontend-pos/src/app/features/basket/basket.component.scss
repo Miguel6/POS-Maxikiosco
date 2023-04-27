@@ -11,7 +11,7 @@ div.basket-container {
   span.left-container {
     display: flex;
     flex-direction: column;
-    width: 70%;
+    width: 65%;
     height: 100%;
     align-items: center;
     justify-content: center;
@@ -57,7 +57,7 @@ div.basket-container {
   }
 
   span.right-container {
-    width: 30%;
+    width: 35%;
     overflow-y: auto;
     background-color: $white;
     padding: 0.5rem;

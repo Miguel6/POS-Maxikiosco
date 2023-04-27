@@ -4,6 +4,7 @@ import {BasketComponent} from './basket.component';
 import {SharedModule} from '../../shared/shared.module';
 import {TranslateModule} from '@ngx-translate/core';
 import {PanelOrderSelectorComponent} from './components/order-selector/panel-order-selector.component';
+import {FormsModule} from '@angular/forms';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import {PanelOrderSelectorComponent} from './components/order-selector/panel-ord
   imports: [
     CommonModule,
     SharedModule,
-    TranslateModule
+    TranslateModule,
+    FormsModule
   ]
 })
 export class BasketModule {

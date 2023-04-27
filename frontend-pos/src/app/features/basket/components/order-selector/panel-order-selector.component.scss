@@ -1,4 +1,5 @@
 @import "src/app/styles/colors";
+@import "src/app/styles/fonts";
 
 span.panel-order-selector-container {
   display: flex;
@@ -6,13 +7,23 @@ span.panel-order-selector-container {
   width: 100%;
 
   & * {
-    font-size: 1.25rem;
+  }
+
+  span.order-details-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    color: $green-medium;
+    font-size: $font-size-1-25-rem;
   }
 
   span.current-order-container {
     display: flex;
     flex-direction: row;
     align-items: center;
+    justify-content: space-between;
+    width: 100%;
 
     span.current-order-text {
       margin-right: 0.5rem;
@@ -22,25 +33,36 @@ span.panel-order-selector-container {
       }
     }
 
-    span.current-order-indicator {
-      color: $green-medium;
-    }
+    span.order-selector {
+      width: 100%;
 
-    button.delete-order {
-      justify-self: flex-end;
-      padding: 0;
-      min-width: fit-content;
-      width: 3rem;
-      margin-left: auto;
-
-      mat-icon {
-        padding: 0;
-        margin: 0;
+      mat-form-field.order-selector-form-field {
+        max-height: 50px;
+        transform: scale(0.75);
+        width: 5em;
+        text-align: center;
+        max-width: 6rem;
       }
     }
-  }
 
-  span.order-selector-container {
+    .action-buttons-container {
+      display: flex;
+      justify-content: space-evenly;
+      max-width: 7rem;
+      width: 100%;
+
+      button.delete-order, button.add-order {
+        justify-self: end;
+        padding: 0;
+        min-width: fit-content;
+        width: 3rem;
+
+        mat-icon {
+          padding: 0;
+          margin: 0;
+        }
+      }
+    }
   }
 
   span.items-container {
