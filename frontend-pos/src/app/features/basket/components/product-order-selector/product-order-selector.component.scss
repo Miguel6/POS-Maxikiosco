@@ -30,6 +30,7 @@ div.item-card-container {
     border-radius: 10px;
     margin-bottom: 10px;
     grid-area: image;
+    margin-right: 10px;
 
     & > img, & > mat-icon {
       max-height: 7em;
