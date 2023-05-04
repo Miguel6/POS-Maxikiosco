@@ -78,7 +78,6 @@ import {HighlightPipe} from './pipes/highlight-pipe';
     SnackBarBuilder,
     {provide: MAT_SNACK_BAR_DATA, useValue: {}},
     {provide: LOCALE_ID, useValue: 'en-EN'},
-
     BreadcrumbService,
     Base64Converter,
     ProductSearchAdapter

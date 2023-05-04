@@ -39,5 +39,4 @@ export class CacheManagerService<K, V> {
 
     return currentTime - timestamp < Environment.ttlCacheInMilliseconds
   }
-
 }

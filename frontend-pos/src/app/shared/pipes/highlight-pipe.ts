@@ -8,7 +8,6 @@ export class HighlightPipe implements PipeTransform {
       .split(' ')
       .filter(t => t.length > 0)
       .join('|');
-    console.log(pattern);
     const regex = new RegExp(pattern, 'gi');
 
     return search ? text.normalize('NFC').replace(regex, match => `<span class="highlighted-coincident-text-mat-option">${match}</span>`) : text;

@@ -1,19 +1,20 @@
 import {Component} from '@angular/core';
 import {Order} from '../../models/order';
 import {ItemCardModel} from '../../../products/models/item-card-model';
+import {CacheManagerService} from '../../../../shared/cache/cache-manager.service';
 
 @Component({
   selector: 'pos-order-selector',
   templateUrl: './panel-order-selector.component.html',
-  styleUrls: ['./panel-order-selector.component.scss']
+  styleUrls: ['./panel-order-selector.component.scss'],
 })
 export class PanelOrderSelectorComponent {
 
-  public currentOrder = 0;
+  public currentOrderIndex = 0;
   public orders: Order[] = []
   public orderIndexes: number[] = [];
 
-  constructor() {
+  constructor(private cacheManagerService: CacheManagerService<number, Order>) {
     const product = new ItemCardModel();
     product.id = 1;
     product.image = null;
@@ -31,6 +32,12 @@ export class PanelOrderSelectorComponent {
     this.updateOrderIndexes();
   }
 
+  public addNewOrder(): void {
+  }
+
+  public deleteOrder(index: number): void {
+
+  }
 
   private updateOrderIndexes(): void {
     this.orderIndexes = this.getOrderIndexes();

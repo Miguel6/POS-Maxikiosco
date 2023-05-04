@@ -87,6 +87,11 @@ span.panel-order-selector-container {
         content: ':';
       }
     }
+
+    span.subtotal-amount {
+      font-weight: bold;
+      color: $green-medium;
+    }
   }
 
   span.finish-order-wrapper {

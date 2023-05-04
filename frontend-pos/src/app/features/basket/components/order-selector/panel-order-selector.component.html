@@ -7,17 +7,19 @@
     <span class="order-selector">
       <span class="current-order-text fw-700">{{'BASKET.ORDER-SELECTOR.CURRENT-ORDER' | translate}}</span>
       <mat-form-field class="order-selector-form-field">
-        <mat-select [(ngModel)]="currentOrder" name="orders">
+        <mat-select [(ngModel)]="currentOrderIndex" name="orders">
           <mat-option *ngFor="let orderIndex of orderIndexes" [value]="orderIndex-1">{{orderIndex}}</mat-option>
         </mat-select>
       </mat-form-field>
     </span>
     <span class="action-buttons-container">
       <button [matTooltip]="'BASKET.ORDER-SELECTOR.ADD-ORDER' | translate" class="add-order white-font" color="primary"
+              (click)="addNewOrder()"
               mat-flat-button>
         <mat-icon class="material-icons-outlined">add</mat-icon>
       </button>
       <button [matTooltip]="'BASKET.ORDER-SELECTOR.DELETE-ORDER' | translate" class="delete-order" color="warn"
+              (click)="deleteOrder(currentOrderIndex)"
               mat-flat-button>
         <mat-icon class="material-icons-outlined">delete</mat-icon>
       </button>
@@ -27,13 +29,13 @@
   <mat-divider class="regular-divider"></mat-divider>
 
   <span class="products-container">
-    <pos-product-order-selector *ngFor="let product of orders[currentOrder].products"
+    <pos-product-order-selector *ngFor="let product of orders[currentOrderIndex].products"
                                 [product]="product"></pos-product-order-selector>
   </span>
   <span class="subtotal-container">
     <span class="subtotal-text fw-700">{{'BASKET.ORDER-SELECTOR.SUBTOTAL'| translate}}</span>
     <span
-      class="subtotal-amount">{{orders[currentOrder].total| currency:'$': 'symbol-narrow':'1.2-2': 'es-Ar' }}</span>
+      class="subtotal-amount">{{orders[currentOrderIndex].total| currency:'$': 'symbol-narrow':'1.2-2': 'es-Ar' }}</span>
   </span>
 
   <mat-divider class="regular-divider"></mat-divider>
