@@ -31,6 +31,7 @@ div.item-card-container {
     margin-bottom: 10px;
     grid-area: image;
     margin-right: 10px;
+    min-width: 70px;
 
     & > img, & > mat-icon {
       max-height: 7em;
@@ -64,7 +65,7 @@ div.item-card-container {
 
     .title-infinite-cycling {
       &:hover {
-        animation: infinite-text 10s linear infinite;
+        animation: infinite-text 2s linear infinite;
         text-overflow: unset;
       }
 
@@ -73,7 +74,7 @@ div.item-card-container {
           transform: translateX(0);
         }
         75%, 100% {
-          transform: translateX(calc(calc(var(--width-title) * 1px) - 100%));
+          transform: translateX(calc(calc(var(--width-title) * 0.85px) - 100%));
         }
       }
     }

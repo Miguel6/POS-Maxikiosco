@@ -68,7 +68,7 @@ export class BasketComponent implements OnInit {
     }, {
       id: 2,
       image: this.imageInBase64,
-      description: 'Producto uno',
+      description: 'Producto uno uno uno uno',
       barcode: '123123123123',
       price: 1231.33,
       category: 'drinks',

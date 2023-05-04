@@ -17,7 +17,7 @@ export class PanelOrderSelectorComponent {
     const product = new ItemCardModel();
     product.id = 1;
     product.image = null;
-    product.description = 'Soy un producto';
+    product.description = 'Soy un producto a la venta';
     product.barcode = '123123123123';
     product.price = 10.10;
     product.category = 'drinks';

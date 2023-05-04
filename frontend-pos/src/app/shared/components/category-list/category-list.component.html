@@ -7,8 +7,10 @@
   </button>
   <span class="example-container">
       <span class="arrow-buttons-scrollbar intangible">
-            <mat-icon (mouseover)="scrollTo(direction.left)" (mouseleave)="stopScroll()" class="material-icons-outlined left">chevron_left</mat-icon>
-            <mat-icon (mouseover)="scrollTo(direction.right)" (mouseleave)="stopScroll()" class="material-icons-outlined right">chevron_right</mat-icon>
+            <mat-icon (mouseover)="scrollTo(direction.left)" (mouseleave)="stopScroll()"
+                      class="material-icons-outlined left">chevron_left</mat-icon>
+            <mat-icon (mouseover)="scrollTo(direction.right)" (mouseleave)="stopScroll()"
+                      class="material-icons-outlined right">chevron_right</mat-icon>
       </span>
       <span class="customs-categories" posHorizontalScroll>
         <button mat-flat-button *ngFor="let category of categories"

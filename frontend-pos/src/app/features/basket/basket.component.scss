@@ -6,7 +6,7 @@ div.basket-container {
   display: flex;
   flex-direction: row;
   height: 92vh; //Todo: Revisar esto. No me convence tener que usar esta medida y no un height 100%
-  gap: 10px;
+  //gap: 10px;
 
   span.left-container {
     display: flex;
@@ -15,6 +15,8 @@ div.basket-container {
     height: 100%;
     align-items: center;
     justify-content: center;
+    padding: 5px;
+    box-sizing: border-box;
 
     & * {
       width: 100%;
@@ -45,7 +47,8 @@ div.basket-container {
     }
 
     span.products-wrapper {
-      padding: 0 10px;
+      //padding: 0 10px;
+      box-sizing: border-box;
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
       grid-template-rows: repeat(auto-fill, minmax(13rem, 1fr));
