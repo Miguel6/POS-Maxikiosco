@@ -1,0 +1,67 @@
+@import "src/app/styles/colors";
+
+div.dialog-template {
+  padding: 10px;
+
+  span.title-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 1.25rem;
+
+    &.information {
+      color: $blue-medium;
+    }
+
+    &.success {
+      color: $green-medium;
+    }
+
+    &.warning {
+      color: $yellow-medium;
+    }
+
+    &.error {
+      color: $red-medium;
+    }
+  }
+
+  mat-dialog-actions.dialog-template-buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+
+    button {
+      font-size: 1rem;
+      width: 40%;
+      height: 3rem;
+
+      &:not(.primary) {
+        color: $gray-medium;
+      }
+
+      &.primary {
+        color: $white;
+
+        &.information {
+          background-color: $blue-medium;
+        }
+
+        &.success {
+          background-color: $green-medium;
+        }
+
+        &.warning {
+          background-color: $yellow-medium;
+        }
+
+        &.error {
+          background-color: $red-medium;
+        }
+      }
+    }
+  }
+}

@@ -10,5 +10,6 @@ export class DialogParam {
   public maxHeight = this.height;
   public width = 'auto';
   public maxWidth = this.width;
+  public autoFocus = false;
   public panelClass: string | string[] = '';
 }

@@ -20,6 +20,7 @@ export class GenericDialogBuilder {
         maxWidth: dialogParams.maxWidth,
         maxHeight: dialogParams.maxHeight,
         panelClass: dialogParams.panelClass,
+        autoFocus: dialogParams.autoFocus,
         data: this.createData(dialogParams)
       }
     );
@@ -31,7 +32,8 @@ export class GenericDialogBuilder {
     return {
       title: dialogParam.title,
       messages: dialogParam.messages,
-      buttons: dialogParam.buttons
+      buttons: dialogParam.buttons,
+      style: dialogParam.dialogStyle
     };
   }
 }

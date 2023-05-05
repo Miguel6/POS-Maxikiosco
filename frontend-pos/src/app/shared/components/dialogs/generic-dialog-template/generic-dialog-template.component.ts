@@ -5,6 +5,7 @@ import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog';
 import {GenericDialogData} from '../../../../core/models/dialogs/generic-dialog-data';
 import {ButtonModel} from '../../../../core/models/dialogs/button-model';
 import {ButtonAction} from '../../../../core/models/dialogs/button-action';
+import {DialogStyle} from '../../../../core/models/dialogs/dialog-style';
 
 @Component({
   selector: 'pos-generic-dialog-template',
@@ -15,6 +16,7 @@ export class GenericDialogTemplateComponent implements OnInit {
 
   public buttonType = ButtonType;
   public dialogType = DialogType;
+  public dialogStyle = DialogStyle;
 
   constructor(public dialogRef: MatDialogRef<GenericDialogTemplateComponent>,
               @Inject(MAT_DIALOG_DATA) public data: GenericDialogData) {
@@ -24,7 +26,7 @@ export class GenericDialogTemplateComponent implements OnInit {
 
   }
 
-  @HostListener('keydown', ['$event'])
+  @HostListener('window:keydown', ['$event'])
   onKeyDown(event: KeyboardEvent) {
     const button = this.findButtonByKeyCode(event.keyCode);
     if (button) {

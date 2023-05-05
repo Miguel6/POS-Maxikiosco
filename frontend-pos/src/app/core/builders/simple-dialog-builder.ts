@@ -56,7 +56,7 @@ export class SimpleDialogBuilder {
   private startInformational(buttonText: string, dialogStyle: DialogStyle): SimpleDialogBuilder {
     this.dialogParams.buttons = [this.createPrimaryButton(buttonText)];
     this.dialogParams.dialogStyle = dialogStyle;
-    
+
     return this;
   }
 
@@ -115,7 +115,8 @@ export class SimpleDialogBuilder {
     return this;
   }
 
-  public show(): Promise<ButtonAction> {
+  public show(autoFocus: boolean = false): Promise<ButtonAction> {
+    this.dialogParams.autoFocus = autoFocus;
     return this.genericDialogBuilder.show(this.dialogParams);
   }
 }

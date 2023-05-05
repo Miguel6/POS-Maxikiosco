@@ -1,19 +1,27 @@
 <div class="dialog-template">
-    <span *ngIf="data.title" class="title-wrapper">
-        <span class="dialog-template-title">{{data.title}}</span>
-    </span>
+  <span *ngIf="data.title" [ngClass]="{
+      'information': data.style == dialogStyle.Information,
+      'warning': data.style == dialogStyle.Warning,
+      'error': data.style == dialogStyle.Error,
+      'success': data.style == dialogStyle.Success
+     }" class="title-wrapper">
+    <span class="dialog-template-title">{{data.title}}</span>
+  </span>
+  <mat-divider></mat-divider>
   <mat-dialog-content *ngIf="data.messages && data.messages.length > 0" class="dialog-template-text">
-        <span *ngFor="let message of data.messages">
-            {{message}}
-        </span>
+    <span *ngFor="let message of data.messages">{{message}}</span>
   </mat-dialog-content>
   <mat-divider></mat-divider>
   <mat-dialog-actions *ngIf="data.buttons" class="dialog-template-buttons">
-        <span *ngFor="let button of data.buttons">
-            <button (click)="closeDialog(button.action)" *ngIf="button.type == buttonType.Primary" class="primary"
-                    mat-stroked-button>{{button.name}}</button>
-            <button (click)="closeDialog(button.action)" *ngIf="button.type == buttonType.Secondary" class=""
-                    mat-stroked-button>{{button.name}}</button>
-        </span>
+    <ng-container *ngFor="let button of data.buttons">
+      <button (click)="closeDialog(button.action)" *ngIf="button.type == buttonType.Primary" [ngClass]="{
+        'information': data.style == dialogStyle.Information,
+        'warning': data.style == dialogStyle.Warning,
+        'error': data.style == dialogStyle.Error,
+        'success': data.style == dialogStyle.Success
+       }" class="primary" mat-stroked-button>{{button.name}}</button>
+      <button (click)="closeDialog(button.action)" *ngIf="button.type == buttonType.Secondary" class=""
+              mat-stroked-button>{{button.name}}</button>
+    </ng-container>
   </mat-dialog-actions>
 </div>

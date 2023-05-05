@@ -55,9 +55,10 @@ export class PanelOrderSelectorComponent implements OnInit {
   private showConfirmationDeleteOrder(): Promise<ButtonAction> {
     const yesText = this.translateService.instant('GENERICS.YES');
     const noText = this.translateService.instant('GENERICS.NO');
-    return new SimpleDialogBuilder(this.dialog, DialogStyle.Warning, yesText, noText)
+    return new SimpleDialogBuilder(this.dialog, DialogStyle.Error, yesText, noText)
       .setTitle(this.translateService.instant('BASKET.ORDER-SELECTOR.DELETE-CURRENT-ORDER.TITLE'))
       .addMessage(this.translateService.instant('BASKET.ORDER-SELECTOR.DELETE-CURRENT-ORDER.DESCRIPTION'))
+      .setPanelClass('ten-pixels-padding')
       .show();
   }
 
