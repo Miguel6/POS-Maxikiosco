@@ -26,8 +26,8 @@ import {SearchInputComponent} from './components/search-input/search-input.compo
 import {SearchInputOptionComponent} from './components/search-input-option/search-input-option.component';
 import {ProductSearch, ProductSearchAdapter} from '../features/basket/models/product-search';
 import {HighlightPipe} from './pipes/highlight-pipe';
-import {CacheManagerService} from '../core/cache/cache-manager.service';
-import {CacheManagerFactoryService} from '../core/factories/cache-manager-factory.service';
+import {MapCacheManagerService} from '../core/cache/map-cache-manager.service';
+import {MapCacheManagerFactoryService} from '../core/factories/map-cache-manager-factory.service';
 import {Environment} from '../../environments/environment';
 
 @NgModule({
@@ -85,13 +85,13 @@ import {Environment} from '../../environments/environment';
     Base64Converter,
     ProductSearchAdapter,
     {
-      provide: CacheManagerService,
-      useFactory: (factory: CacheManagerFactoryService<number, ProductSearch[]>) => factory.createInstance(),
-      deps: [CacheManagerFactoryService]
+      provide: MapCacheManagerService,
+      useFactory: (factory: MapCacheManagerFactoryService<number, ProductSearch[]>) => factory.createInstance(),
+      deps: [MapCacheManagerFactoryService]
     },
     {
-      provide: CacheManagerFactoryService,
-      useFactory: () => new CacheManagerFactoryService(Environment.ttlCacheInMilliseconds)
+      provide: MapCacheManagerFactoryService,
+      useFactory: () => new MapCacheManagerFactoryService(Environment.ttlCacheInMilliseconds)
     }
   ]
 })

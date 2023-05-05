@@ -29,13 +29,13 @@
   <mat-divider class="regular-divider"></mat-divider>
 
   <span class="products-container">
-    <pos-product-order-selector *ngFor="let product of orders[currentOrderIndex].products"
+    <pos-product-order-selector *ngFor="let product of cacheManagerService.getAllElements()[currentOrderIndex].products"
                                 [product]="product"></pos-product-order-selector>
   </span>
   <span class="subtotal-container">
     <span class="subtotal-text fw-700">{{'BASKET.ORDER-SELECTOR.SUBTOTAL'| translate}}</span>
     <span
-      class="subtotal-amount">{{orders[currentOrderIndex].total| currency:'$': 'symbol-narrow':'1.2-2': 'es-Ar' }}</span>
+      class="subtotal-amount">{{cacheManagerService.getAllElements()[currentOrderIndex].total| currency:'$': 'symbol-narrow':'1.2-2': 'es-Ar' }}</span>
   </span>
 
   <mat-divider class="regular-divider"></mat-divider>

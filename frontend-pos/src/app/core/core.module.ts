@@ -1,7 +1,7 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
-import {CacheManagerFactoryService} from './factories/cache-manager-factory.service';
-import {CacheManagerService} from './cache/cache-manager.service';
+import {MapCacheManagerFactoryService} from './factories/map-cache-manager-factory.service';
+import {MapCacheManagerService} from './cache/map-cache-manager.service';
 
 @NgModule({
   declarations: [],
@@ -9,8 +9,8 @@ import {CacheManagerService} from './cache/cache-manager.service';
     CommonModule
   ],
   providers: [
-    CacheManagerService,
-    CacheManagerFactoryService
+    MapCacheManagerService,
+    MapCacheManagerFactoryService
   ]
 })
 export class CoreModule {

@@ -1,30 +1,29 @@
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Order} from '../../models/order';
 import {ItemCardModel} from '../../../products/models/item-card-model';
-import {CacheManagerService} from '../../../../core/cache/cache-manager.service';
-import {CacheManagerFactoryService} from '../../../../core/factories/cache-manager-factory.service';
+import {ListCacheManagerFactoryService} from '../../../../core/factories/list-cache-manager-factory.service';
+import {ListCacheManagerService} from '../../../../core/cache/list-cache-manager.service';
 
 @Component({
   selector: 'pos-order-selector',
   templateUrl: './panel-order-selector.component.html',
   styleUrls: ['./panel-order-selector.component.scss'],
   providers: [{
-    provide: CacheManagerService,
-    useFactory: (factory: CacheManagerFactoryService<number, Order>) => factory.createInstance(),
-    deps: [CacheManagerFactoryService]
+    provide: ListCacheManagerService,
+    useFactory: (factory: ListCacheManagerFactoryService<Order>) => factory.createInstance(),
+    deps: [ListCacheManagerFactoryService]
   },
     {
-      provide: CacheManagerFactoryService,
-      useFactory: () => new CacheManagerFactoryService(undefined)
+      provide: ListCacheManagerFactoryService,
+      useFactory: () => new ListCacheManagerFactoryService(undefined)
     }]
 })
-export class PanelOrderSelectorComponent {
+export class PanelOrderSelectorComponent implements OnInit {
 
   public currentOrderIndex = 0;
-  public orders: Order[] = []
   public orderIndexes: number[] = [];
 
-  constructor(private cacheManagerService: CacheManagerService<number, Order>) {
+  constructor(public cacheManagerService: ListCacheManagerService<Order>) {
     const product = new ItemCardModel();
     product.id = 1;
     product.image = null;
@@ -34,20 +33,28 @@ export class PanelOrderSelectorComponent {
     product.category = 'drinks';
     product.quantity = 1
 
-    const order = new Order();
-    order.products = [product, product, product, product, product, product, product, product, product, product, product, product];
-    this.orders.push(order);
-    this.orders.push(new Order());
-
     this.updateOrderIndexes();
   }
 
-  public addNewOrder(): void {
-    this.cacheManagerService.getTTL();
+  ngOnInit() {
+    this.addNewOrder();
   }
 
+  public addNewOrder(): void {
+    this.cacheManagerService.addElement(new Order());
+    this.updateOrderIndexes();
+  }
+  
   public deleteOrder(index: number): void {
-
+    this.cacheManagerService.delete(index);
+    this.updateOrderIndexes();
+    if (this.currentOrderIndex == this.cacheManagerService.getSize()) {
+      this.currentOrderIndex = this.orderIndexes.length - 1;
+    }
+    if (this.cacheManagerService.isEmpty()) {
+      this.addNewOrder();
+      this.currentOrderIndex = 0;
+    }
   }
 
   private updateOrderIndexes(): void {
@@ -55,6 +62,6 @@ export class PanelOrderSelectorComponent {
   }
 
   private getOrderIndexes(): number[] {
-    return Array.from({length: this.orders.length}, (_, i) => i + 1);
+    return Array.from({length: this.cacheManagerService.getAllElements().length}, (_, i) => i + 1);
   }
 }

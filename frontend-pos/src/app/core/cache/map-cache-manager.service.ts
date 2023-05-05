@@ -1,13 +1,15 @@
 import {Inject, Injectable} from '@angular/core';
+import {CacheManager} from '../models/cache-manager';
 
 @Injectable({
   providedIn: 'any'
 })
-export class CacheManagerService<K, V> {
+export class MapCacheManagerService<K, V> extends CacheManager {
 
   private cache = new Map<K, { data: V, timestamp: number }>();
 
-  constructor(@Inject('ttlCacheInMilliseconds') private ttlCacheInMilliseconds: number) {
+  constructor(@Inject('ttlCacheInMilliseconds') protected override ttlCacheInMilliseconds: number) {
+    super(ttlCacheInMilliseconds);
   }
 
   public getByKey(key: K): V {
@@ -29,27 +31,11 @@ export class CacheManagerService<K, V> {
     }
   }
 
-  public getTTL(): void {
-    console.log(this.ttlCacheInMilliseconds);
-  }
-
-  private getCurrentTime(): number {
-    return new Date().getTime();
-  }
 
   public delete(key: K): boolean {
     if (this.cache.has(key)) {
       return this.cache.delete(key);
     }
     return false;
-  }
-
-  private isValid(timestamp: number): boolean {
-    const currentTime = this.getCurrentTime();
-
-    if (this.ttlCacheInMilliseconds == undefined) {
-      return true;
-    }
-    return currentTime - timestamp < this.ttlCacheInMilliseconds;
   }
 }
