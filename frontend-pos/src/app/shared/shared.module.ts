@@ -29,6 +29,7 @@ import {HighlightPipe} from './pipes/highlight-pipe';
 import {MapCacheManagerService} from '../core/cache/map-cache-manager.service';
 import {MapCacheManagerFactoryService} from '../core/factories/map-cache-manager-factory.service';
 import {Environment} from '../../environments/environment';
+import { GenericDialogTemplateComponent } from './components/dialogs/generic-dialog-template/generic-dialog-template.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import {Environment} from '../../environments/environment';
     CategoryListComponent,
     SearchInputComponent,
     SearchInputOptionComponent,
-    HighlightPipe
+    HighlightPipe,
+    GenericDialogTemplateComponent
   ],
   exports: [
     MaterialModule,

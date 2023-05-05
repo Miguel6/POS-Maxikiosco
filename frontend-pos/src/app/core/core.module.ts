@@ -10,7 +10,7 @@ import {MapCacheManagerService} from './cache/map-cache-manager.service';
   ],
   providers: [
     MapCacheManagerService,
-    MapCacheManagerFactoryService
+    MapCacheManagerFactoryService,
   ]
 })
 export class CoreModule {

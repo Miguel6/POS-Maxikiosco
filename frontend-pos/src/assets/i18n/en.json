@@ -37,11 +37,19 @@
       "SUBTOTAL": "Subtotal",
       "DELETE-ORDER": "Delete order",
       "ADD-ORDER": "Add order",
-      "ORDER-DETAIL": "Order details"
+      "ORDER-DETAIL": "Order details",
+      "DELETE-CURRENT-ORDER": {
+        "TITLE": "Delete order",
+        "DESCRIPTION": "Are you sure you want to delete the current order?"
+      }
     }
   },
   "MISCELLANEOUS": {
     "SEARCHING": "Searching ...",
     "NOT-FOUND": "Not found"
+  },
+  "GENERICS": {
+    "YES": "Yes",
+    "NO": "No"
   }
 }

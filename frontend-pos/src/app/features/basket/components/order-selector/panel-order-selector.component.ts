@@ -3,6 +3,11 @@ import {Order} from '../../models/order';
 import {ItemCardModel} from '../../../products/models/item-card-model';
 import {ListCacheManagerFactoryService} from '../../../../core/factories/list-cache-manager-factory.service';
 import {ListCacheManagerService} from '../../../../core/cache/list-cache-manager.service';
+import {SimpleDialogBuilder} from '../../../../core/builders/simple-dialog-builder';
+import {MatDialog} from '@angular/material/dialog';
+import {DialogStyle} from '../../../../core/models/dialogs/dialog-style';
+import {TranslateService} from '@ngx-translate/core';
+import {ButtonAction} from '../../../../core/models/dialogs/button-action';
 
 @Component({
   selector: 'pos-order-selector',
@@ -23,7 +28,9 @@ export class PanelOrderSelectorComponent implements OnInit {
   public currentOrderIndex = 0;
   public orderIndexes: number[] = [];
 
-  constructor(public cacheManagerService: ListCacheManagerService<Order>) {
+  constructor(public cacheManagerService: ListCacheManagerService<Order>,
+              private dialog: MatDialog,
+              private translateService: TranslateService) {
     const product = new ItemCardModel();
     product.id = 1;
     product.image = null;
@@ -44,8 +51,21 @@ export class PanelOrderSelectorComponent implements OnInit {
     this.cacheManagerService.addElement(new Order());
     this.updateOrderIndexes();
   }
-  
+
+  private showConfirmationDeleteOrder(): Promise<ButtonAction> {
+    const yesText = this.translateService.instant('GENERICS.YES');
+    const noText = this.translateService.instant('GENERICS.NO');
+    return new SimpleDialogBuilder(this.dialog, DialogStyle.Warning, yesText, noText)
+      .setTitle(this.translateService.instant('BASKET.ORDER-SELECTOR.DELETE-CURRENT-ORDER.TITLE'))
+      .addMessage(this.translateService.instant('BASKET.ORDER-SELECTOR.DELETE-CURRENT-ORDER.DESCRIPTION'))
+      .show();
+  }
+
   public deleteOrder(index: number): void {
+    this.showConfirmationDeleteOrder().then(result => {
+      console.log(result);
+    }).catch();
+
     this.cacheManagerService.delete(index);
     this.updateOrderIndexes();
     if (this.currentOrderIndex == this.cacheManagerService.getSize()) {
