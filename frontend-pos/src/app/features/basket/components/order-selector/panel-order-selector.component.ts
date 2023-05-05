@@ -1,12 +1,22 @@
 import {Component} from '@angular/core';
 import {Order} from '../../models/order';
 import {ItemCardModel} from '../../../products/models/item-card-model';
-import {CacheManagerService} from '../../../../shared/cache/cache-manager.service';
+import {CacheManagerService} from '../../../../core/cache/cache-manager.service';
+import {CacheManagerFactoryService} from '../../../../core/factories/cache-manager-factory.service';
 
 @Component({
   selector: 'pos-order-selector',
   templateUrl: './panel-order-selector.component.html',
   styleUrls: ['./panel-order-selector.component.scss'],
+  providers: [{
+    provide: CacheManagerService,
+    useFactory: (factory: CacheManagerFactoryService<number, Order>) => factory.createInstance(),
+    deps: [CacheManagerFactoryService]
+  },
+    {
+      provide: CacheManagerFactoryService,
+      useFactory: () => new CacheManagerFactoryService(undefined)
+    }]
 })
 export class PanelOrderSelectorComponent {
 
@@ -33,6 +43,7 @@ export class PanelOrderSelectorComponent {
   }
 
   public addNewOrder(): void {
+    this.cacheManagerService.getTTL();
   }
 
   public deleteOrder(index: number): void {

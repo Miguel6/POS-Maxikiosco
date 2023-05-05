@@ -1,11 +1,12 @@
 import {Injectable} from '@angular/core';
 import {Observable, of, tap} from 'rxjs';
 import {ProductSearch} from '../basket/models/product-search';
-import {CacheManagerService} from '../../shared/cache/cache-manager.service';
+import {CacheManagerService} from '../../core/cache/cache-manager.service';
 import {ISearchProductsService, SearchProductsService} from '../basket/services/search-products.service';
 
 @Injectable({
   providedIn: 'root'
+
 })
 export class SearchProductProxyService implements ISearchProductsService {
 
@@ -14,6 +15,7 @@ export class SearchProductProxyService implements ISearchProductsService {
   }
 
   public getByDescription(description: string): Observable<ProductSearch[]> {
+    this.cacheManagerService.getTTL();
     if (!description) {
       description = '';
     }

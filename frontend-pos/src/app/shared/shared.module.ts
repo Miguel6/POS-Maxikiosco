@@ -24,8 +24,11 @@ import {HorizontalScrollDirective} from './directives/horizontal-scroll.directiv
 import {CategoryListComponent} from './components/category-list/category-list.component';
 import {SearchInputComponent} from './components/search-input/search-input.component';
 import {SearchInputOptionComponent} from './components/search-input-option/search-input-option.component';
-import {ProductSearchAdapter} from '../features/basket/models/product-search';
+import {ProductSearch, ProductSearchAdapter} from '../features/basket/models/product-search';
 import {HighlightPipe} from './pipes/highlight-pipe';
+import {CacheManagerService} from '../core/cache/cache-manager.service';
+import {CacheManagerFactoryService} from '../core/factories/cache-manager-factory.service';
+import {Environment} from '../../environments/environment';
 
 @NgModule({
   declarations: [
@@ -80,7 +83,16 @@ import {HighlightPipe} from './pipes/highlight-pipe';
     {provide: LOCALE_ID, useValue: 'en-EN'},
     BreadcrumbService,
     Base64Converter,
-    ProductSearchAdapter
+    ProductSearchAdapter,
+    {
+      provide: CacheManagerService,
+      useFactory: (factory: CacheManagerFactoryService<number, ProductSearch[]>) => factory.createInstance(),
+      deps: [CacheManagerFactoryService]
+    },
+    {
+      provide: CacheManagerFactoryService,
+      useFactory: () => new CacheManagerFactoryService(Environment.ttlCacheInMilliseconds)
+    }
   ]
 })
 export class SharedModule {

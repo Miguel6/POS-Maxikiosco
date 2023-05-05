@@ -1,14 +1,13 @@
-import {Injectable} from '@angular/core';
-import {Environment} from '../../../environments/environment';
+import {Inject, Injectable} from '@angular/core';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'any'
 })
 export class CacheManagerService<K, V> {
 
   private cache = new Map<K, { data: V, timestamp: number }>();
 
-  constructor() {
+  constructor(@Inject('ttlCacheInMilliseconds') private ttlCacheInMilliseconds: number) {
   }
 
   public getByKey(key: K): V {
@@ -17,7 +16,7 @@ export class CacheManagerService<K, V> {
       if (this.isValid(cachedData.timestamp)) {
         return cachedData.data;
       } else {
-        this.cache.delete(key);
+        this.delete(key);
       }
     }
 
@@ -30,13 +29,27 @@ export class CacheManagerService<K, V> {
     }
   }
 
+  public getTTL(): void {
+    console.log(this.ttlCacheInMilliseconds);
+  }
+
   private getCurrentTime(): number {
     return new Date().getTime();
+  }
+
+  public delete(key: K): boolean {
+    if (this.cache.has(key)) {
+      return this.cache.delete(key);
+    }
+    return false;
   }
 
   private isValid(timestamp: number): boolean {
     const currentTime = this.getCurrentTime();
 
-    return currentTime - timestamp < Environment.ttlCacheInMilliseconds
+    if (this.ttlCacheInMilliseconds == undefined) {
+      return true;
+    }
+    return currentTime - timestamp < this.ttlCacheInMilliseconds;
   }
 }
