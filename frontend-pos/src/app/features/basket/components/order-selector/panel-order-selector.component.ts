@@ -62,20 +62,27 @@ export class PanelOrderSelectorComponent implements OnInit {
       .show();
   }
 
-  public deleteOrder(index: number): void {
-    this.showConfirmationDeleteOrder().then(result => {
-      console.log(result);
-    }).catch();
+  public async deleteOrder(index: number): Promise<void> {
+    const result = await this.showConfirmationDeleteOrder();
 
-    this.cacheManagerService.delete(index);
-    this.updateOrderIndexes();
-    if (this.currentOrderIndex == this.cacheManagerService.getSize()) {
-      this.currentOrderIndex = this.orderIndexes.length - 1;
+    if (result === ButtonAction.Confirm) {
+      this.cacheManagerService.delete(index);
+      this.updateOrderIndexes();
+
+      if (this.cacheManagerService.isEmpty()) {
+        this.addNewOrder();
+      }
+
+      this.setCurrentIndex(index);
     }
-    if (this.cacheManagerService.isEmpty()) {
-      this.addNewOrder();
-      this.currentOrderIndex = 0;
-    }
+  }
+
+  private isValidIndex(index: number): boolean {
+    return index >= 0 && index < this.cacheManagerService.getSize();
+  }
+
+  private setCurrentIndex(index: number): void {
+    this.currentOrderIndex = this.isValidIndex(index) ? index : this.cacheManagerService.getSize() - 1;
   }
 
   private updateOrderIndexes(): void {
